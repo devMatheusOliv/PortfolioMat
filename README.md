@@ -1,104 +1,69 @@
-# Portfolio - Matheus Oliveira
+# Quiz Brasil & Programação
 
-![Portfolio Preview](assets/images/og-image.jpg)
+Um quiz interativo desenvolvido com React que testa conhecimentos sobre o Brasil e conceitos de programação.
 
-## 🚀 Sobre o Projeto
+## 🚀 Funcionalidades
 
-Portfolio profissional desenvolvido com HTML, CSS e JavaScript, apresentando minha experiência, projetos e habilidades como Desenvolvedor Front-end.
-
-### ✨ Características
-
+- 5 questões desafiadoras (3 sobre Brasil e 2 sobre programação)
+- Timer de 30 segundos por questão
+- Barra de progresso
+- Feedback visual para respostas
+- Sistema de pontuação
 - Design responsivo e moderno
-- Animações suaves e interativas
-- Modo claro/escuro
-- Suporte para múltiplos idiomas (PT-BR/EN)
-- Integração com GitHub API
-- Otimizado para SEO
-- Progressive Web App (PWA)
+- Compartilhamento de resultados
 
 ## 🛠️ Tecnologias Utilizadas
 
+- React
+- Styled Components
+- JavaScript ES6+
+- CSS3 com animações
 - HTML5
-- CSS3
-- JavaScript
-- Font Awesome (ícones)
-- Google Fonts
-- GitHub API
 
-## 🚦 Como Executar
+## 📦 Instalação
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/devMatheusOliv/portfolio.git
+git clone https://github.com/devMatheusOliv/quiz-app.git
 ```
 
-2. Navegue até o diretório do projeto:
+2. Entre no diretório:
 
 ```bash
-cd portfolio
+cd quiz-app
 ```
 
-3. Abra o arquivo `index.html` em seu navegador ou use um servidor local.
+3. Instale as dependências:
 
-## 📱 PWA
-
-Este portfolio está configurado como um Progressive Web App, permitindo:
-
-- Instalação no dispositivo
-- Funcionamento offline
-- Experiência semelhante a um aplicativo nativo
-
-## 🔧 Configuração
-
-### Google Analytics
-
-Substitua o placeholder do Google Analytics ID no arquivo `index.html`:
-
-```html
-<!-- Google Analytics -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-AQUI"
-></script>
+```bash
+npm install
 ```
 
-### GitHub API
+4. Execute o projeto:
 
-A integração com o GitHub está configurada no arquivo `assets/js/github-integration.js`.
+```bash
+npm start
+```
 
-## 📄 Licença
+## 🎮 Como Jogar
+
+1. Clique em "Começar Quiz"
+2. Responda as questões dentro do tempo limite de 30 segundos
+3. Veja seu resultado final
+4. Compartilhe com amigos!
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📬 Contato
+## 👤 Autor
 
-- Email: matheus.luiz0524@gmail.com
-- LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive)
+Matheus Oliveira
+
 - GitHub: [@devMatheusOliv](https://github.com/devMatheusOliv)
-
-## 🚀 Projetos
-
-### Calculadora JavaScript 🔢
-
-Uma calculadora científica moderna com interface elegante e efeito glassmorphism.
-
-#### Funcionalidades
-
-- Operações básicas (adição, subtração, multiplicação, divisão)
-- Funções científicas:
-  - Trigonométricas (sin, cos, tan)
-  - Logaritmos (log, ln)
-  - Potenciação (x², x³, x^n)
-  - Raiz quadrada
-  - Constantes (π, e)
-  - Fatorial (n!)
-- Interface responsiva
-- Efeito glassmorphism
-- Animações suaves
-- Suporte a entrada por teclado
-
-#### Links
-
-- [Ver Demo](calculadora/index.html)
-- [Código Fonte](https://github.com/devMatheusOliv/CalculadoraJS)
+- LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive/)
