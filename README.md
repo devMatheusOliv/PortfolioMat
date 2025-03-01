@@ -1,91 +1,96 @@
-# Portfólio - Matheus Oliveira
+# 👨‍💻 Matheus Oliveira | Portfólio
 
-Bem-vindo ao meu portfólio profissional! Aqui você encontrará uma coleção dos meus projetos e habilidades como Desenvolvedor Front-end.
+<div align="center">
+  <h3>Desenvolvedor Front-end apaixonado por criar experiências web incríveis</h3>
+  
+  [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-olive)
+  [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devMatheusOliv)
+  [![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Matheus.luiz0524@gmail.com)
+</div>
 
-## 🚀 Projetos
+## 🎯 Sobre Mim
 
-### 1. To-Do List App
+Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior, focado em criar interfaces modernas e intuitivas. Apaixonado por tecnologia e sempre em busca de aprender e evoluir na área de desenvolvimento web.
 
-- Lista de tarefas moderna e responsiva
-- Funcionalidades: adição, edição, exclusão e filtros
-- Modo escuro/claro
-- Tecnologias: HTML5, CSS3, JavaScript
+## 💼 Principais Projetos
 
-### 2. Weather Dashboard
+### ✨ LiteraTour - Livraria Online
 
-- Dashboard de previsão do tempo para cidades de São Paulo
-- Informações detalhadas sobre clima atual e previsão
-- Interface moderna e responsiva
-- Tecnologias: HTML5, CSS3, JavaScript, API OpenWeather
+Uma landing page elegante e moderna para uma livraria digital, desenvolvida com foco em experiência do usuário.
 
-### 3. Calculadora JavaScript
+- **Destaques:** Design responsivo, modo escuro/claro, animações suaves
+- **Tecnologias:** `HTML5` `CSS3` `JavaScript`
+- [Ver Projeto](https://github.com/devMatheusOliv/landing-page) | [Demo ao Vivo](https://devmatheusoliv.github.io/landing-page/)
 
-- Calculadora científica com interface moderna
-- Operações básicas e funções científicas
-- Efeito glassmorphism
-- Tecnologias: HTML5, CSS3, JavaScript
+### 🌦️ Weather Dashboard
 
-### 4. Quiz Brasil & Programação
+Dashboard interativo de previsão do tempo para cidades de São Paulo, com interface moderna e informações detalhadas.
 
-- Quiz interativo sobre Brasil e programação
-- Sistema de pontuação e timer
-- Design moderno e responsivo
-- Tecnologias: React, Styled Components, JavaScript
+- **Destaques:** Previsão em tempo real, interface intuitiva
+- **Tecnologias:** `HTML5` `CSS3` `JavaScript` `OpenWeather API`
+- [Ver Projeto](https://github.com/devMatheusOliv/weather-dashboard) | [Demo ao Vivo](https://devmatheusoliv.github.io/weather-dashboard/)
 
-### 5. Movie Catalog
+### ✅ To-Do List App
 
-- Aplicação para busca e visualização de informações sobre filmes
-- Integração com a API do TMDB
-- Interface responsiva e moderna
-- Tecnologias: React, API REST, CSS
+Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas.
 
-### 6. LiteraTour - Livraria Online
+- **Destaques:** CRUD completo, filtros, modo escuro/claro
+- **Tecnologias:** `HTML5` `CSS3` `JavaScript`
+- [Ver Projeto](https://github.com/devMatheusOliv/to-do-list-app) | [Demo ao Vivo](https://devmatheusoliv.github.io/to-do-list-app/)
 
-- Landing page moderna para uma livraria online
-- Design responsivo com modo escuro/claro
-- Seções organizadas para categorias de livros
-- Interface elegante com animações suaves
-- Tecnologias: HTML5, CSS3, JavaScript
+### 🎬 Movie Catalog
 
-## 💻 Tecnologias
+Catálogo de filmes com integração à API do TMDB, oferecendo uma experiência rica em conteúdo.
 
-- HTML5
-- CSS3
-- JavaScript
-- React
-- Node.js
-- MySQL
-- Git/GitHub
+- **Destaques:** Busca avançada, detalhes dos filmes
+- **Tecnologias:** `React` `API REST` `CSS`
+- [Ver Projeto](https://github.com/devMatheusOliv/movie-catalog)
 
-## 📱 Responsividade
+### 🔢 Calculadora JavaScript
 
-O portfólio é totalmente responsivo, adaptando-se a diferentes tamanhos de tela:
+Calculadora científica com design moderno e efeito glassmorphism.
 
-- Desktop (1024px+)
-- Tablet (768px - 1024px)
-- Mobile (até 768px)
-- Mobile pequeno (até 480px)
+- **Destaques:** Funções científicas, interface elegante
+- **Tecnologias:** `HTML5` `CSS3` `JavaScript`
+- [Ver Projeto](https://github.com/devMatheusOliv/CalculadoraJS)
 
-## 🎨 Design
+### 🎯 Quiz Brasil & Programação
 
-- Interface limpa e moderna
-- Modo escuro/claro
-- Animações suaves
-- Navegação intuitiva
-- Acessibilidade
+Quiz interativo sobre Brasil e programação com sistema de pontuação.
 
-## 📞 Contato
+- **Destaques:** Timer, sistema de pontos
+- **Tecnologias:** `React` `Styled Components` `JavaScript`
+- [Ver Projeto](https://github.com/devMatheusOliv/quiz-app)
 
-- Email: Matheus.luiz0524@gmail.com
-- LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive)
-- GitHub: [devMatheusOliv](https://github.com/devMatheusOliv)
+## 🛠️ Tecnologias & Ferramentas
 
-## 🛠️ Como Usar
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
 
-1. Clone o repositório
-2. Abra o arquivo `index.html` no seu navegador
-3. Navegue pelo portfólio!
+## 📱 Design Responsivo
 
-## 📝 Licença
+O portfólio e todos os projetos são desenvolvidos com foco em responsividade:
 
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+- 🖥️ Desktop (1024px+)
+- 💻 Tablet (768px - 1024px)
+- 📱 Mobile (até 768px)
+- 📱 Mobile pequeno (até 480px)
+
+## 🤝 Vamos Conectar?
+
+Estou sempre aberto a novas oportunidades e colaborações! Entre em contato:
+
+- 📧 Email: [Matheus.luiz0524@gmail.com](mailto:Matheus.luiz0524@gmail.com)
+- 💼 LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive)
+- 🐱 GitHub: [devMatheusOliv](https://github.com/devMatheusOliv)
+
+---
+
+<div align="center">
+  <sub>Feito com 💜 por Matheus Oliveira</sub>
+</div>
