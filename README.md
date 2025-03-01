@@ -76,3 +76,29 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - Email: matheus.luiz0524@gmail.com
 - LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive)
 - GitHub: [@devMatheusOliv](https://github.com/devMatheusOliv)
+
+## 🚀 Projetos
+
+### Calculadora JavaScript 🔢
+
+Uma calculadora científica moderna com interface elegante e efeito glassmorphism.
+
+#### Funcionalidades
+
+- Operações básicas (adição, subtração, multiplicação, divisão)
+- Funções científicas:
+  - Trigonométricas (sin, cos, tan)
+  - Logaritmos (log, ln)
+  - Potenciação (x², x³, x^n)
+  - Raiz quadrada
+  - Constantes (π, e)
+  - Fatorial (n!)
+- Interface responsiva
+- Efeito glassmorphism
+- Animações suaves
+- Suporte a entrada por teclado
+
+#### Links
+
+- [Ver Demo](calculadora/index.html)
+- [Código Fonte](https://github.com/devMatheusOliv/CalculadoraJS)
