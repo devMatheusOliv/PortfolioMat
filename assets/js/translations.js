@@ -115,7 +115,7 @@ const translations = {
 
     "projects.card1.title": "To-Do List App ✅",
     "projects.card1.description":
-      "Aplicativo de lista de tarefas desenvolvido com React e CSS moderno. Inclui funcionalidades de CRUD, filtros e armazenamento local.",
+      "Aplicativo de lista de tarefas com interface moderna e responsiva. Inclui adição, edição, exclusão, filtros e modo escuro/claro.",
     "projects.card1.github": "GitHub",
     "projects.card1.demo": "Demo",
 
