@@ -417,7 +417,7 @@
               <i class="fab fa-github"></i>
               <span data-i18n="projects.card1.github">GitHub</span>
             </a>
-            <a href="todo-app/index.html" target="_blank">
+            <a href="projetos/todo-app/index.html" target="_blank">
               <i class="fas fa-external-link-alt"></i>
               <span data-i18n="projects.card1.demo">Demo</span>
             </a>
@@ -462,7 +462,7 @@
               <span data-i18n="projects.card2.github">GitHub</span>
             </a>
             <a
-              href="https://devmatheusoliv.github.io/weather-dashboard/"
+              href="projetos/weather-dashboard/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -500,7 +500,7 @@
               <span data-i18n="projects.literatour.github">GitHub</span>
             </a>
             <a
-              href="https://devmatheusoliv.github.io/landing-page/"
+              href="projetos/landing-page/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -537,7 +537,7 @@
               <span>GitHub</span>
             </a>
             <a
-              href="calculadora/index.html"
+              href="projetos/calculadora/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -568,17 +568,10 @@
               href="https://github.com/devMatheusOliv/quiz-app"
               target="_blank"
               rel="noopener noreferrer"
+              class="github-only"
             >
               <i class="fab fa-github"></i>
               <span>GitHub</span>
-            </a>
-            <a
-              href="quiz-app/build/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fas fa-external-link-alt"></i>
-              <span>Demo</span>
             </a>
           </div>
         </div>
@@ -809,6 +802,20 @@
     <script src="assets/js/script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Atualizar traduções para a seção "Sobre"
+        if (window.translations) {
+          // Português
+          if (window.translations.pt && window.translations.pt.about) {
+            window.translations.pt.about.description =
+              "Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior com experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.";
+          }
+          // Inglês
+          if (window.translations.en && window.translations.en.about) {
+            window.translations.en.about.description =
+              "Software Engineering student and Junior Front-end Developer with experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, as well as knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.";
+          }
+        }
+
         document.querySelectorAll(".skill-progress").forEach((progress) => {
           const width = progress.style.width;
           const skillName = progress.parentElement.previousElementSibling;

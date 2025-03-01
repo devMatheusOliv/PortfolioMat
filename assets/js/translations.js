@@ -16,7 +16,7 @@ const translations = {
 
     "about.title": "Sobre Mim 👨‍💻",
     "about.description":
-      "Desenvolvedor Front-end Júnior com formação em Engenharia de Software e experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.",
+      "Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior com experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.",
 
     "about.card1.title": "Desenvolvimento Web 💻",
     "about.card1.description":
@@ -172,7 +172,7 @@ const translations = {
 
     "about.title": "About Me 👨‍💻",
     "about.description":
-      "Junior Front-end Developer with a background in Software Engineering and experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, plus knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.",
+      "Software Engineering student and Junior Front-end Developer with experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, as well as knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.",
 
     "about.card1.title": "Web Development 💻",
     "about.card1.description":
