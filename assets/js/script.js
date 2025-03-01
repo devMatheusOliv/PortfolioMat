@@ -38,12 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  menuBtn.innerHTML = navLinks.classList.contains("active")
+    ? '<i class="fas fa-times"></i>'
+    : '<i class="fas fa-bars"></i>';
 });
 
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".nav-bar")) {
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
     navLinks.classList.remove("active");
+    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  });
+});
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    navLinks.classList.remove("active");
+    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
   }
+  lastScrollTop = scrollTop;
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -51,11 +65,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({
+      window.scrollTo({
+        top: target.offsetTop - 70,
         behavior: "smooth",
       });
-
-      navLinks.classList.remove("active");
     }
   });
 });
@@ -79,3 +92,26 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// Animação de entrada para cards
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+document
+  .querySelectorAll(
+    ".experiencia-card, .educacao-card, .habilidade-card, .projeto-card"
+  )
+  .forEach((el) => {
+    el.classList.add("fade-in-hidden");
+    observer.observe(el);
+  });

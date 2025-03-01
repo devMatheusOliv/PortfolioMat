@@ -1,0 +1,207 @@
+/* Tablets (768px até 1024px) */
+@media screen and (max-width: 1024px) {
+  :root {
+    --fs-1: 22px;
+    --fs-2: 17px;
+    --fs-3: 16px;
+    --fs-4: 15px;
+    --fs-5: 14px;
+  }
+
+  .nav-bar {
+    padding: 0.8rem 3%;
+  }
+
+  .hero {
+    padding: 6rem 3% 2rem;
+  }
+
+  .hero-left {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    padding-left: 0;
+  }
+
+  section:not(.hero) {
+    padding: 4rem 3%;
+  }
+
+  .sobre-grid,
+  .experiencia-grid,
+  .educacao-grid,
+  .projetos-grid,
+  .habilidades-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile (até 767px) */
+@media screen and (max-width: 767px) {
+  :root {
+    --fs-1: 20px;
+    --fs-2: 16px;
+    --fs-3: 15px;
+    --fs-4: 14px;
+    --fs-5: 13px;
+  }
+
+  .header {
+    padding: 0.3rem 0;
+  }
+
+  .nav-bar {
+    padding: 0.5rem 5%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--military-green);
+  }
+
+  .hero {
+    padding: 5rem 1rem 2rem;
+    align-items: center;
+  }
+
+  .hero-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-text h1 {
+    font-size: var(--fs-1);
+    text-align: center;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .button-30 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sobre-grid,
+  .experiencia-grid,
+  .educacao-grid,
+  .projetos-grid,
+  .habilidades-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .sobre-text {
+    text-align: center;
+  }
+
+  .info-card {
+    padding: 1.2rem;
+  }
+
+  .experiencia-card,
+  .educacao-card,
+  .projeto-card {
+    padding: 1.2rem;
+  }
+
+  .tecnologias-exp,
+  .tecnologias {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skill-item {
+    margin-bottom: 1rem;
+  }
+
+  .contato-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contato-info {
+    text-align: center;
+  }
+
+  #contato-form {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/* Small Mobile (até 480px) */
+@media screen and (max-width: 480px) {
+  :root {
+    --fs-1: 18px;
+    --fs-2: 15px;
+    --fs-3: 14px;
+    --fs-4: 13px;
+    --fs-5: 12px;
+  }
+
+  .hero-left {
+    padding: 1rem;
+  }
+
+  .hero-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-card,
+  .experiencia-card,
+  .educacao-card,
+  .projeto-card {
+    padding: 1rem;
+  }
+
+  .tecnologias-exp span,
+  .tecnologias span {
+    font-size: var(--fs-5);
+    padding: 0.3rem 0.6rem;
+  }
+
+  .contato-info .info-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
