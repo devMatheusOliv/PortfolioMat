@@ -1,0 +1,21 @@
+{
+  "name": "Matheus Oliveira - Portfolio",
+  "short_name": "MO Portfolio",
+  "description": "Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#3c4a3e",
+  "icons": [
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

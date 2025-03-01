@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matheus Oliveira - Desenvolvedor Front-end | Portfolio</title>
+
+    <meta
+      name="description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas com React, HTML5, CSS3 e JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="desenvolvedor front-end, web developer, react, javascript, html5, css3, são paulo, portfolio"
+    />
+    <meta name="author" content="Matheus Oliveira" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seu-site.com/" />
+    <meta
+      property="og:title"
+      content="Matheus Oliveira - Desenvolvedor Front-end"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://seu-site.com/" />
+    <meta
+      property="twitter:title"
+      content="Matheus Oliveira - Desenvolvedor Front-end"
+    />
+    <meta
+      property="twitter:description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas."
+    />
+    <meta property="twitter:image" content="assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/jpg" href="assets/images/icon.jpg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-AQUI"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "SEU-ID-AQUI");
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="#home" data-i18n="nav.home">Início</a></li>
+          <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+          <li>
+            <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+          </li>
+          <li><a href="#educacao" data-i18n="nav.education">Educação</a></li>
+          <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
+          <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+
+        <button class="lang-toggle" aria-label="Toggle Language">
+          <span class="lang-text">PT</span>
+        </button>
+
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-avatar">
+            <img src="assets/images/avatar.png" alt="Matheus Oliveira" />
+          </div>
+          <div class="hero-text">
+            <h1>
+              <span class="greeting" data-i18n="hero.greeting"
+                >Olá, eu sou</span
+              >
+              <span class="name highlight">Matheus Oliveira</span>
+              <span class="role" data-i18n="hero.role"
+                >Desenvolvedor Front-end</span
+              >
+            </h1>
+            <div class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span data-i18n="hero.location">São Paulo, Brasil</span>
+            </div>
+            <div class="hero-btns">
+              <a href="#projetos" class="button-30" data-i18n="hero.projects"
+                >Ver Projetos</a
+              >
+              <a href="#contato" class="button-30" data-i18n="hero.contact"
+                >Contato</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <h2 data-i18n="about.title">Sobre</h2>
+      <div class="sobre-content">
+        <div class="sobre-grid">
+          <div class="sobre-text">
+            <p class="sobre-intro" data-i18n="about.intro">
+              👋 Olá! Sou um Desenvolvedor Front-end Junior apaixonado por criar
+              experiências web incríveis.
+            </p>
+            <p class="sobre-description" data-i18n="about.description">
+              Com foco em desenvolvimento web moderno, trabalho principalmente
+              com React, HTML5, CSS3 e JavaScript. Minha jornada na programação
+              começou com a curiosidade de entender como as coisas funcionam na
+              web, e hoje essa curiosidade se transformou em paixão por criar
+              interfaces intuitivas e responsivas.
+            </p>
+            <p class="sobre-goals" data-i18n="about.goals">
+              Atualmente, estou aprimorando minhas habilidades em
+              desenvolvimento full-stack e sempre buscando aprender novas
+              tecnologias. Acredito que a combinação de código limpo e design
+              intuitivo é a chave para criar experiências digitais memoráveis.
+            </p>
+          </div>
+          <div class="sobre-info">
+            <div class="info-card">
+              <i class="fas fa-code"></i>
+              <h3 data-i18n="about.card1.title">Desenvolvimento Web</h3>
+              <p data-i18n="about.card1.description">
+                Criação de sites e aplicações web responsivas e modernas
+              </p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-laptop-code"></i>
+              <h3 data-i18n="about.card2.title">Front-end</h3>
+              <p data-i18n="about.card2.description">
+                Interfaces intuitivas com foco em experiência do usuário
+              </p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-server"></i>
+              <h3 data-i18n="about.card3.title">Back-end</h3>
+              <p data-i18n="about.card3.description">
+                Desenvolvimento de APIs e integração com banco de dados
+              </p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-mobile-alt"></i>
+              <h3 data-i18n="about.card4.title">Responsivo</h3>
+              <p data-i18n="about.card4.description">
+                Sites adaptáveis para todos os dispositivos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="experiencia">
+      <h2 data-i18n="experience.title">Experiência</h2>
+      <div class="experiencia-grid">
+        <div class="experiencia-card">
+          <div class="card-header">
+            <i class="fas fa-headset"></i>
+            <h3 data-i18n="experience.job1.title">
+              Agente de Backoffice - NEOBPO
+            </h3>
+            <div class="periodo">
+              <i class="far fa-calendar-alt"></i>
+              <span data-i18n="experience.job1.period"
+                >Janeiro 2023 - Presente</span
+              >
+            </div>
+          </div>
+          <div class="tecnologias-exp">
+            <span>SAP</span>
+            <span>Excel</span>
+            <span>Zendesk</span>
+            <span>ServiceNow</span>
+          </div>
+          <div class="card-content">
+            <h4>Principais Responsabilidades:</h4>
+            <ul>
+              <li data-i18n="experience.job1.task1">
+                <i class="fas fa-check-circle"></i>
+                Análise e processamento de solicitações de clientes através de
+                múltiplos canais
+              </li>
+              <li data-i18n="experience.job1.task2">
+                <i class="fas fa-check-circle"></i>
+                Gerenciamento de documentação e registros em sistemas CRM
+              </li>
+              <li data-i18n="experience.job1.task3">
+                <i class="fas fa-check-circle"></i>
+                Resolução de problemas complexos e escalonamento quando
+                necessário
+              </li>
+              <li data-i18n="experience.job1.task4">
+                <i class="fas fa-check-circle"></i>
+                Elaboração de relatórios e acompanhamento de indicadores de
+                performance
+              </li>
+            </ul>
+          </div>
+          <div class="conquistas">
+            <h4>Conquistas:</h4>
+            <ul>
+              <li>
+                <i class="fas fa-trophy"></i>
+                <span data-i18n="experience.job1.achievement1"
+                  >Reconhecimento por excelência no atendimento com 98% de
+                  satisfação dos clientes</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-trophy"></i>
+                <span data-i18n="experience.job1.achievement2"
+                  >Redução do tempo médio de resolução de casos em 30%</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experiencia-card">
+          <div class="card-header">
+            <i class="fas fa-phone-alt"></i>
+            <h3 data-i18n="experience.job2.title">
+              Agente de Telemarketing - NEOBPO
+            </h3>
+            <div class="periodo">
+              <i class="far fa-calendar-alt"></i>
+              <span data-i18n="experience.job2.period"
+                >Junho 2022 - Dezembro 2022</span
+              >
+            </div>
+          </div>
+          <div class="tecnologias-exp">
+            <span>Avaya</span>
+            <span>CRM</span>
+            <span>Office</span>
+            <span>Teams</span>
+          </div>
+          <div class="card-content">
+            <h4>Principais Responsabilidades:</h4>
+            <ul>
+              <li data-i18n="experience.job2.task1">
+                <i class="fas fa-check-circle"></i>
+                Atendimento ao cliente via telefone com foco em resolução no
+                primeiro contato
+              </li>
+              <li data-i18n="experience.job2.task2">
+                <i class="fas fa-check-circle"></i>
+                Registro detalhado de interações e encaminhamento de
+                solicitações
+              </li>
+              <li data-i18n="experience.job2.task3">
+                <i class="fas fa-check-circle"></i>
+                Identificação de oportunidades de venda e cross-selling durante
+                atendimentos
+              </li>
+              <li data-i18n="experience.job2.task4">
+                <i class="fas fa-check-circle"></i>
+                Suporte na resolução de problemas e dúvidas dos clientes
+              </li>
+            </ul>
+          </div>
+          <div class="conquistas">
+            <h4>Conquistas:</h4>
+            <ul>
+              <li>
+                <i class="fas fa-trophy"></i>
+                <span data-i18n="experience.job2.achievement1"
+                  >Destaque em vendas adicionais, superando meta em 25%</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-trophy"></i>
+                <span data-i18n="experience.job2.achievement2"
+                  >Premiação por melhor qualidade no atendimento do
+                  trimestre</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="educacao" class="educacao">
+      <h2 data-i18n="education.title">Educação</h2>
+      <div class="educacao-grid">
+        <div class="educacao-card">
+          <h3 data-i18n="education.degree1.title">
+            Análise e Desenvolvimento de Sistemas
+          </h3>
+          <p class="instituicao" data-i18n="education.degree1.institution">
+            FIAP
+          </p>
+          <p class="periodo" data-i18n="education.degree1.period">
+            2023 - Presente
+          </p>
+          <p data-i18n="education.degree1.description">
+            Graduação tecnológica focada em desenvolvimento de software,
+            arquitetura de sistemas e metodologias ágeis. Cursando o segundo
+            semestre com ênfase em programação e análise de sistemas.
+          </p>
+        </div>
+
+        <div class="educacao-card">
+          <h3 data-i18n="education.degree2.title">
+            CS50: Introduction to Computer Science
+          </h3>
+          <p class="instituicao" data-i18n="education.degree2.institution">
+            Harvard University
+          </p>
+          <p class="periodo" data-i18n="education.degree2.period">2023</p>
+          <p data-i18n="education.degree2.description">
+            Curso introdutório de Ciência da Computação de Harvard, cobrindo
+            conceitos fundamentais de programação, algoritmos, estruturas de
+            dados, segurança e desenvolvimento web.
+          </p>
+        </div>
+
+        <div class="educacao-card">
+          <h3 data-i18n="education.degree3.title">Python Professional</h3>
+          <p class="instituicao" data-i18n="education.degree3.institution">
+            Data Science Academy
+          </p>
+          <p class="periodo" data-i18n="education.degree3.period">2023</p>
+          <p data-i18n="education.degree3.description">
+            Formação completa em Python, incluindo programação orientada a
+            objetos, análise de dados, automação e desenvolvimento web com
+            Django e Flask.
+          </p>
+        </div>
+
+        <div class="educacao-card">
+          <h3 data-i18n="education.degree4.title">Bootcamp Full Stack</h3>
+          <p class="instituicao" data-i18n="education.degree4.institution">
+            Digital House
+          </p>
+          <p class="periodo" data-i18n="education.degree4.period">2022</p>
+          <p data-i18n="education.degree4.description">
+            Formação intensiva em desenvolvimento web full stack, com foco em
+            HTML, CSS, JavaScript, React, Node.js e banco de dados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 data-i18n="projects.title">Projetos</h2>
+      <div class="projetos-grid">
+        <div class="projeto-card">
+          <img src="assets/images/todo-app.jpg" alt="To-Do App" />
+          <h3 data-i18n="projects.card1.title">To-Do List App</h3>
+          <p data-i18n="projects.card1.description">
+            Aplicativo de lista de tarefas desenvolvido com React e CSS moderno.
+            Inclui funcionalidades de CRUD, filtros e armazenamento local.
+          </p>
+          <div class="tecnologias">
+            <span>React ⚛️</span>
+            <span>CSS 🎨</span>
+            <span>LocalStorage 💾</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/todo-app"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card1.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card1.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="assets/images/weather-app.jpg" alt="Weather App" />
+          <h3 data-i18n="projects.card2.title">Weather Dashboard</h3>
+          <p data-i18n="projects.card2.description">
+            Dashboard de previsão do tempo que consome API externa. Exibe
+            informações detalhadas sobre clima e previsão para 5 dias.
+          </p>
+          <div class="tecnologias">
+            <span>JavaScript 💻</span>
+            <span>API REST 🔌</span>
+            <span>CSS Grid 📱</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/weather-dashboard"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card2.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card2.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="assets/images/landing-page.jpg" alt="Landing Page" />
+          <h3 data-i18n="projects.card3.title">Landing Page Responsiva</h3>
+          <p data-i18n="projects.card3.description">
+            Página de destino moderna e responsiva para um produto fictício, com
+            animações suaves e design atraente.
+          </p>
+          <div class="tecnologias">
+            <span>HTML5 📝</span>
+            <span>CSS3 🎨</span>
+            <span>JavaScript 💻</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/landing-page"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card3.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card3.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="assets/images/calculator.jpg" alt="Calculator App" />
+          <h3 data-i18n="projects.card4.title">Calculadora JavaScript</h3>
+          <p data-i18n="projects.card4.description">
+            Calculadora interativa com operações básicas e avançadas, histórico
+            de cálculos e tema escuro/claro.
+          </p>
+          <div class="tecnologias">
+            <span>HTML5 📝</span>
+            <span>CSS3 🎨</span>
+            <span>JavaScript 💻</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/calculator"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card4.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card4.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="assets/images/quiz-app.jpg" alt="Quiz App" />
+          <h3 data-i18n="projects.card5.title">Quiz Interativo</h3>
+          <p data-i18n="projects.card5.description">
+            Aplicativo de quiz com múltiplas categorias, pontuação em tempo real
+            e ranking de jogadores.
+          </p>
+          <div class="tecnologias">
+            <span>React ⚛️</span>
+            <span>CSS Modules 🎨</span>
+            <span>JavaScript 💻</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/quiz-app"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card5.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card5.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="assets/images/movie-app.jpg" alt="Movie App" />
+          <h3 data-i18n="projects.card6.title">Catálogo de Filmes</h3>
+          <p data-i18n="projects.card6.description">
+            Aplicação para busca e visualização de informações sobre filmes,
+            utilizando a API do TMDB.
+          </p>
+          <div class="tecnologias">
+            <span>React ⚛️</span>
+            <span>API REST 🔌</span>
+            <span>CSS 🎨</span>
+          </div>
+          <div class="projeto-links">
+            <a
+              href="https://github.com/devMatheusOliv/movie-catalog"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span data-i18n="projects.card6.github">GitHub</span>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="projects.card6.demo">Demo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+      <h2 data-i18n="skills.title">Habilidades</h2>
+      <div class="habilidades-grid">
+        <div class="habilidade-card">
+          <i class="fas fa-code"></i>
+          <h3 data-i18n="skills.frontend.title">Front-end</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name" data-progress="90%">
+                <span data-i18n="skills.frontend.html">HTML & CSS 🎨</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="85%">
+                <span data-i18n="skills.frontend.javascript"
+                  >JavaScript 💻</span
+                >
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="80%">
+                <span data-i18n="skills.frontend.react">React ⚛️</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="75%">
+                <span data-i18n="skills.frontend.nodejs">Node.js 🚀</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="habilidade-card">
+          <i class="fas fa-tools"></i>
+          <h3 data-i18n="skills.tools.title">Ferramentas & Outros</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name" data-progress="80%">
+                <span data-i18n="skills.tools.git">Git/GitHub 📂</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="90%">
+                <span data-i18n="skills.tools.vscode">VS Code 📝</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="70%">
+                <span data-i18n="skills.tools.mysql">MySQL 🗄️</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="85%">
+                <span data-i18n="skills.tools.responsive"
+                  >Design Responsivo 📱</span
+                >
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="habilidade-card">
+          <i class="fas fa-language"></i>
+          <h3 data-i18n="skills.soft.title">Soft Skills & Idiomas</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name" data-progress="100%">
+                <span data-i18n="skills.soft.portuguese">Português 🇧🇷</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="70%">
+                <span data-i18n="skills.soft.english">Inglês 🇺🇸</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="90%">
+                <span data-i18n="skills.soft.teamwork"
+                  >Trabalho em Equipe 👥</span
+                >
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" data-progress="85%">
+                <span data-i18n="skills.soft.problemsolving"
+                  >Resolução de Problemas 🎯</span
+                >
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2 data-i18n="contact.title">Contato</h2>
+      <div class="contato-content">
+        <div class="contato-info">
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=Matheus.luiz0524@gmail.com&su=Contato via Portfolio&body=Olá Matheus,"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📧 Matheus.luiz0524@gmail.com</a
+            >
+          </div>
+          <div class="info-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/matheus-olive"
+              target="_blank"
+              rel="noopener noreferrer"
+              >👥 LinkedIn</a
+            >
+          </div>
+          <div class="info-item">
+            <i class="fab fa-github"></i>
+            <a
+              href="https://github.com/devMatheusOliv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📦 GitHub</a
+            >
+          </div>
+        </div>
+
+        <form id="contato-form">
+          <input
+            type="text"
+            data-i18n="contact.name"
+            placeholder="Nome"
+            required
+          />
+          <input
+            type="email"
+            data-i18n="contact.email"
+            placeholder="E-mail"
+            required
+          />
+          <textarea
+            data-i18n="contact.message"
+            placeholder="Mensagem"
+            required
+          ></textarea>
+          <button type="submit" class="button-30" data-i18n="contact.send">
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2024 Matheus Oliveira. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/github-integration.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".skill-progress").forEach((progress) => {
+          const width = progress.style.width;
+          const skillName = progress.parentElement.previousElementSibling;
+          skillName.setAttribute("data-progress", width);
+          progress.style.setProperty("--progress", width);
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+
+                if (entry.target.classList.contains("habilidade-card")) {
+                  entry.target
+                    .querySelectorAll(".skill-progress")
+                    .forEach((progress) => {
+                      const width = progress.style.width;
+                      setTimeout(() => {
+                        progress.style.width = width;
+                      }, 200);
+                    });
+                }
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        document
+          .querySelectorAll(
+            ".experiencia-card, .educacao-card, .habilidade-card, .projeto-card"
+          )
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

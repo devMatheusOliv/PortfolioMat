@@ -1,0 +1,163 @@
+/* Importando a fonte Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: hsl(40, 33%, 95%);
+  --cream-dark: hsl(40, 25%, 90%);
+  --military-green: hsl(120, 12%, 25%);
+  --military-green-light: hsl(120, 12%, 35%);
+  --shadow-1: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --transition-1: 0.25s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-container {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-2);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(
+    135deg,
+    var(--military-green) 0%,
+    var(--military-green-light) 100%
+  );
+  box-shadow: var(--shadow-2);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--cream);
+}
+
+h1 {
+  color: var(--military-green);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--military-green-light);
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-btn {
+  background: var(--military-green);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-1);
+  box-shadow: var(--shadow-1);
+}
+
+.landing-btn:hover {
+  background: var(--military-green-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+}
+
+.landing-btn i {
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .landing-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .landing-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  animation: fadeIn 0.8s ease forwards;
+}
