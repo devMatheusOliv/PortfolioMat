@@ -34,6 +34,21 @@ langToggle.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   translatePage(currentLang);
+
+  // Garantir que o link do GitHub para o Catálogo de Filmes esteja correto
+  const projetosGrid = document.querySelector(".projetos-grid");
+  if (projetosGrid) {
+    const cards = projetosGrid.querySelectorAll(".projeto-card");
+    cards.forEach((card) => {
+      const title = card.querySelector("h3");
+      if (title && title.textContent.includes("Catálogo de Filmes")) {
+        const githubLink = card.querySelector(".projeto-links a:first-child");
+        if (githubLink) {
+          githubLink.href = "https://github.com/devMatheusOliv/movie-catalog";
+        }
+      }
+    });
+  }
 });
 
 menuBtn.addEventListener("click", () => {

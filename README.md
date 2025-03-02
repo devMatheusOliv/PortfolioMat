@@ -40,11 +40,11 @@ Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades a
 
 ### 🎬 Movie Catalog
 
-Catálogo de filmes com integração à API do TMDB, oferecendo uma experiência rica em conteúdo.
+Aplicação para busca e visualização de informações sobre filmes, utilizando a API do TMDB.
 
-- **Destaques:** Busca avançada, detalhes dos filmes
-- **Tecnologias:** `React` `API REST` `CSS`
-- [Ver Projeto](https://github.com/devMatheusOliv/movie-catalog)
+- **Destaques:** Busca de filmes, modo escuro/claro, detalhes dos filmes e trailers
+- **Tecnologias:** `HTML5` `CSS3` `JavaScript` `API TMDB`
+- [Ver Projeto](https://github.com/devMatheusOliv/movie-catalog) | [Demo ao Vivo](https://devmatheusoliv.github.io/movie-catalog/)
 
 ### 🔢 Calculadora JavaScript
 

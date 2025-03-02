@@ -145,7 +145,7 @@ const translations = {
 
     "projects.card6.title": "Catálogo de Filmes 🎬",
     "projects.card6.description":
-      "Aplicação para busca e visualização de informações sobre filmes, utilizando a API do TMDB.",
+      "Aplicação para busca e visualização de informações sobre filmes, utilizando a API do TMDB. Inclui modo escuro/claro, detalhes dos filmes e trailers.",
     "projects.card6.github": "GitHub",
     "projects.card6.demo": "Demo",
 
@@ -301,7 +301,7 @@ const translations = {
 
     "projects.card6.title": "Movie Catalog 🎬",
     "projects.card6.description":
-      "Application for searching and viewing movie information using the TMDB API.",
+      "Application for searching and viewing information about movies, using the TMDB API. Includes dark/light mode, movie details, and trailers.",
     "projects.card6.github": "GitHub",
     "projects.card6.demo": "Demo",
 

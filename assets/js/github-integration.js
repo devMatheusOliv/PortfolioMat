@@ -21,6 +21,13 @@ function updateProjectCards(repos) {
     const card = projetosGrid.children[index];
     if (!card) return;
 
+    // Verificar se é o card do Catálogo de Filmes
+    const title = card.querySelector("h3");
+    if (title && title.textContent.includes("Catálogo de Filmes")) {
+      // Não atualizar o link do GitHub para o Catálogo de Filmes
+      return;
+    }
+
     const githubLink = card.querySelector(".projeto-links a:first-child");
     if (githubLink) {
       githubLink.href = repo.html_url;

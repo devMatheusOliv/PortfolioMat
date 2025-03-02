@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Filmes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Catálogo de Filmes</h1>
+        <div class="header-right">
+          <form id="search-form">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Buscar filmes..."
+            />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Alternar tema"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="movies-grid" id="movies-grid">
+        <!-- Movies will be dynamically added here -->
+      </div>
+
+      <div class="load-more">
+        <button id="load-more-btn">Carregar Mais</button>
+      </div>
+    </main>
+
+    <!-- Movie Modal -->
+    <div id="movie-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-details"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Desenvolvido por Matheus utilizando a API do TMDB</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
