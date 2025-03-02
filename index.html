@@ -20,7 +20,7 @@
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://seu-site.com/" />
+    <meta property="og:url" content="https://devmatheus.com/" />
     <meta
       property="og:title"
       content="Matheus Oliveira - Desenvolvedor Front-end"
@@ -32,7 +32,7 @@
     <meta property="og:image" content="assets/images/og-image.jpg" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://seu-site.com/" />
+    <meta property="twitter:url" content="https://devmatheus.com/" />
     <meta
       property="twitter:title"
       content="Matheus Oliveira - Desenvolvedor Front-end"
@@ -62,12 +62,19 @@
       href="assets/images/favicon-16x16.png"
     />
     <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -85,6 +92,131 @@
       gtag("js", new Date());
       gtag("config", "SEU-ID-AQUI");
     </script>
+
+    <style>
+      .habilidade-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .habilidade-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .skill-name {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .skill-name i {
+        margin-right: 8px;
+        font-size: 1.5em;
+        color: #4caf50;
+      }
+
+      .skill-level {
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 20px;
+        margin-top: 5px;
+      }
+
+      .skill-progress {
+        height: 100%;
+        transition: width 0.5s ease;
+      }
+
+      .skill-percent-number {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      .path {
+        width: 2px;
+        background-color: #ccc;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      .educacao-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        position: relative;
+      }
+
+      .educacao-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .path {
+        width: 4px;
+        background-color: #4caf50;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 2px;
+        position: relative;
+        z-index: -1;
+      }
+
+      .educacao-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .educacao-card i {
+        font-size: 2.5em;
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+        color: #333;
+      }
+
+      .message-bubble {
+        position: relative;
+        background-color: #58b763;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        max-width: 300px;
+        margin: 20px 0;
+      }
+
+      .message-bubble::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #58b763 transparent;
+        z-index: 1;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -110,31 +242,39 @@
       </nav>
     </header>
 
-    <section id="home" class="hero">
+    <section id="home" class="hero section-animate">
       <div class="hero-content">
-        <div class="hero-left">
+        <div class="hero-left" style="margin-left: -8%; margin-top: 5%">
           <div class="hero-avatar">
             <img src="assets/images/avatar.png" alt="Matheus Oliveira" />
           </div>
           <div class="hero-text">
-            <h1>
-              <span class="greeting" data-i18n="hero.greeting"
-                >Olá, eu sou</span
-              >
-              <span class="name highlight">Matheus Oliveira</span>
-              <span class="role" data-i18n="hero.role"
-                >Desenvolvedor Front-end</span
-              >
-            </h1>
+            <div class="message-bubble" style="margin-left: 0">
+              <h1>
+                <span class="greeting" data-i18n="hero.greeting"
+                  >Olá, eu sou</span
+                >
+                <span class="name highlight">Matheus Oliveira</span>
+                <span class="role" data-i18n="hero.role"
+                  >Desenvolvedor Front-end</span
+                >
+              </h1>
+            </div>
             <div class="location">
               <i class="fas fa-map-marker-alt"></i>
               <span data-i18n="hero.location">São Paulo, Brasil</span>
             </div>
             <div class="hero-btns">
-              <a href="#projetos" class="button-30" data-i18n="hero.projects"
+              <a
+                href="#projetos"
+                class="button-neomorphic-theme"
+                data-i18n="hero.projects"
                 >Ver Projetos</a
               >
-              <a href="#contato" class="button-30" data-i18n="hero.contact"
+              <a
+                href="#contato"
+                class="button-neomorphic-theme"
+                data-i18n="hero.contact"
                 >Contato</a
               >
             </div>
@@ -143,7 +283,7 @@
       </div>
     </section>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre section-animate">
       <h2 data-i18n="about.title">Sobre</h2>
       <div class="sobre-content">
         <div class="sobre-grid">
@@ -200,7 +340,7 @@
       </div>
     </section>
 
-    <section id="experiencia" class="experiencia">
+    <section id="experiencia" class="experiencia section-animate">
       <h2 data-i18n="experience.title">Experiência</h2>
       <div class="experiencia-grid">
         <div class="experiencia-card">
@@ -331,10 +471,11 @@
       </div>
     </section>
 
-    <section id="educacao" class="educacao">
+    <section id="educacao" class="educacao section-animate">
       <h2 data-i18n="education.title">Educação</h2>
       <div class="educacao-grid">
         <div class="educacao-card">
+          <i class="fas fa-graduation-cap"></i>
           <h3 data-i18n="education.degree1.title">
             Análise e Desenvolvimento de Sistemas
           </h3>
@@ -350,8 +491,9 @@
             semestre com ênfase em programação e análise de sistemas.
           </p>
         </div>
-
+        <div class="path"></div>
         <div class="educacao-card">
+          <i class="fas fa-book"></i>
           <h3 data-i18n="education.degree2.title">
             CS50: Introduction to Computer Science
           </h3>
@@ -365,8 +507,9 @@
             dados, segurança e desenvolvimento web.
           </p>
         </div>
-
+        <div class="path"></div>
         <div class="educacao-card">
+          <i class="fas fa-code"></i>
           <h3 data-i18n="education.degree3.title">Python Professional</h3>
           <p class="instituicao" data-i18n="education.degree3.institution">
             Data Science Academy
@@ -378,8 +521,9 @@
             Django e Flask.
           </p>
         </div>
-
+        <div class="path"></div>
         <div class="educacao-card">
+          <i class="fas fa-laptop-code"></i>
           <h3 data-i18n="education.degree4.title">Bootcamp Full Stack</h3>
           <p class="instituicao" data-i18n="education.degree4.institution">
             Digital House
@@ -393,349 +537,480 @@
       </div>
     </section>
 
-    <section id="projetos" class="projetos">
+    <section id="projetos" class="projetos section-animate">
       <h2 data-i18n="projects.title">Projetos 🚀</h2>
       <div class="projetos-grid">
-        <div class="projeto-card">
-          <img src="assets/images/to-do-list-app.png" alt="To-Do App" />
-          <h3 data-i18n="projects.card1.title">To-Do List App</h3>
-          <p data-i18n="projects.card1.description">
-            Aplicativo de lista de tarefas com interface moderna e responsiva.
-            Inclui adição, edição, exclusão, filtros e modo escuro/claro.
-          </p>
-          <div class="tecnologias">
-            <span>HTML5 📝</span>
-            <span>CSS3 🎨</span>
-            <span>JavaScript 💻</span>
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
           </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/to-do-list-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-github"></i>
-              <span data-i18n="projects.card1.github">GitHub</span>
-            </a>
-            <a href="projetos/todo-app/index.html" target="_blank">
-              <i class="fas fa-external-link-alt"></i>
-              <span data-i18n="projects.card1.demo">Demo</span>
-            </a>
+          <div class="mac-card__content">
+            <img src="assets/images/to-do-list-app.png" alt="To-Do App" />
+            <h3 data-i18n="projects.card1.title">To-Do List App</h3>
+            <p data-i18n="projects.card1.description">
+              Aplicativo de lista de tarefas com interface moderna e responsiva.
+              Inclui adição, edição, exclusão, filtros e modo escuro/claro.
+            </p>
+            <div class="tecnologias">
+              <span>HTML5 📝</span>
+              <span>CSS3 🎨</span>
+              <span>JavaScript 💻</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/to-do-list-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span data-i18n="projects.card1.github">GitHub</span>
+              </a>
+              <a
+                href="projetos/todo-app/index.html"
+                target="_blank"
+                class="bounce-effect"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span data-i18n="projects.card1.demo">Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="projeto-card">
-          <img
-            src="assets/images/weather-dashboard.png"
-            alt="Weather Dashboard"
-          />
-          <h3 data-i18n="projects.card2.title">
-            Weather Dashboard
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
+          </div>
+          <div class="mac-card__content">
             <img
               src="assets/images/weather-dashboard.png"
-              alt="Weather Icon"
-              class="project-icon"
-              style="
-                width: 24px;
-                height: 24px;
-                vertical-align: middle;
-                margin-left: 5px;
-              "
+              alt="Weather Dashboard"
             />
-          </h3>
-          <p data-i18n="projects.card2.description">
-            Dashboard de previsão do tempo que consome API externa. Exibe
-            informações detalhadas sobre clima e previsão para 5 dias.
-          </p>
-          <div class="tecnologias">
-            <span>JavaScript 💻</span>
-            <span>API REST 🔌</span>
-            <span>CSS Grid 📱</span>
-          </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/weather-dashboard"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-github"></i>
-              <span data-i18n="projects.card2.github">GitHub</span>
-            </a>
-            <a
-              href="projetos/weather-dashboard/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fas fa-external-link-alt"></i>
-              <span data-i18n="projects.card2.demo">Demo</span>
-            </a>
+            <h3 data-i18n="projects.card2.title">
+              Weather Dashboard
+              <img
+                src="assets/images/weather-dashboard.png"
+                alt="Weather Icon"
+                class="project-icon"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  vertical-align: middle;
+                  margin-left: 5px;
+                "
+              />
+            </h3>
+            <p data-i18n="projects.card2.description">
+              Dashboard de previsão do tempo que consome API externa. Exibe
+              informações detalhadas sobre clima e previsão para 5 dias.
+            </p>
+            <div class="tecnologias">
+              <span>JavaScript 💻</span>
+              <span>API REST 🔌</span>
+              <span>CSS Grid 📱</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/weather-dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span data-i18n="projects.card2.github">GitHub</span>
+              </a>
+              <a
+                href="projetos/weather-dashboard/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span data-i18n="projects.card2.demo">Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="projeto-card">
-          <img
-            src="assets/images/livraria.png"
-            alt="LiteraTour - Livraria Online"
-          />
-          <h3 data-i18n="projects.literatour.title">
-            LiteraTour - Livraria Online 📚
-          </h3>
-          <p data-i18n="projects.literatour.description">
-            Landing page moderna para uma livraria online com modo escuro/claro,
-            design responsivo, seções para categorias de livros e destaques da
-            semana. Interface elegante com animações suaves.
-          </p>
-          <div class="tecnologias">
-            <span>HTML5 📝</span>
-            <span>CSS3 🎨</span>
-            <span>JavaScript 💻</span>
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
           </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/landing-page"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-github"></i>
-              <span data-i18n="projects.literatour.github">GitHub</span>
-            </a>
-            <a
-              href="projetos/landing-page/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fas fa-external-link-alt"></i>
-              <span data-i18n="projects.literatour.demo">Demo</span>
-            </a>
+          <div class="mac-card__content">
+            <img
+              src="assets/images/livraria.png"
+              alt="LiteraTour - Livraria Online"
+            />
+            <h3 data-i18n="projects.literatour.title">
+              LiteraTour - Livraria Online 📚
+            </h3>
+            <p data-i18n="projects.literatour.description">
+              Landing page moderna para uma livraria online com modo
+              escuro/claro, design responsivo, seções para categorias de livros
+              e destaques da semana. Interface elegante com animações suaves.
+            </p>
+            <div class="tecnologias">
+              <span>HTML5 📝</span>
+              <span>CSS3 🎨</span>
+              <span>JavaScript 💻</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/landing-page"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span data-i18n="projects.literatour.github">GitHub</span>
+              </a>
+              <a
+                href="projetos/landing-page/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span data-i18n="projects.literatour.demo">Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Calculadora JavaScript -->
-        <div class="projeto-card">
-          <img
-            src="assets/images/calculadora-cientifica.png"
-            alt="Calculadora JavaScript"
-          />
-          <h3>Calculadora JavaScript 🔢</h3>
-          <p>
-            Calculadora científica moderna com interface elegante e efeito
-            glassmorphism. Inclui operações básicas e funções científicas como
-            sin, cos, tan, log, e muito mais.
-          </p>
-          <div class="tecnologias">
-            <span>HTML5 📝</span>
-            <span>CSS3 🎨</span>
-            <span>JavaScript 💻</span>
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
           </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/CalculadoraJS"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
-            <a
-              href="projetos/calculadora/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fas fa-external-link-alt"></i>
-              <span>Demo</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="projeto-card">
-          <img
-            src="assets/images/quiz-app.png"
-            alt="Quiz Brasil & Programação"
-          />
-          <h3>Quiz Brasil & Programação 🎯</h3>
-          <p>
-            Quiz interativo desenvolvido com React que testa conhecimentos sobre
-            o Brasil e programação. Inclui timer, sistema de pontuação e design
-            moderno.
-          </p>
-          <div class="tecnologias">
-            <span>React ⚛️</span>
-            <span>Styled Components 💅</span>
-            <span>JavaScript 💻</span>
-          </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/quiz-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="github-only"
-            >
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
+          <div class="mac-card__content">
+            <img
+              src="assets/images/calculadora-cientifica.png"
+              alt="Calculadora JavaScript"
+            />
+            <h3>Calculadora JavaScript 🔢</h3>
+            <p>
+              Calculadora científica moderna com interface elegante e efeito
+              glassmorphism. Inclui operações básicas e funções científicas como
+              sin, cos, tan, log, e muito mais.
+            </p>
+            <div class="tecnologias">
+              <span>HTML5 📝</span>
+              <span>CSS3 🎨</span>
+              <span>JavaScript 💻</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/CalculadoraJS"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="projetos/calculadora/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span>Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="projeto-card">
-          <img src="assets/images/movie-app.jpg" alt="Movie App" />
-          <h3 data-i18n="projects.card6.title">Catálogo de Filmes</h3>
-          <p data-i18n="projects.card6.description">
-            Aplicação para busca e visualização de informações sobre filmes,
-            utilizando a API do TMDB.
-          </p>
-          <div class="tecnologias">
-            <span>React ⚛️</span>
-            <span>API REST 🔌</span>
-            <span>CSS 🎨</span>
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
           </div>
-          <div class="projeto-links">
-            <a
-              href="https://github.com/devMatheusOliv/movie-catalog"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i>
-              <span data-i18n="projects.card6.github">GitHub</span>
-            </a>
-            <a href="#" target="_blank">
-              <i class="fas fa-external-link-alt"></i>
-              <span data-i18n="projects.card6.demo">Demo</span>
-            </a>
+          <div class="mac-card__content">
+            <img
+              src="assets/images/quiz-app.png"
+              alt="Quiz Brasil & Programação"
+            />
+            <h3>Quiz Brasil & Programação 🎯</h3>
+            <p>
+              Quiz interativo desenvolvido com React que testa conhecimentos
+              sobre o Brasil e programação. Inclui timer, sistema de pontuação e
+              design moderno.
+            </p>
+            <div class="tecnologias">
+              <span>React ⚛️</span>
+              <span>Styled Components 💅</span>
+              <span>JavaScript 💻</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/quiz-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mac-card projeto-card">
+          <div class="mac-tools">
+            <div class="mac-circle">
+              <span class="mac-box mac-red"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-yellow"></span>
+            </div>
+            <div class="mac-circle">
+              <span class="mac-box mac-green"></span>
+            </div>
+          </div>
+          <div class="mac-card__content">
+            <img src="assets/images/movie-app.jpg" alt="Movie App" />
+            <h3 data-i18n="projects.card6.title">Catálogo de Filmes</h3>
+            <p data-i18n="projects.card6.description">
+              Aplicação para busca e visualização de informações sobre filmes,
+              utilizando a API do TMDB.
+            </p>
+            <div class="tecnologias">
+              <span>React ⚛️</span>
+              <span>API REST 🔌</span>
+              <span>CSS 🎨</span>
+            </div>
+            <div class="projeto-links">
+              <a
+                href="https://github.com/devMatheusOliv/movie-catalog"
+                target="_blank"
+                class="bounce-effect"
+              >
+                <i class="fab fa-github"></i>
+                <span data-i18n="projects.card6.github">GitHub</span>
+              </a>
+              <a href="#" target="_blank" class="bounce-effect">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-i18n="projects.card6.demo">Demo</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="habilidades" class="habilidades">
+    <section id="habilidades" class="habilidades section-animate">
       <h2 data-i18n="skills.title">Habilidades</h2>
       <div class="habilidades-grid">
+        <!-- Front-end -->
         <div class="habilidade-card">
-          <i class="fas fa-code"></i>
-          <h3 data-i18n="skills.frontend.title">Front-end</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name" data-progress="90%">
-                <span data-i18n="skills.frontend.html">HTML & CSS 🎨</span>
+          <div class="card-header">
+            <i class="fas fa-code"></i>
+            <h3 data-i18n="skills.frontend">Front-end</h3>
+          </div>
+          <div class="card-body">
+            <div class="skill-item" style="--skill-index: 0">
+              <div class="skill-name">
+                <i class="fab fa-html5"></i> HTML & CSS
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="85%">
-                <span data-i18n="skills.frontend.javascript"
-                  >JavaScript 💻</span
-                >
+            <div class="skill-item" style="--skill-index: 1">
+              <div class="skill-name"><i class="fab fa-js"></i> JavaScript</div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #f0db4f"
+                ></div>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="80%">
-                <span data-i18n="skills.frontend.react">React ⚛️</span>
+            <div class="skill-item" style="--skill-index: 2">
+              <div class="skill-name"><i class="fab fa-react"></i> React</div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #61dafb"
+                ></div>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%"></div>
-              </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="75%">
-                <span data-i18n="skills.frontend.nodejs">Node.js 🚀</span>
+            <div class="skill-item" style="--skill-index: 3">
+              <div class="skill-name"><i class="fab fa-node"></i> Node.js</div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #8cc84b"
+                ></div>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-              </div>
+              <div class="skill-percent-number">100%</div>
             </div>
           </div>
         </div>
 
+        <!-- Ferramentas e Outros -->
         <div class="habilidade-card">
-          <i class="fas fa-tools"></i>
-          <h3 data-i18n="skills.tools.title">Ferramentas & Outros</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name" data-progress="80%">
-                <span data-i18n="skills.tools.git">Git/GitHub 📂</span>
+          <div class="card-header">
+            <i class="fas fa-tools"></i>
+            <h3 data-i18n="skills.tools">Ferramentas & Outros</h3>
+          </div>
+          <div class="card-body">
+            <div class="skill-item" style="--skill-index: 0">
+              <div class="skill-name">
+                <i class="fab fa-git"></i> Git/GitHub
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #f05032"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="90%">
-                <span data-i18n="skills.tools.vscode">VS Code 📝</span>
+            <div class="skill-item" style="--skill-index: 1">
+              <div class="skill-name"><i class="fas fa-code"></i> VS Code</div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #007acc"
+                ></div>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
-              </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="70%">
-                <span data-i18n="skills.tools.mysql">MySQL 🗄️</span>
+            <div class="skill-item" style="--skill-index: 2">
+              <div class="skill-name">
+                <i class="fas fa-database"></i> MySQL
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4479a1"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="85%">
-                <span data-i18n="skills.tools.responsive"
-                  >Design Responsivo 📱</span
-                >
+            <div class="skill-item" style="--skill-index: 3">
+              <div class="skill-name">
+                <i class="fas fa-mobile-alt"></i> Responsivo
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
           </div>
         </div>
 
+        <!-- Soft Skills e Idiomas -->
         <div class="habilidade-card">
-          <i class="fas fa-language"></i>
-          <h3 data-i18n="skills.soft.title">Soft Skills & Idiomas</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name" data-progress="100%">
-                <span data-i18n="skills.soft.portuguese">Português 🇧🇷</span>
+          <div class="card-header">
+            <i class="fas fa-comments"></i>
+            <h3 data-i18n="skills.soft">Soft Skills & Idiomas</h3>
+          </div>
+          <div class="card-body">
+            <div class="skill-item" style="--skill-index: 0">
+              <div class="skill-name">
+                <i class="fas fa-language"></i> Português
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 100%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="70%">
-                <span data-i18n="skills.soft.english">Inglês 🇺🇸</span>
+            <div class="skill-item" style="--skill-index: 1">
+              <div class="skill-name">
+                <i class="fas fa-language"></i> English
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="90%">
-                <span data-i18n="skills.soft.teamwork"
-                  >Trabalho em Equipe 👥</span
-                >
+            <div class="skill-item" style="--skill-index: 2">
+              <div class="skill-name">
+                <i class="fas fa-users"></i> Teamwork
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
-            <div class="skill-item">
-              <div class="skill-name" data-progress="85%">
-                <span data-i18n="skills.soft.problemsolving"
-                  >Resolução de Problemas 🎯</span
-                >
+            <div class="skill-item" style="--skill-index: 3">
+              <div class="skill-name">
+                <i class="fas fa-lightbulb"></i> Problem Solving
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
+              <div class="skill-level">
+                <div
+                  class="skill-progress"
+                  style="--progress: 100%; background-color: #4caf50"
+                ></div>
               </div>
+              <div class="skill-percent-number">100%</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="contato">
+    <section id="contato" class="contato section-animate">
       <h2 data-i18n="contact.title">Contato</h2>
       <div class="contato-content">
         <div class="contato-info">
@@ -768,27 +1043,40 @@
           </div>
         </div>
 
-        <form id="contato-form">
+        <form
+          id="contato-form"
+          action="https://formspree.io/f/xdkaqder"
+          method="POST"
+          class="formspree-form"
+        >
           <input
             type="text"
+            name="name"
             data-i18n="contact.name"
             placeholder="Nome"
             required
           />
           <input
             type="email"
+            name="email"
             data-i18n="contact.email"
             placeholder="E-mail"
             required
           />
           <textarea
+            name="message"
             data-i18n="contact.message"
             placeholder="Mensagem"
             required
           ></textarea>
-          <button type="submit" class="button-30" data-i18n="contact.send">
+          <button
+            type="submit"
+            class="button-neomorphic-theme"
+            data-i18n="contact.send"
+          >
             Enviar Mensagem
           </button>
+          <div id="form-status"></div>
         </form>
       </div>
     </section>
@@ -800,6 +1088,7 @@
     <script src="assets/js/translations.js"></script>
     <script src="assets/js/github-integration.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/animations.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Atualizar traduções para a seção "Sobre"
@@ -816,34 +1105,174 @@
           }
         }
 
+        // Formulário Formspree
+        const form = document.querySelector(".formspree-form");
+        if (form) {
+          const formStatus = document.getElementById("form-status");
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  formStatus.innerHTML =
+                    '<div class="alert-success">Obrigado! Sua mensagem foi enviada com sucesso.</div>';
+                  form.reset();
+                  setTimeout(() => {
+                    formStatus.innerHTML = "";
+                  }, 5000);
+                } else {
+                  response.json().then((data) => {
+                    if (data.errors) {
+                      formStatus.innerHTML = `<div class="alert-error">Oops! ${data.errors
+                        .map((error) => error.message)
+                        .join(", ")}</div>`;
+                    } else {
+                      formStatus.innerHTML =
+                        '<div class="alert-error">Oops! Houve um problema ao enviar sua mensagem. Por favor, tente novamente.</div>';
+                    }
+                  });
+                }
+              })
+              .catch((error) => {
+                formStatus.innerHTML =
+                  '<div class="alert-error">Oops! Houve um problema ao enviar sua mensagem. Por favor, tente novamente.</div>';
+                console.error("Error:", error);
+              });
+          });
+        }
+
+        // Configurar barras de progresso
         document.querySelectorAll(".skill-progress").forEach((progress) => {
-          const width = progress.style.width;
+          // Forçar todas as barras para 100%
+          progress.style.width = "0%";
+          progress.setAttribute("data-width", "100%");
           const skillName = progress.parentElement.previousElementSibling;
-          skillName.setAttribute("data-progress", width);
-          progress.style.setProperty("--progress", width);
+          skillName.setAttribute("data-progress", "100%");
+          progress.style.setProperty("--progress", "100%");
         });
 
+        // Animação de entrada para seções
+        const animateSections = () => {
+          const sections = document.querySelectorAll(".section-animate");
+
+          // Configurar índices para elementos dentro das seções
+          document.querySelectorAll(".sobre-text p").forEach((p, index) => {
+            p.style.setProperty("--p-index", index);
+          });
+
+          document
+            .querySelectorAll(
+              ".experiencia-card, .educacao-card, .projeto-card, .habilidade-card, .info-card"
+            )
+            .forEach((card, index) => {
+              card.style.setProperty("--card-index", index % 4); // Reset a cada 4 para evitar delays muito longos
+            });
+
+          document.querySelectorAll(".skill-item").forEach((item, index) => {
+            item.style.setProperty("--skill-index", index);
+          });
+
+          document
+            .querySelectorAll(
+              ".info-item, .contato-form input, .contato-form textarea, .contato-form button"
+            )
+            .forEach((item, index) => {
+              item.style.setProperty("--contact-index", index);
+            });
+
+          // Animar a seção hero imediatamente
+          const heroSection = document.querySelector(".hero");
+          if (heroSection) {
+            setTimeout(() => {
+              heroSection.classList.add("animate");
+            }, 100);
+          }
+
+          // Observer para animar as seções quando visíveis
+          const sectionObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  // Adicionar um pequeno delay antes de animar para tornar mais suave
+                  setTimeout(() => {
+                    entry.target.classList.add("animate");
+
+                    // Animar as barras de progresso quando a seção de habilidades estiver visível
+                    if (entry.target.classList.contains("habilidades")) {
+                      setTimeout(() => {
+                        entry.target
+                          .querySelectorAll(".skill-progress")
+                          .forEach((progress, index) => {
+                            // Sempre animar para 100%
+                            setTimeout(() => {
+                              progress.style.width = "100%";
+                            }, index * 100);
+                          });
+                      }, 500);
+                    }
+                  }, 100);
+
+                  // Desativar a observação após animar
+                  sectionObserver.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.15, // Animar quando 15% da seção estiver visível
+              rootMargin: "-10px",
+            }
+          );
+
+          // Observar todas as seções exceto a hero (que já foi animada)
+          sections.forEach((section) => {
+            if (!section.classList.contains("hero")) {
+              sectionObserver.observe(section);
+            }
+          });
+        };
+
+        // Iniciar animações após um pequeno delay para garantir que tudo esteja carregado
+        setTimeout(animateSections, 200);
+
+        // Adicionar animação suave ao rolar para as seções
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Ajuste para o cabeçalho fixo
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Observer para elementos visíveis
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-
-                if (entry.target.classList.contains("habilidade-card")) {
-                  entry.target
-                    .querySelectorAll(".skill-progress")
-                    .forEach((progress) => {
-                      const width = progress.style.width;
-                      setTimeout(() => {
-                        progress.style.width = width;
-                      }, 200);
-                    });
-                }
               }
             });
           },
           {
             threshold: 0.1,
+            rootMargin: "0px",
           }
         );
 
@@ -852,6 +1281,38 @@
             ".experiencia-card, .educacao-card, .habilidade-card, .projeto-card"
           )
           .forEach((el) => observer.observe(el));
+
+        // Adicionar classe bounce-effect a todos os botões e links relevantes
+        document
+          .querySelectorAll(
+            ".button-neomorphic-theme, .projeto-links a, .info-item, .nav-links a"
+          )
+          .forEach((element) => {
+            element.classList.add("bounce-effect");
+          });
+
+        // Garantir que a animação possa ser repetida
+        document.querySelectorAll(".bounce-effect").forEach((element) => {
+          element.addEventListener("animationend", function () {
+            this.style.animation = "";
+          });
+
+          element.addEventListener("mouseenter", function () {
+            this.style.animation = "bounce-top-light 0.9s both";
+          });
+        });
+      });
+
+      // Código adicional para garantir que todas as barras de progresso sejam preenchidas
+      window.addEventListener("load", function () {
+        // Esperar 2 segundos e depois forçar todas as barras para 100%
+        setTimeout(function () {
+          document
+            .querySelectorAll(".skill-progress")
+            .forEach(function (progress) {
+              progress.style.width = "100%";
+            });
+        }, 2000);
       });
     </script>
   </body>

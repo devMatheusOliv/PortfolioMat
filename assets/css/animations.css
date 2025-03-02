@@ -1,0 +1,380 @@
+/* ----------------------------------------------
+ * Arquivo de animações minimalistas para o portfólio
+ * ---------------------------------------------- */
+
+/* Animação suave para links e botões */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação para barras de progresso */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress, 0%);
+  }
+}
+
+/* Animação para cursor de digitação */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Card neumórfico para a seção hero */
+.neomorphic-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--cream);
+  box-shadow: 8px 8px 16px var(--cream-darker), -8px -8px 16px #ffffff;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card:hover {
+  box-shadow: 10px 10px 20px var(--cream-darker), -10px -10px 20px #ffffff;
+  transform: translateY(-3px);
+}
+
+.neomorphic-card h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--military-green);
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+
+.neomorphic-card .greeting {
+  font-size: 1.5rem;
+  color: var(--military-green-light);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.neomorphic-card .name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--military-green);
+  display: block;
+  margin: 5px 0;
+}
+
+.neomorphic-card .role {
+  font-size: 1.8rem;
+  color: var(--military-green-light);
+  display: block;
+  margin-top: 5px;
+}
+
+/* Estilo de botão neumórfico simplificado */
+.button-neomorphic {
+  color: var(--military-green);
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 8px;
+  background: var(--cream);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 8px var(--cream-darker), -4px -4px 8px #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.button-neomorphic:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px var(--cream-darker), -6px -6px 12px #ffffff;
+}
+
+.button-neomorphic:active {
+  box-shadow: 2px 2px 4px var(--cream-darker), -2px -2px 4px #ffffff;
+  transform: translateY(1px);
+}
+
+/* Versão adaptada para o tema do portfólio */
+.button-neomorphic-theme {
+  color: var(--military-green);
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 8px;
+  background: var(--cream);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 8px var(--cream-darker), -4px -4px 8px #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.button-neomorphic-theme:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px var(--cream-darker), -6px -6px 12px #ffffff;
+}
+
+.button-neomorphic-theme:active {
+  box-shadow: 2px 2px 4px var(--cream-darker), -2px -2px 4px #ffffff;
+  transform: translateY(1px);
+}
+
+/* Estados ativos para elementos interativos */
+.button-30:active {
+  transform: translateY(1px);
+  transition: all 0.1s ease;
+}
+
+.projeto-links a:active {
+  transform: translateY(1px);
+  transition: all 0.1s ease;
+}
+
+.info-item:active {
+  transform: translateY(1px);
+  transition: all 0.1s ease;
+}
+
+.nav-links a:active {
+  transform: translateY(1px);
+  transition: all 0.1s ease;
+}
+
+/* Aplicando animações a elementos específicos */
+.section-animate.animate {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.section-animate.animate .skill-progress {
+  animation: fillBar 0.8s ease-out forwards;
+}
+
+/* Efeito para barras de progresso */
+.skill-progress {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito para ícones */
+.info-card i,
+.card-header i,
+.habilidade-card i,
+.info-item i {
+  transition: all 0.3s ease;
+}
+
+.info-card:hover i,
+.card-header:hover i,
+.habilidade-card:hover i,
+.info-item:hover i {
+  transform: scale(1.1);
+  color: var(--accent-gold);
+}
+
+/* Efeito para imagens de projetos */
+.mac-card__content img {
+  transition: all 0.3s ease;
+}
+
+.mac-card:hover .mac-card__content img {
+  transform: scale(1.02);
+}
+
+/* Efeito para círculos do macOS */
+.mac-circle {
+  transition: all 0.2s ease;
+}
+
+.mac-card:hover .mac-circle {
+  transform: scale(1.05);
+}
+
+.mac-box {
+  transition: all 0.2s ease;
+}
+
+.mac-card:hover .mac-box {
+  transform: scale(1.1);
+}
+
+/* Efeito para tags de tecnologias */
+.tecnologias span,
+.tecnologias-exp span {
+  transition: all 0.3s ease;
+}
+
+.tecnologias span:hover,
+.tecnologias-exp span:hover {
+  transform: translateY(-2px);
+}
+
+/* Efeito para o formulário de contato */
+#contato-form input,
+#contato-form textarea {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--military-green-rgb), 0.2);
+}
+
+#contato-form input:focus,
+#contato-form textarea:focus {
+  transform: translateY(-2px);
+  border: 1px solid var(--accent-gold);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Efeito para links de contato */
+.info-item a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.info-item a:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.info-item a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Efeito para o footer */
+.footer {
+  position: relative;
+}
+
+.footer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--cream-darker);
+}
+
+/* Efeito para o botão de idioma */
+.lang-toggle {
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* Efeito para o menu mobile */
+.menu-btn {
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Efeito de scroll suave para toda a página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efeito para a barra de navegação */
+.nav-bar {
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Efeito para o scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--military-green-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--military-green);
+}
+
+/* Efeito para os círculos do macOS */
+.mac-red {
+  background-color: var(--mac-red);
+}
+
+.mac-yellow {
+  background-color: var(--mac-yellow);
+}
+
+.mac-green {
+  background-color: var(--mac-green);
+}
+
+/* Classe para o cursor de digitação */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--military-green);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  vertical-align: middle;
+}

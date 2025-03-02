@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /.git/
 
-Sitemap: https://seu-site.com/sitemap.xml 
+Sitemap: https://devmatheus.com/sitemap.xml 

@@ -2,67 +2,36 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 :root {
-  --cream: hsl(40, 33%, 95%);
-  --cream-dark: hsl(40, 25%, 90%);
-  --cream-darker: hsl(40, 20%, 85%);
-  --military-green: hsl(120, 12%, 25%);
-  --military-green-light: hsl(120, 12%, 35%);
-  --military-green-dark: hsl(120, 12%, 20%);
+  --cream: hsl(40, 20%, 95%);
+  --cream-dark: hsl(40, 15%, 90%);
+  --cream-darker: hsl(40, 10%, 85%);
+  --military-green: hsl(120, 8%, 25%);
+  --military-green-light: hsl(120, 8%, 35%);
+  --military-green-dark: hsl(120, 8%, 20%);
+  --accent-gold: hsl(48, 40%, 75%);
+  --accent-gold-dark: hsl(48, 40%, 65%);
 
-  --bg-gradient-cream: linear-gradient(
-    to bottom right,
-    var(--cream) 0%,
-    var(--cream-dark) 100%
-  );
-  --bg-gradient-card: linear-gradient(
-    to bottom right,
-    hsl(40, 30%, 97%) 0%,
-    hsl(40, 30%, 92%) 100%
-  );
-  --bg-gradient-hover: linear-gradient(
-    135deg,
-    var(--military-green-light) 0%,
-    var(--military-green) 100%
-  );
+  /* Cores para os círculos de controle do macOS */
+  --mac-red: hsla(0, 80%, 68%, 0.85);
+  --mac-yellow: hsla(40, 90%, 68%, 0.85);
+  --mac-green: hsla(130, 80%, 40%, 0.85);
 
-  --header-pattern: repeating-linear-gradient(
-    45deg,
-    var(--military-green-light) 0,
-    var(--military-green-light) 1px,
-    transparent 0,
-    transparent 50%
-  );
+  /* Variáveis RGB para uso em rgba() */
+  --cream-rgb: 242, 240, 235;
+  --military-green-rgb: 60, 68, 60;
+  --accent-gold-rgb: 204, 196, 166;
 
-  --text-dark: var(--military-green-dark);
-  --text-light: var(--cream);
-  --text-muted: hsl(120, 8%, 45%);
-  --border-color: var(--cream-darker);
-  --card-bg: var(--cream);
-  --header-bg: rgba(255, 255, 255, 0.95);
+  /* Duração de transições */
+  --transition-fast: 0.2s;
+  --transition-medium: 0.3s;
+  --transition-slow: 0.5s;
 
-  --shadow-1: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-2: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-3: 0 12px 24px rgba(0, 0, 0, 0.15);
-
-  --ff-poppins: "Poppins", sans-serif;
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
-  --fw-300: 300;
-  --fw-400: 400;
-  --fw-500: 500;
-  --fw-600: 600;
-
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  /* Curva de bezier para transições suaves */
+  --bezier-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
@@ -73,6 +42,8 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background-color var(--transition-medium);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .header {
@@ -142,7 +113,8 @@ body {
   color: var(--text-dark);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  will-change: color, transform;
   position: relative;
   padding: 5px 0;
 }
@@ -249,13 +221,22 @@ body {
 
 .hero-text {
   flex-grow: 1;
+  max-width: 600px;
 }
 
 .hero-text h1 {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  font-size: 2.5rem;
+  line-height: 1.4;
   margin-bottom: 1rem;
+}
+
+/* Ajustes para o card neumórfico */
+.hero-text .neomorphic-card {
+  margin-bottom: 1.5rem;
+}
+
+.hero-text .neomorphic-card h1 {
+  margin-bottom: 0;
 }
 
 .hero-text .greeting {
@@ -912,159 +893,149 @@ section h2::after {
 }
 
 .habilidade-card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: var(--shadow-2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.habilidade-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: var(--cream);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--cream-darker);
 }
 
 .habilidade-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  border-color: var(--military-green-light);
 }
 
-.habilidade-card i {
-  color: var(--military-green);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.habilidade-card:hover i {
-  transform: scale(1.1);
-}
-
-.habilidade-card h3 {
-  color: var(--military-green);
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  font-weight: var(--fw-600);
-}
-
-.skill-list {
+.habilidade-card .card-header {
+  background-color: var(--military-green);
+  color: var(--cream);
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.habilidade-card .card-header i {
+  margin-right: 10px;
+  color: var(--cream);
+  font-size: 1.5rem;
+}
+
+.habilidade-card .card-header h3 {
+  margin: 0;
+  color: var(--cream);
+  font-size: 1.1rem;
+}
+
+.habilidade-card .card-body {
+  padding: 20px;
 }
 
 .skill-item {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .skill-name {
+  width: 120px;
+  font-size: 16px;
+  color: var(--military-green);
+  font-weight: 500;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
 }
 
-.skill-name::after {
-  content: attr(data-progress);
-  font-size: 0.8rem;
-  color: var(--gray);
+.skill-name emoji {
+  margin-left: 5px;
 }
 
-.skill-bar {
-  width: 100%;
-  height: 8px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--gray-light) 0px,
-    var(--gray-light) 4px,
-    var(--background) 4px,
-    var(--background) 8px
-  );
-  border-radius: 4px;
+.skill-level {
+  flex-grow: 1;
+  height: 10px;
+  background-color: var(--cream-darker);
+  border-radius: 10px;
   overflow: hidden;
+  margin: 0 15px;
   position: relative;
 }
 
 .skill-progress {
-  height: 6px;
   background: linear-gradient(
     90deg,
     var(--military-green) 0%,
-    var(--military-green-light) 100%
+    var(--accent-gold) 100%
   );
-  border-radius: 3px;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  width: 0;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-}
-
-.skill-progress::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 15px 15px;
-  animation: moveStripes 1s linear infinite;
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-out;
 }
 
-@keyframes moveStripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 15px 0;
-  }
+.skill-percent-number {
+  width: 40px;
+  font-size: 14px;
+  color: var(--military-green);
+  text-align: right;
+  font-weight: 500;
 }
 
-.habilidade-card.visible .skill-progress {
-  width: var(--progress);
+/* Removendo estilos antigos que não são mais necessários */
+.skill-bar {
+  display: none;
 }
 
-@media screen and (max-width: 1024px) {
-  .habilidades-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+.skill-name::after {
+  display: none;
 }
 
+/* Ajustes para responsividade */
 @media screen and (max-width: 768px) {
-  .habilidades-grid {
-    grid-template-columns: 1fr;
+  .skill-name {
+    width: 100px;
+    font-size: 14px;
   }
 
-  .habilidade-card {
-    padding: 1.5rem;
+  .skill-level {
+    margin: 0 10px;
+  }
+
+  .skill-percent-number {
+    width: 35px;
+    font-size: 13px;
   }
 }
 
+/* Animação para as barras de progresso */
 @keyframes fillBar {
   from {
     width: 0;
   }
   to {
-    width: 100%;
+    width: var(--progress, 100%);
   }
 }
 
-.skill-progress {
-  animation: fillBar 1.5s ease-out forwards;
+.section-animate.animate .skill-progress {
+  animation: fillBar 1s ease-out forwards;
+}
+
+/* Ajustes para o cursor de digitação */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--military-green);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  vertical-align: middle;
 }
 
 .contato {
@@ -1384,7 +1355,7 @@ section h2::after {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -1392,12 +1363,12 @@ section h2::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--military-green);
-  border-radius: 5px;
+  background: var(--military-green-light);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--military-green-light);
+  background: var(--military-green);
 }
 
 @keyframes fadeIn {
@@ -1452,7 +1423,7 @@ section h2::after {
 .fade-in-hidden {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in {
@@ -1521,4 +1492,493 @@ section h2::after {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Estilos para mensagens do formulário */
+#form-status {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #4caf50;
+  margin-bottom: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.5s;
+}
+
+.alert-error {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #f44336;
+  margin-bottom: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------
+ * Animation: tracking-in-expand-fwd-top - versão mais fluida
+ * ---------------------------------------------- */
+@-webkit-keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.2em;
+    -webkit-transform: translateZ(-300px) translateY(-200px);
+    transform: translateZ(-300px) translateY(-200px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.2em;
+    -webkit-transform: translateZ(-300px) translateY(-200px);
+    transform: translateZ(-300px) translateY(-200px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animação de fade-in para elementos internos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Classe para aplicar a animação */
+.section-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-animation: tracking-in-expand-fwd-top 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+
+/* Ajustes para melhorar a animação em seções específicas */
+section h2 {
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+section.section-animate.animate h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* Ajuste para que o conteúdo das seções apareça após o título */
+.section-animate .sobre-content,
+.section-animate .experiencia-grid,
+.section-animate .educacao-grid,
+.section-animate .projetos-grid,
+.section-animate .habilidades-grid,
+.section-animate .contato-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.section-animate.animate .sobre-content,
+.section-animate.animate .experiencia-grid,
+.section-animate.animate .educacao-grid,
+.section-animate.animate .projetos-grid,
+.section-animate.animate .habilidades-grid,
+.section-animate.animate .contato-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste para animação de cards dentro das seções */
+.experiencia-card,
+.educacao-card,
+.projeto-card,
+.habilidade-card,
+.info-card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    box-shadow 0.3s ease, background-color 0.3s ease;
+  transition-delay: calc(var(--card-index, 0) * 0.15s + 0.3s);
+}
+
+.section-animate.animate .experiencia-card,
+.section-animate.animate .educacao-card,
+.section-animate.animate .projeto-card,
+.section-animate.animate .habilidade-card,
+.section-animate.animate .info-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste para animação de elementos dentro da seção hero */
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero.animate .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste para animação de elementos dentro da seção sobre */
+.sobre-text p {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: calc(var(--p-index, 0) * 0.15s + 0.3s);
+}
+
+.section-animate.animate .sobre-text p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste para animação de elementos dentro da seção habilidades */
+.skill-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: calc(var(--skill-index, 0) * 0.1s + 0.3s);
+}
+
+.section-animate.animate .skill-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste para animação de elementos dentro da seção contato */
+.info-item,
+.contato-form input,
+.contato-form textarea,
+.contato-form button {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: calc(var(--contact-index, 0) * 0.1s + 0.3s);
+}
+
+.section-animate.animate .info-item,
+.section-animate.animate .contato-form input,
+.section-animate.animate .contato-form textarea,
+.section-animate.animate .contato-form button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação para barras de progresso */
+.section-animate.animate .skill-progress {
+  transition: width 1s ease-out;
+  transition-delay: calc(var(--skill-index, 0) * 0.15s + 0.5s);
+}
+
+/* ----------------------------------------------
+ * Animation: bounce-top (versão mais leve)
+ * ---------------------------------------------- */
+@-webkit-keyframes bounce-top-light {
+  0% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  40% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-top-light {
+  0% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  40% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* Classe para aplicar a animação de bounce */
+.bounce-effect:hover {
+  -webkit-animation: bounce-top-light 0.9s both;
+  animation: bounce-top-light 0.9s both;
+}
+
+/* Aplicando a classe aos botões e links */
+.button-30:hover {
+  background-color: var(--accent-color-dark);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  -webkit-animation: bounce-top-light 0.9s both;
+  animation: bounce-top-light 0.9s both;
+}
+
+.projeto-links a:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  -webkit-animation: bounce-top-light 0.9s both;
+  animation: bounce-top-light 0.9s both;
+}
+
+.info-item:hover {
+  background-color: var(--accent-color);
+  -webkit-animation: bounce-top-light 0.9s both;
+  animation: bounce-top-light 0.9s both;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  -webkit-animation: bounce-top-light 0.9s both;
+  animation: bounce-top-light 0.9s both;
+}
+
+/* Estilos para cards com aparência de janela macOS */
+.mac-card {
+  background-color: var(--cream);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mac-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.mac-tools {
+  background-color: rgba(var(--cream-darker-rgb), 0.5);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mac-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mac-box {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mac-red {
+  background-color: var(--mac-red);
+}
+
+.mac-yellow {
+  background-color: var(--mac-yellow);
+}
+
+.mac-green {
+  background-color: var(--mac-green);
+}
+
+.mac-card:hover .mac-box {
+  transform: scale(1.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.mac-card__content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajustes para os cards de projeto com estilo macOS */
+.mac-card.projeto-card {
+  background-color: var(--cream);
+}
+
+.mac-card.projeto-card .mac-card__content img {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mac-card.projeto-card:hover .mac-card__content img {
+  transform: scale(1.02);
+  filter: brightness(1.03);
+}
+
+.mac-card.projeto-card .tecnologias {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.mac-card.projeto-card .projeto-links {
+  margin-top: 15px;
+}
+
+/* Aplicando o estilo macOS aos cards existentes */
+.experiencia-card,
+.educacao-card,
+.habilidade-card,
+.projeto-card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    box-shadow 0.3s ease, background-color 0.3s ease;
+  transition-delay: calc(var(--card-index, 0) * 0.15s + 0.3s);
+}
+
+.section-animate.animate .experiencia-card,
+.section-animate.animate .educacao-card,
+.section-animate.animate .projeto-card,
+.section-animate.animate .habilidade-card,
+.section-animate.animate .info-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para cursor personalizado */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: var(--accent-gold);
+  font-weight: bold;
+}
+
+/* Estilo para partículas */
+.particles-container {
+  display: none;
 }
