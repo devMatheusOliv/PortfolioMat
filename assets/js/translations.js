@@ -8,6 +8,7 @@ window.translations = {
       skills: "Habilidades",
       projects: "Projetos",
       contact: "Contato",
+      menu: "Menu",
     },
     hero: {
       title: "Olá, eu sou Matheus",
@@ -47,6 +48,18 @@ window.translations = {
     experience: {
       title: "Experiência",
       current: "Presente",
+      responsibilities: "Principais Responsabilidades:",
+      achievements: "Conquistas:",
+      tech: {
+        sap: "SAP",
+        excel: "Excel",
+        zendesk: "Zendesk",
+        servicenow: "ServiceNow",
+        avaya: "Avaya",
+        crm: "CRM",
+        office: "Office",
+        teams: "Teams",
+      },
       job1: {
         title: "Agente de Backoffice - NEOBPO",
         period: "Janeiro 2023 - Presente",
@@ -114,12 +127,27 @@ window.translations = {
         "Conjunto de habilidades técnicas e interpessoais desenvolvidas ao longo da minha jornada profissional",
       frontend: {
         title: "Front-end",
+        html: '<i class="fab fa-html5"></i> HTML',
+        css: '<i class="fab fa-css3-alt"></i> CSS',
+        js: '<i class="fab fa-js"></i> JavaScript',
+        react: '<i class="fab fa-react"></i> React',
+        nodejs: '<i class="fab fa-node-js"></i> Node.js',
       },
       tools: {
         title: "Ferramentas & Outros",
+        git: '<i class="fab fa-git-alt"></i> Git',
+        vscode: '<i class="fas fa-code"></i> VS Code',
+        mysql: '<i class="fas fa-database"></i> MySQL',
+        responsive: '<i class="fas fa-mobile-alt"></i> Responsive',
+        github: '<i class="fab fa-github"></i> GitHub',
       },
       soft: {
         title: "Soft Skills & Idiomas",
+        portuguese: '<i class="fas fa-language"></i> Português',
+        english: '<i class="fas fa-globe"></i> English',
+        teamwork: '<i class="fas fa-users"></i> Trabalho em Equipe',
+        problemsolving: '<i class="fas fa-lightbulb"></i> Solução de Problemas',
+        communication: '<i class="fas fa-comments"></i> Comunicação',
       },
     },
     contact: {
@@ -128,6 +156,9 @@ window.translations = {
       email: "E-mail",
       message: "Mensagem",
       send: "Enviar Mensagem",
+      success: "Obrigado! Sua mensagem foi enviada com sucesso.",
+      error:
+        "Oops! Houve um problema ao enviar sua mensagem. Por favor, tente novamente.",
     },
     footer: {
       navigation: "Navegação",
@@ -137,6 +168,15 @@ window.translations = {
     },
     projects: {
       title: "Projetos 🚀",
+      tech: {
+        html: "HTML5 📝",
+        css: "CSS3 🎨",
+        js: "JavaScript 💻",
+        api: "API REST 🔌",
+        grid: "CSS Grid 📱",
+        react: "React ⚛️",
+        styled: "Styled Components 💅",
+      },
       card1: {
         title: "To-Do List App",
         description:
@@ -196,6 +236,7 @@ window.translations = {
       skills: "Skills",
       projects: "Projects",
       contact: "Contact",
+      menu: "Menu",
     },
     hero: {
       title: "Hi, I'm Matheus",
@@ -236,6 +277,18 @@ window.translations = {
     experience: {
       title: "Experience",
       current: "Present",
+      responsibilities: "Main Responsibilities:",
+      achievements: "Achievements:",
+      tech: {
+        sap: "SAP",
+        excel: "Excel",
+        zendesk: "Zendesk",
+        servicenow: "ServiceNow",
+        avaya: "Avaya",
+        crm: "CRM",
+        office: "Office",
+        teams: "Teams",
+      },
       job1: {
         title: "Backoffice Agent - NEOBPO",
         period: "January 2023 - Present",
@@ -300,12 +353,27 @@ window.translations = {
         "Set of technical and interpersonal skills developed throughout my professional journey",
       frontend: {
         title: "Front-end",
+        html: '<i class="fab fa-html5"></i> HTML',
+        css: '<i class="fab fa-css3-alt"></i> CSS',
+        js: '<i class="fab fa-js"></i> JavaScript',
+        react: '<i class="fab fa-react"></i> React',
+        nodejs: '<i class="fab fa-node-js"></i> Node.js',
       },
       tools: {
         title: "Tools & Others",
+        git: '<i class="fab fa-git-alt"></i> Git',
+        vscode: '<i class="fas fa-code"></i> VS Code',
+        mysql: '<i class="fas fa-database"></i> MySQL',
+        responsive: '<i class="fas fa-mobile-alt"></i> Responsive',
+        github: '<i class="fab fa-github"></i> GitHub',
       },
       soft: {
         title: "Soft Skills & Languages",
+        portuguese: '<i class="fas fa-language"></i> Portuguese',
+        english: '<i class="fas fa-globe"></i> English',
+        teamwork: '<i class="fas fa-users"></i> Teamwork',
+        problemsolving: '<i class="fas fa-lightbulb"></i> Problem Solving',
+        communication: '<i class="fas fa-comments"></i> Communication',
       },
     },
     contact: {
@@ -314,6 +382,9 @@ window.translations = {
       email: "Email",
       message: "Message",
       send: "Send Message",
+      success: "Thank you! Your message has been sent successfully.",
+      error:
+        "Oops! There was a problem sending your message. Please try again.",
     },
     footer: {
       navigation: "Navigation",
@@ -323,6 +394,15 @@ window.translations = {
     },
     projects: {
       title: "Projects 🚀",
+      tech: {
+        html: "HTML5 📝",
+        css: "CSS3 🎨",
+        js: "JavaScript 💻",
+        api: "REST API 🔌",
+        grid: "CSS Grid 📱",
+        react: "React ⚛️",
+        styled: "Styled Components 💅",
+      },
       card1: {
         title: "To-Do List App",
         description:

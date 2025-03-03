@@ -72,6 +72,65 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  const form = document.querySelector(".formspree-form");
+  if (form) {
+    const formStatus = document.getElementById("form-status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const currentLang = localStorage.getItem("language") || "pt";
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            const successMessage =
+              getTranslation("contact.success", currentLang) ||
+              "Obrigado! Sua mensagem foi enviada com sucesso.";
+
+            formStatus.innerHTML = `<div class="alert-success" data-i18n="contact.success">${successMessage}</div>`;
+            form.reset();
+            setTimeout(() => {
+              formStatus.innerHTML = "";
+            }, 5000);
+          } else {
+            response.json().then((data) => {
+              if (data.errors) {
+                const errorPrefix =
+                  getTranslation("contact.error", currentLang) ||
+                  "Oops! Houve um problema ao enviar sua mensagem.";
+
+                formStatus.innerHTML = `<div class="alert-error" data-i18n="contact.error">${errorPrefix} ${data.errors
+                  .map((error) => error.message)
+                  .join(", ")}</div>`;
+              } else {
+                const errorMessage =
+                  getTranslation("contact.error", currentLang) ||
+                  "Oops! Houve um problema ao enviar sua mensagem. Por favor, tente novamente.";
+
+                formStatus.innerHTML = `<div class="alert-error" data-i18n="contact.error">${errorMessage}</div>`;
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          const errorMessage =
+            getTranslation("contact.error", currentLang) ||
+            "Oops! Houve um problema ao enviar sua mensagem. Por favor, tente novamente.";
+
+          formStatus.innerHTML = `<div class="alert-error" data-i18n="contact.error">${errorMessage}</div>`;
+          console.error("Error:", error);
+        });
+    });
+  }
 });
 
 menuBtn.addEventListener("click", () => {
@@ -219,6 +278,24 @@ function updateLanguage(lang) {
       }
     }
   });
+
+  const formStatus = document.getElementById("form-status");
+  if (formStatus && formStatus.children.length > 0) {
+    const alertElement = formStatus.children[0];
+    if (alertElement.classList.contains("alert-success")) {
+      const successTranslation = getTranslation("contact.success", lang);
+      if (successTranslation) {
+        alertElement.innerHTML = successTranslation;
+      }
+    } else if (alertElement.classList.contains("alert-error")) {
+      const errorTranslation = getTranslation("contact.error", lang);
+      if (errorTranslation) {
+        alertElement.innerHTML = errorTranslation;
+      }
+    }
+  }
+
+  document.documentElement.lang = lang;
 }
 
 function getTranslation(key, lang) {
