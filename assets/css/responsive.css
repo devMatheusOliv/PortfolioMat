@@ -1,4 +1,4 @@
-/* Tablets (768px até 1024px) */
+﻿
 @media screen and (max-width: 1024px) {
   :root {
     --fs-1: 22px;
@@ -7,28 +7,66 @@
     --fs-4: 15px;
     --fs-5: 14px;
   }
-
   .nav-bar {
     padding: 0.8rem 3%;
   }
-
   .hero {
     padding: 6rem 3% 2rem;
   }
-
   .hero-left {
     margin-left: 0;
     padding: 1.5rem;
   }
-
   .hero-content {
     padding-left: 0;
+    max-width: 600px;
   }
-
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .project-card {
+    width: calc(50% - 20px);
+  }
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-content {
+    flex-direction: column;
+  }
+  .about-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+  .contact-info {
+    margin-top: 40px;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    margin-top: 20px;
+  }
+  .footer-social {
+    margin-top: 20px;
+  }
   section:not(.hero) {
     padding: 4rem 3%;
   }
-
   .sobre-grid,
   .experiencia-grid,
   .educacao-grid,
@@ -37,9 +75,28 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-btn {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .sobre-text {
+    order: 1;
+  }
+  .sobre-info {
+    order: 2;
+  }
+  .info-card {
+    margin-bottom: 1.5rem;
+  }
 }
-
-/* Mobile (até 767px) */
 @media screen and (max-width: 767px) {
   :root {
     --fs-1: 20px;
@@ -48,74 +105,113 @@
     --fs-4: 14px;
     --fs-5: 13px;
   }
-
   .header {
-    padding: 0.3rem 0;
+    padding: 1rem;
   }
-
   .nav-bar {
-    padding: 0.5rem 5%;
     justify-content: space-between;
+    padding: 15px 0;
   }
-
   .nav-links {
     display: none;
-    position: fixed;
-    top: 60px;
+    position: absolute;
+    top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
+    background-color: var(--bg-color);
     flex-direction: column;
-    padding: 1rem 0;
-    gap: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
   }
-
   .nav-links.active {
     display: flex;
   }
-
+  .nav-links li {
+    margin: 15px 0;
+  }
+  .nav-links a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
   .menu-btn {
     display: block;
-    font-size: 1.5rem;
-    color: var(--military-green);
   }
-
   .hero {
-    padding: 5rem 1rem 2rem;
-    align-items: center;
+    padding: 100px 0 50px;
+    height: auto;
+    min-height: 80vh;
   }
-
-  .hero-left {
-    flex-direction: column;
-    align-items: center;
+  .hero-content {
     text-align: center;
-    gap: 1rem;
-    padding: 1.2rem;
+    padding: 2rem 0;
   }
-
-  .hero-avatar {
-    width: 120px;
-    height: 120px;
+  .hero-title {
+    font-size: 2.2rem;
   }
-
-  .hero-text h1 {
-    font-size: var(--fs-1);
-    text-align: center;
+  .hero-subtitle {
+    font-size: 1rem;
   }
-
-  .hero-btns {
-    flex-direction: column;
-    gap: 1rem;
+  .hero-buttons {
+    justify-content: center;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .project-card {
     width: 100%;
   }
-
-  .button-30 {
-    width: 100%;
-    text-align: center;
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-
+  .skill-item {
+    padding: 15px;
+  }
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  .testimonial-card {
+    padding: 20px;
+  }
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+  .testimonial-author {
+    font-size: 1rem;
+  }
+  .contact-form {
+    padding: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-control {
+    padding: 10px;
+  }
+  .btn-submit {
+    padding: 10px 20px;
+  }
+  .contact-info-item {
+    margin-bottom: 20px;
+  }
+  .contact-info-text {
+    font-size: 0.9rem;
+  }
+  .footer {
+    padding: 40px 0;
+  }
+  .footer-text {
+    font-size: 0.9rem;
+  }
+  .footer-link {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  .footer-social-link {
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
   .sobre-grid,
   .experiencia-grid,
   .educacao-grid,
@@ -124,51 +220,28 @@
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-
   .sobre-text {
     text-align: center;
   }
-
   .info-card {
     padding: 1.2rem;
   }
-
-  .experiencia-card,
-  .educacao-card,
-  .projeto-card {
-    padding: 1.2rem;
-  }
-
   .tecnologias-exp,
   .tecnologias {
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .skill-item {
-    margin-bottom: 1rem;
-  }
-
   .contato-content {
     flex-direction: column;
     gap: 2rem;
   }
-
   .contato-info {
     text-align: center;
   }
-
   #contato-form {
     width: 100%;
   }
-
-  .footer {
-    padding: 1rem;
-    text-align: center;
-  }
 }
-
-/* Small Mobile (até 480px) */
 @media screen and (max-width: 480px) {
   :root {
     --fs-1: 18px;
@@ -177,31 +250,72 @@
     --fs-4: 13px;
     --fs-5: 12px;
   }
-
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-btn {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .section {
+    padding: 40px 0;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .testimonial-author-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .testimonial-author-img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .contact-form-title {
+    font-size: 1.2rem;
+  }
+  .contact-info-title {
+    font-size: 1.2rem;
+  }
+  .contact-info-item i {
+    font-size: 1.5rem;
+  }
   .hero-left {
     padding: 1rem;
   }
-
   .hero-avatar {
     width: 100px;
     height: 100px;
   }
-
   .info-card,
   .experiencia-card,
   .educacao-card,
   .projeto-card {
     padding: 1rem;
   }
-
   .tecnologias-exp span,
   .tecnologias span {
     font-size: var(--fs-5);
     padding: 0.3rem 0.6rem;
   }
-
   .contato-info .info-item {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
+
+

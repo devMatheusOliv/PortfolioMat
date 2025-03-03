@@ -1,314 +1,376 @@
-const translations = {
+window.translations = {
   pt: {
-    "nav.home": "Início",
-    "nav.about": "Sobre",
-    "nav.experience": "Experiência",
-    "nav.education": "Educação",
-    "nav.skills": "Habilidades",
-    "nav.projects": "Projetos",
-    "nav.contact": "Contato",
-
-    "hero.greeting": "Olá, eu sou",
-    "hero.role": "Desenvolvedor Front-end",
-    "hero.location": "São Paulo, Brasil",
-    "hero.projects": "Ver Projetos",
-    "hero.contact": "Contato",
-
-    "about.title": "Sobre Mim 👨‍💻",
-    "about.description":
-      "Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior com experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.",
-
-    "about.card1.title": "Desenvolvimento Web 💻",
-    "about.card1.description":
-      "Especializado em criar sites e aplicações web modernas, responsivas e de alta performance",
-
-    "about.card2.title": "Front-end 🎨",
-    "about.card2.description":
-      "Desenvolvimento de interfaces intuitivas e atraentes, priorizando a melhor experiência do usuário",
-
-    "about.card3.title": "Back-end ⚙️",
-    "about.card3.description":
-      "Construção de APIs robustas e eficientes, com integração segura a bancos de dados",
-
-    "about.card4.title": "Design Responsivo 📱",
-    "about.card4.description":
-      "Criação de layouts adaptáveis que funcionam perfeitamente em qualquer dispositivo",
-
-    "experience.title": "Experiência 💼",
-    "experience.job1.title": "Agente de Backoffice 💻 - NEOBPO",
-    "experience.job1.period": "Janeiro 2023 - Presente",
-    "experience.job1.task1":
-      "Análise e processamento de solicitações de clientes através de múltiplos canais 📊",
-    "experience.job1.task2":
-      "Gerenciamento de documentação e registros em sistemas CRM 📝",
-    "experience.job1.task3":
-      "Resolução de problemas complexos e escalonamento quando necessário 🔍",
-    "experience.job1.task4":
-      "Elaboração de relatórios e acompanhamento de indicadores de performance 📈",
-    "experience.job1.achievement1":
-      "Reconhecimento por excelência no atendimento com 98% de satisfação dos clientes 🏆",
-    "experience.job1.achievement2":
-      "Redução do tempo médio de resolução de casos em 30% 🎯",
-
-    "experience.job2.title": "Agente de Telemarketing 📞 - NEOBPO",
-    "experience.job2.period": "Junho 2022 - Dezembro 2022",
-    "experience.job2.task1":
-      "Atendimento ao cliente via telefone com foco em resolução no primeiro contato 🎯",
-    "experience.job2.task2":
-      "Registro detalhado de interações e encaminhamento de solicitações 📝",
-    "experience.job2.task3":
-      "Identificação de oportunidades de venda e cross-selling durante atendimentos 💡",
-    "experience.job2.task4":
-      "Suporte na resolução de problemas e dúvidas dos clientes ✅",
-    "experience.job2.achievement1":
-      "Destaque em vendas adicionais, superando meta em 25% 🏆",
-    "experience.job2.achievement2":
-      "Premiação por melhor qualidade no atendimento do trimestre 🌟",
-
-    "education.title": "Educação 📚",
-    "education.degree1.title": "Engenharia de Software",
-    "education.degree1.institution": "Universidade de Mogi das Cruzes",
-    "education.degree1.period": "2023 - Presente",
-    "education.degree1.description":
-      "Cursando Engenharia de Software com foco em desenvolvimento web e mobile",
-
-    "education.degree2.title": "The Complete 2023 Web Development Bootcamp",
-    "education.degree2.institution": "Bootcamp",
-    "education.degree2.period": "2023",
-    "education.degree2.description":
-      "Desenvolvimento web full-stack com foco em tecnologias modernas",
-
-    "education.degree3.title": "Python Professional",
-    "education.degree3.institution": "Digital Innovation One",
-    "education.degree3.period": "2023",
-    "education.degree3.description":
-      "Curso profissionalizante em Python com foco em desenvolvimento backend",
-
-    "education.degree4.title": "Bootcamp Full Stack",
-    "education.degree4.institution": "Digital Innovation One",
-    "education.degree4.period": "2022",
-    "education.degree4.description":
-      "Desenvolvimento web full-stack com JavaScript e frameworks modernos",
-
-    "skills.title": "Habilidades 🎯",
-    "skills.frontend.title": "Front-end 💻",
-    "skills.frontend.html": "HTML & CSS 🎨",
-    "skills.frontend.javascript": "JavaScript 💻",
-    "skills.frontend.react": "React ⚛️",
-    "skills.frontend.nodejs": "Node.js 🚀",
-
-    "skills.tools.title": "Ferramentas & Outros 🛠️",
-    "skills.tools.git": "Git/GitHub 📂",
-    "skills.tools.vscode": "VS Code 📝",
-    "skills.tools.mysql": "MySQL 🗄️",
-    "skills.tools.responsive": "Design Responsivo 📱",
-
-    "skills.soft.title": "Soft Skills & Idiomas 🌟",
-    "skills.soft.portuguese": "Português 🇧🇷",
-    "skills.soft.english": "Inglês 🇺🇸",
-    "skills.soft.teamwork": "Trabalho em Equipe 👥",
-    "skills.soft.problemsolving": "Resolução de Problemas 🎯",
-
-    "projects.title": "Projetos 🚀",
-    "projects.viewMore": "Ver Mais",
-    "projects.viewLess": "Ver Menos",
-
-    "projects.card1.title": "To-Do List App ✅",
-    "projects.card1.description":
-      "Aplicativo de lista de tarefas com interface moderna e responsiva. Inclui adição, edição, exclusão, filtros e modo escuro/claro.",
-    "projects.card1.github": "GitHub",
-    "projects.card1.demo": "Demo",
-
-    "projects.card2.title": "Weather Dashboard 🌤️",
-    "projects.card2.description":
-      "Dashboard de previsão do tempo que consome API externa. Exibe informações detalhadas sobre clima e previsão para 5 dias.",
-    "projects.card2.github": "GitHub",
-    "projects.card2.demo": "Demo",
-
-    "projects.card3.title": "Landing Page Responsiva 🎯",
-    "projects.card3.description":
-      "Página de destino moderna e responsiva para um produto fictício, com animações suaves e design atraente.",
-    "projects.card3.github": "GitHub",
-    "projects.card3.demo": "Demo",
-
-    "projects.card4.title": "Calculadora JavaScript 🔢",
-    "projects.card4.description":
-      "Calculadora interativa com operações básicas e avançadas, histórico de cálculos e tema escuro/claro.",
-    "projects.card4.github": "GitHub",
-    "projects.card4.demo": "Demo",
-
-    "projects.card5.title": "Quiz Interativo ❓",
-    "projects.card5.description":
-      "Aplicativo de quiz com múltiplas categorias, pontuação em tempo real e ranking de jogadores.",
-    "projects.card5.github": "GitHub",
-    "projects.card5.demo": "Demo",
-
-    "projects.card6.title": "Catálogo de Filmes 🎬",
-    "projects.card6.description":
-      "Aplicação para busca e visualização de informações sobre filmes, utilizando a API do TMDB. Inclui modo escuro/claro, detalhes dos filmes e trailers.",
-    "projects.card6.github": "GitHub",
-    "projects.card6.demo": "Demo",
-
-    "contact.title": "Contato 📬",
-    "contact.name": "Nome",
-    "contact.email": "E-mail",
-    "contact.message": "Mensagem",
-    "contact.send": "Enviar",
+    nav: {
+      home: "Início",
+      about: "Sobre",
+      experience: "Experiência",
+      education: "Educação",
+      skills: "Habilidades",
+      projects: "Projetos",
+      contact: "Contato",
+    },
+    hero: {
+      title: "Olá, eu sou Matheus",
+      subtitle: "Desenvolvendo o Futuro Digital",
+      description:
+        "Transformando ideias em experiências digitais extraordinárias através de código limpo e design inovador. Especializado em criar interfaces modernas e intuitivas que encantam usuários e impulsionam negócios.",
+      buttons: {
+        projects: "Explorar Projetos",
+        contact: "Iniciar Conversa",
+      },
+    },
+    about: {
+      title: "Sobre",
+      introduction:
+        "👋 Olá! Sou um Desenvolvedor Front-end Junior apaixonado por criar experiências web incríveis.",
+      description:
+        "Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior com experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.",
+      goals:
+        "Atualmente, estou aprimorando minhas habilidades em desenvolvimento full-stack e sempre buscando aprender novas tecnologias. Acredito que a combinação de código limpo e design intuitivo é a chave para criar experiências digitais memoráveis.",
+      card1: {
+        title: "Desenvolvimento Web",
+        description: "Criação de sites e aplicações web responsivas e modernas",
+      },
+      card2: {
+        title: "Front-end",
+        description: "Interfaces intuitivas com foco em experiência do usuário",
+      },
+      card3: {
+        title: "Back-end",
+        description: "Desenvolvimento de APIs e integração com banco de dados",
+      },
+      card4: {
+        title: "Responsivo",
+        description: "Sites adaptáveis para todos os dispositivos",
+      },
+    },
+    experience: {
+      title: "Experiência",
+      current: "Presente",
+      job1: {
+        title: "Agente de Backoffice - NEOBPO",
+        period: "Janeiro 2023 - Presente",
+        task1:
+          "Análise e processamento de solicitações de clientes através de múltiplos canais",
+        task2: "Gerenciamento de documentação e registros em sistemas CRM",
+        task3:
+          "Resolução de problemas complexos e escalonamento quando necessário",
+        task4:
+          "Elaboração de relatórios e acompanhamento de indicadores de performance",
+        achievement1:
+          "Reconhecimento por excelência no atendimento com 98% de satisfação dos clientes",
+        achievement2: "Redução do tempo médio de resolução de casos em 30%",
+      },
+      job2: {
+        title: "Agente de Telemarketing - NEOBPO",
+        period: "Junho 2022 - Dezembro 2022",
+        task1:
+          "Atendimento ao cliente via telefone com foco em resolução no primeiro contato",
+        task2:
+          "Registro detalhado de interações e encaminhamento de solicitações",
+        task3:
+          "Identificação de oportunidades de venda e cross-selling durante atendimentos",
+        task4: "Suporte na resolução de problemas e dúvidas dos clientes",
+        achievement1: "Destaque em vendas adicionais, superando meta em 25%",
+        achievement2:
+          "Premiação por melhor qualidade no atendimento do trimestre",
+      },
+    },
+    education: {
+      title: "Educação",
+      degree1: {
+        title: "Engenharia de Software",
+        institution: "Universidade de Mogi das Cruzes",
+        period: "2023 - Presente",
+        description:
+          "Cursando Engenharia de Software com foco em desenvolvimento web e mobile. Estudando conceitos avançados de programação, arquitetura de software e metodologias ágeis.",
+      },
+      degree2: {
+        title: "The Complete 2023 Web Development Bootcamp",
+        institution: "Udemy",
+        period: "2023",
+        description:
+          "Bootcamp completo de desenvolvimento web, abrangendo HTML5, CSS3, JavaScript, React, Node.js e MongoDB. Desenvolvimento de projetos práticos e aplicações full-stack.",
+      },
+      degree3: {
+        title: "Python Professional",
+        institution: "Digital Innovation One",
+        period: "2023",
+        description:
+          "Formação completa em Python, incluindo programação orientada a objetos, análise de dados, automação e desenvolvimento web com Django e Flask.",
+      },
+      degree4: {
+        title: "Bootcamp Full Stack",
+        institution: "Digital Innovation One",
+        period: "2022",
+        description:
+          "Formação intensiva em desenvolvimento web full stack, com foco em HTML, CSS, JavaScript, React, Node.js e banco de dados.",
+      },
+    },
+    skills: {
+      title: "Habilidades 🎯",
+      subtitle: "Minhas Especialidades",
+      description:
+        "Conjunto de habilidades técnicas e interpessoais desenvolvidas ao longo da minha jornada profissional",
+      frontend: {
+        title: "Front-end",
+      },
+      tools: {
+        title: "Ferramentas & Outros",
+      },
+      soft: {
+        title: "Soft Skills & Idiomas",
+      },
+    },
+    contact: {
+      title: "Contato",
+      name: "Nome",
+      email: "E-mail",
+      message: "Mensagem",
+      send: "Enviar Mensagem",
+    },
+    footer: {
+      navigation: "Navegação",
+      projects: "Projetos",
+      contact: "Contato",
+      copyright: "© 2024 Matheus Oliveira. Todos os direitos reservados.",
+    },
+    projects: {
+      title: "Projetos 🚀",
+      card1: {
+        title: "To-Do List App",
+        description:
+          "Aplicativo de lista de tarefas com interface moderna e responsiva. Inclui adição, edição, exclusão, filtros e modo escuro/claro.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      card2: {
+        title: "Weather Dashboard",
+        description:
+          "Dashboard de previsão do tempo que consome API externa. Exibe informações detalhadas sobre clima e previsão para 5 dias.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      literatour: {
+        title: "LiteraTour - Livraria Online 📚",
+        description:
+          "Landing page moderna para uma livraria online com modo escuro/claro, design responsivo, seções para categorias de livros e destaques da semana. Interface elegante com animações suaves.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      calculator: {
+        title: "Calculadora JavaScript 🔢",
+        description:
+          "Calculadora científica moderna com interface elegante e efeito glassmorphism. Inclui operações básicas e funções científicas como sin, cos, tan, log, e muito mais.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      quiz: {
+        title: "Quiz Brasil & Programação 🎯",
+        description:
+          "Quiz interativo desenvolvido com React que testa conhecimentos sobre o Brasil e programação. Inclui timer, sistema de pontuação e design moderno.",
+        github: "GitHub",
+      },
+      card6: {
+        title: "Catálogo de Filmes 🎬",
+        description:
+          "Aplicação para busca e visualização de informações sobre filmes, utilizando a API do TMDB. Inclui modo escuro/claro, detalhes dos filmes e trailers.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+    },
+    sidebar: {
+      logo: "Matheus Luiz",
+      menu: "Menu",
+      social: "Social",
+      email: "Email",
+      role: "Desenvolvedor Front-end",
+    },
   },
   en: {
-    "nav.home": "Home",
-    "nav.about": "About",
-    "nav.experience": "Experience",
-    "nav.education": "Education",
-    "nav.skills": "Skills",
-    "nav.projects": "Projects",
-    "nav.contact": "Contact",
-
-    "hero.greeting": "Hi, I'm",
-    "hero.role": "Front-end Developer",
-    "hero.location": "São Paulo, Brazil",
-    "hero.projects": "View Projects",
-    "hero.contact": "Contact",
-
-    "about.title": "About Me 👨‍💻",
-    "about.description":
-      "Software Engineering student and Junior Front-end Developer with experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, as well as knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.",
-
-    "about.card1.title": "Web Development 💻",
-    "about.card1.description":
-      "Specialized in creating modern, responsive, and high-performance web applications",
-
-    "about.card2.title": "Front-end 🎨",
-    "about.card2.description":
-      "Development of intuitive and attractive interfaces, prioritizing the best user experience",
-
-    "about.card3.title": "Back-end ⚙️",
-    "about.card3.description":
-      "Building robust and efficient APIs with secure database integration",
-
-    "about.card4.title": "Responsive Design 📱",
-    "about.card4.description":
-      "Creation of adaptable layouts that work perfectly on any device",
-
-    "experience.title": "Experience 💼",
-    "experience.job1.title": "Backoffice Agent 💻 - NEOBPO",
-    "experience.job1.period": "January 2023 - Present",
-    "experience.job1.task1":
-      "Analysis and processing of customer requests through multiple channels 📊",
-    "experience.job1.task2":
-      "Documentation management and CRM system records 📝",
-    "experience.job1.task3":
-      "Complex problem solving and escalation when necessary 🔍",
-    "experience.job1.task4":
-      "Report creation and performance indicator monitoring 📈",
-    "experience.job1.achievement1":
-      "Recognition for service excellence with 98% customer satisfaction 🏆",
-    "experience.job1.achievement2":
-      "Reduced average case resolution time by 30% 🎯",
-
-    "experience.job2.title": "Telemarketing Agent 📞 - NEOBPO",
-    "experience.job2.period": "June 2022 - December 2022",
-    "experience.job2.task1":
-      "Customer service via phone focusing on first-contact resolution 🎯",
-    "experience.job2.task2":
-      "Detailed interaction logging and request forwarding 📝",
-    "experience.job2.task3":
-      "Identification of sales opportunities and cross-selling during service 💡",
-    "experience.job2.task4":
-      "Support in resolving customer problems and inquiries ✅",
-    "experience.job2.achievement1":
-      "Outstanding in additional sales, exceeding target by 25% 🏆",
-    "experience.job2.achievement2":
-      "Award for best service quality of the quarter 🌟",
-
-    "education.title": "Education 📚",
-    "education.degree1.title": "Software Engineering",
-    "education.degree1.institution": "University of Mogi das Cruzes",
-    "education.degree1.period": "2023 - Present",
-    "education.degree1.description":
-      "Studying Software Engineering with focus on web and mobile development",
-
-    "education.degree2.title": "The Complete 2023 Web Development Bootcamp",
-    "education.degree2.institution": "Bootcamp",
-    "education.degree2.period": "2023",
-    "education.degree2.description":
-      "Full-stack web development focusing on modern technologies",
-
-    "education.degree3.title": "Python Professional",
-    "education.degree3.institution": "Digital Innovation One",
-    "education.degree3.period": "2023",
-    "education.degree3.description":
-      "Professional Python course focusing on backend development",
-
-    "education.degree4.title": "Full Stack Bootcamp",
-    "education.degree4.institution": "Digital Innovation One",
-    "education.degree4.period": "2022",
-    "education.degree4.description":
-      "Full-stack web development with JavaScript and modern frameworks",
-
-    "skills.title": "Skills 🎯",
-    "skills.frontend.title": "Front-end 💻",
-    "skills.frontend.html": "HTML & CSS 🎨",
-    "skills.frontend.javascript": "JavaScript 💻",
-    "skills.frontend.react": "React ⚛️",
-    "skills.frontend.nodejs": "Node.js 🚀",
-
-    "skills.tools.title": "Tools & Others 🛠️",
-    "skills.tools.git": "Git/GitHub 📂",
-    "skills.tools.vscode": "VS Code 📝",
-    "skills.tools.mysql": "MySQL 🗄️",
-    "skills.tools.responsive": "Responsive Design 📱",
-
-    "skills.soft.title": "Soft Skills & Languages 🌟",
-    "skills.soft.portuguese": "Portuguese 🇧🇷",
-    "skills.soft.english": "English 🇺🇸",
-    "skills.soft.teamwork": "Team Work 👥",
-    "skills.soft.problemsolving": "Problem Solving 🎯",
-
-    "projects.title": "Projects 🚀",
-    "projects.viewMore": "View More",
-    "projects.viewLess": "View Less",
-
-    "projects.card1.title": "To-Do List App ✅",
-    "projects.card1.description":
-      "Task list application developed with React and modern CSS. Includes CRUD functionality, filters, and local storage.",
-    "projects.card1.github": "GitHub",
-    "projects.card1.demo": "Demo",
-
-    "projects.card2.title": "Weather Dashboard 🌤️",
-    "projects.card2.description":
-      "Weather forecast dashboard consuming external API. Displays detailed weather information and 5-day forecast.",
-    "projects.card2.github": "GitHub",
-    "projects.card2.demo": "Demo",
-
-    "projects.card3.title": "Responsive Landing Page 🎯",
-    "projects.card3.description":
-      "Modern and responsive landing page for a fictional product, featuring smooth animations and attractive design.",
-    "projects.card3.github": "GitHub",
-    "projects.card3.demo": "Demo",
-
-    "projects.card4.title": "JavaScript Calculator 🔢",
-    "projects.card4.description":
-      "Interactive calculator with basic and advanced operations, calculation history, and dark/light theme.",
-    "projects.card4.github": "GitHub",
-    "projects.card4.demo": "Demo",
-
-    "projects.card5.title": "Interactive Quiz ❓",
-    "projects.card5.description":
-      "Quiz application with multiple categories, real-time scoring, and player rankings.",
-    "projects.card5.github": "GitHub",
-    "projects.card5.demo": "Demo",
-
-    "projects.card6.title": "Movie Catalog 🎬",
-    "projects.card6.description":
-      "Application for searching and viewing information about movies, using the TMDB API. Includes dark/light mode, movie details, and trailers.",
-    "projects.card6.github": "GitHub",
-    "projects.card6.demo": "Demo",
-
-    "contact.title": "Contact 📬",
-    "contact.name": "Name",
-    "contact.email": "Email",
-    "contact.message": "Message",
-    "contact.send": "Send",
+    nav: {
+      home: "Home",
+      about: "About",
+      experience: "Experience",
+      education: "Education",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact",
+    },
+    hero: {
+      title: "Hi, I'm Matheus",
+      subtitle: "Developing the Digital Future",
+      description:
+        "Transforming ideas into extraordinary digital experiences through clean code and innovative design. Specialized in creating modern and intuitive interfaces that delight users and drive business.",
+      buttons: {
+        projects: "Explore Projects",
+        contact: "Start Conversation",
+      },
+    },
+    about: {
+      title: "About",
+      introduction:
+        "👋 Hi! I'm a Junior Front-end Developer passionate about creating amazing web experiences.",
+      description:
+        "Software Engineering student and Junior Front-end Developer with experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, as well as knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.",
+      goals:
+        "Currently, I'm enhancing my full-stack development skills and always seeking to learn new technologies. I believe that the combination of clean code and intuitive design is the key to creating memorable digital experiences.",
+      card1: {
+        title: "Web Development",
+        description:
+          "Creation of responsive and modern websites and web applications",
+      },
+      card2: {
+        title: "Front-end",
+        description: "Intuitive interfaces focused on user experience",
+      },
+      card3: {
+        title: "Back-end",
+        description: "API development and database integration",
+      },
+      card4: {
+        title: "Responsive",
+        description: "Adaptable websites for all devices",
+      },
+    },
+    experience: {
+      title: "Experience",
+      current: "Present",
+      job1: {
+        title: "Backoffice Agent - NEOBPO",
+        period: "January 2023 - Present",
+        task1:
+          "Analysis and processing of customer requests through multiple channels",
+        task2: "Documentation management and record keeping in CRM systems",
+        task3: "Complex problem solving and escalation when necessary",
+        task4: "Report preparation and monitoring of performance indicators",
+        achievement1:
+          "Recognition for excellence in customer service with 98% customer satisfaction",
+        achievement2: "Reduction of average case resolution time by 30%",
+      },
+      job2: {
+        title: "Telemarketing Agent - NEOBPO",
+        period: "June 2022 - December 2022",
+        task1:
+          "Customer service via telephone with focus on first contact resolution",
+        task2: "Detailed recording of interactions and forwarding of requests",
+        task3:
+          "Identification of sales opportunities and cross-selling during service",
+        task4: "Support in solving problems and customer doubts",
+        achievement1: "Highlight in additional sales, exceeding target by 25%",
+        achievement2:
+          "Award for best quality in customer service of the quarter",
+      },
+    },
+    education: {
+      title: "Education",
+      degree1: {
+        title: "Software Engineering",
+        institution: "University of Mogi das Cruzes",
+        period: "2023 - Present",
+        description:
+          "Studying Software Engineering with a focus on web and mobile development. Studying advanced concepts of programming, software architecture, and agile methodologies.",
+      },
+      degree2: {
+        title: "The Complete 2023 Web Development Bootcamp",
+        institution: "Udemy",
+        period: "2023",
+        description:
+          "Complete web development bootcamp, covering HTML5, CSS3, JavaScript, React, Node.js, and MongoDB. Development of practical projects and full-stack applications.",
+      },
+      degree3: {
+        title: "Python Professional",
+        institution: "Digital Innovation One",
+        period: "2023",
+        description:
+          "Complete Python training, including object-oriented programming, data analysis, automation, and web development with Django and Flask.",
+      },
+      degree4: {
+        title: "Full Stack Bootcamp",
+        institution: "Digital Innovation One",
+        period: "2022",
+        description:
+          "Intensive training in full stack web development, focusing on HTML, CSS, JavaScript, React, Node.js, and databases.",
+      },
+    },
+    skills: {
+      title: "Skills 🎯",
+      subtitle: "My Specialties",
+      description:
+        "Set of technical and interpersonal skills developed throughout my professional journey",
+      frontend: {
+        title: "Front-end",
+      },
+      tools: {
+        title: "Tools & Others",
+      },
+      soft: {
+        title: "Soft Skills & Languages",
+      },
+    },
+    contact: {
+      title: "Contact",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send Message",
+    },
+    footer: {
+      navigation: "Navigation",
+      projects: "Projects",
+      contact: "Contact",
+      copyright: "© 2024 Matheus Oliveira. All rights reserved.",
+    },
+    projects: {
+      title: "Projects 🚀",
+      card1: {
+        title: "To-Do List App",
+        description:
+          "Task list application with modern and responsive interface. Includes adding, editing, deleting, filters, and dark/light mode.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      card2: {
+        title: "Weather Dashboard",
+        description:
+          "Weather forecast dashboard that consumes external API. Displays detailed information about weather and 5-day forecast.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      literatour: {
+        title: "LiteraTour - Online Bookstore 📚",
+        description:
+          "Modern landing page for an online bookstore with dark/light mode, responsive design, sections for book categories, and weekly highlights. Elegant interface with smooth animations.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      calculator: {
+        title: "JavaScript Calculator 🔢",
+        description:
+          "Modern scientific calculator with elegant interface and glassmorphism effect. Includes basic operations and scientific functions such as sin, cos, tan, log, and much more.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+      quiz: {
+        title: "Brazil & Programming Quiz 🎯",
+        description:
+          "Interactive quiz developed with React that tests knowledge about Brazil and programming. Includes timer, scoring system, and modern design.",
+        github: "GitHub",
+      },
+      card6: {
+        title: "Movie Catalog 🎬",
+        description:
+          "Application for searching and viewing information about movies, using the TMDB API. Includes dark/light mode, movie details, and trailers.",
+        github: "GitHub",
+        demo: "Demo",
+      },
+    },
+    sidebar: {
+      logo: "Matheus Luiz",
+      menu: "Menu",
+      social: "Social",
+      email: "Email",
+      role: "Front-end Developer",
+    },
   },
 };
