@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      rel="icon"
+      href="../assets/images/weather-dashboard.png"
+      type="image/png"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/weather-dashboard.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather Dashboard <i class="fas fa-cloud-sun"></i></h1>
+        <div class="search-container">
+          <input
+            type="text"
+            id="city-input"
+            list="sp-cities"
+            placeholder="Digite o nome da cidade de SP..."
+            autocomplete="off"
+          />
+          <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="toggle-container">
+          <button id="toggle-unit" class="toggle-btn">°C / °F</button>
+          <button id="toggle-theme" class="toggle-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a
+            href="https://devmatheusoliv.github.io/weather-dashboard/"
+            class="demo-btn"
+            title="Ver Demonstração"
+          >
+            <button class="toggle-btn">Demonstração</button>
+          </a>
+        </div>
+      </header>
+
+      <main class="dashboard-grid">
+        <section class="current-weather">
+          <div class="weather-card" id="current-weather-card">
+            <div class="loader" id="loader">
+              <div class="spinner"></div>
+            </div>
+            <div class="weather-info" id="weather-info" style="display: none">
+              <div class="location">
+                <h2 id="city-name">Cidade</h2>
+                <p id="date-time">Data e Hora</p>
+              </div>
+              <div class="weather-main">
+                <img id="weather-icon" src="" alt="Condição climática" />
+                <div class="temperature">
+                  <h2 id="temperature">--°C</h2>
+                  <p id="feels-like">Sensação: --°C</p>
+                </div>
+              </div>
+              <div class="weather-description">
+                <p id="weather-condition">Condição</p>
+              </div>
+              <div class="weather-details">
+                <div class="detail">
+                  <i class="fas fa-wind"></i>
+                  <div>
+                    <p>Vento</p>
+                    <p id="wind-speed">-- km/h</p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <i class="fas fa-tint"></i>
+                  <div>
+                    <p>Umidade</p>
+                    <p id="humidity">--%</p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <i class="fas fa-compress-arrows-alt"></i>
+                  <div>
+                    <p>Pressão</p>
+                    <p id="pressure">-- hPa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="forecast">
+          <h3>Previsão para 5 dias</h3>
+          <div class="forecast-grid" id="forecast-container">
+            <!-- Forecast cards will be added here dynamically -->
+          </div>
+        </section>
+
+        <section class="highlights">
+          <h3>Destaques de Hoje</h3>
+          <div class="highlights-grid">
+            <div class="highlight-card">
+              <h4>Nascer do Sol & Pôr do Sol</h4>
+              <div class="sun-times">
+                <div>
+                  <i class="fas fa-sunrise"></i>
+                  <p id="sunrise">--:--</p>
+                </div>
+                <div>
+                  <i class="fas fa-sunset"></i>
+                  <p id="sunset">--:--</p>
+                </div>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <h4>Índice UV</h4>
+              <div class="uv-index">
+                <div class="uv-meter">
+                  <div class="uv-level" id="uv-level"></div>
+                </div>
+                <p id="uv-index">--</p>
+                <p id="uv-text">--</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <h4>Visibilidade</h4>
+              <div class="visibility">
+                <i class="fas fa-eye"></i>
+                <p id="visibility">-- km</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <h4>Direção do Vento</h4>
+              <div class="wind-direction">
+                <div class="compass">
+                  <i class="fas fa-location-arrow" id="wind-arrow"></i>
+                </div>
+                <p id="wind-direction">--</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="error-container" id="error-container">
+        <div class="error-message">
+          <i class="fas fa-exclamation-circle"></i>
+          <p id="error-text">Cidade não encontrada. Tente novamente.</p>
+          <button id="error-close-btn">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        Desenvolvido por
+        <a href="https://github.com/devMatheusOliv" target="_blank"
+          >Matheus Oliveira</a
+        >
+      </p>
+      <p>
+        Dados fornecidos por
+        <a href="https://openweathermap.org/" target="_blank"
+          >OpenWeatherMap API</a
+        >
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
