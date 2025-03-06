@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Matheus Oliveira - Desenvolvedor Front-end | Portfolio</title>
+
+    <meta
+      name="description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas com React, HTML5, CSS3 e JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="desenvolvedor front-end, web developer, react, javascript, html5, css3, são paulo, portfolio"
+    />
+    <meta name="author" content="Matheus Oliveira" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devmatheus.com/" />
+    <meta
+      property="og:title"
+      content="Matheus Oliveira - Desenvolvedor Front-end"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://devmatheus.com/" />
+    <meta
+      property="twitter:title"
+      content="Matheus Oliveira - Desenvolvedor Front-end"
+    />
+    <meta
+      property="twitter:description"
+      content="Portfolio profissional de Matheus Oliveira, Desenvolvedor Front-end especializado em criar experiências web modernas e responsivas."
+    />
+    <meta property="twitter:image" content="assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/jpg" href="assets/images/icon.jpg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-AQUI"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "SEU-ID-AQUI");
+    </script>
+
+    <style>
+      .habilidade-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 2rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .habilidade-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .skill-name {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .skill-level,
+      .skill-percent-number {
+        display: none;
+      }
+
+      .skill-progress {
+        height: 100%;
+        width: 0;
+        transition: width 1s ease-in-out;
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #4caf50;
+      }
+
+      .animate .skill-progress {
+        animation: fillProgress 1s ease-out forwards;
+      }
+
+      @keyframes fillProgress {
+        from {
+          width: 0;
+        }
+        to {
+          width: var(--progress-width);
+        }
+      }
+
+      .skill-item {
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+      }
+
+      .skill-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      .card-content {
+        margin-top: 1.5rem;
+      }
+
+      .tecnologias-exp {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+      }
+
+      .tecnologias-exp span {
+        background-color: #f0f0f0;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .tecnologias-exp span:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-2px);
+      }
+
+      .tecnologias-exp span i {
+        color: #4caf50;
+      }
+
+      .educacao-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .educacao-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        position: relative;
+        margin: 0;
+      }
+
+      .educacao-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .path {
+        width: 4px;
+        background-color: #4caf50;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 2px;
+        position: relative;
+        z-index: -1;
+      }
+
+      .educacao-card i {
+        font-size: 2.5em;
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+        color: #333;
+      }
+
+      .message-bubble {
+        position: relative;
+        background-color: #58b763;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        max-width: 300px;
+        margin: 20px 0;
+      }
+
+      .message-bubble::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #58b763 transparent;
+        z-index: 1;
+      }
+
+      .feature-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        min-height: 280px;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .skill-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 2px solid #4caf50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4caf50;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .skill-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .skill-tags span {
+        background-color: #f5f5f5;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-tags span:hover {
+        background-color: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .skill-tags span i {
+        color: #4caf50;
+      }
+
+      .skill-tags span:hover i {
+        color: white;
+      }
+
+      .max-w-screen-xl {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .mt-12 {
+        margin-top: 3rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .grid,
+        .educacao-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .grid,
+        .educacao-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          flex-direction: column;
+          width: 100%;
+          background-color: white;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          padding: 1rem 0;
+          gap: 0;
+          transform: translateY(-100%);
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.3s ease;
+          z-index: 100;
+        }
+
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: all;
+        }
+
+        .nav-links li {
+          width: 100%;
+          text-align: center;
+          padding: 1rem 0;
+        }
+
+        .lang-toggle {
+          position: absolute;
+          right: 70px;
+          top: 15px;
+          z-index: 1000;
+          padding: 8px 16px;
+          margin-right: 0;
+        }
+
+        .fixed-language-button {
+          display: none;
+        }
+
+        .nav-right {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      #habilidades {
+        padding: 4rem 0;
+        background-color: #f9f9f9;
+      }
+
+      #habilidades h2 {
+        margin-bottom: 30px;
+      }
+
+      #habilidades h2::after {
+        content: "";
+      }
+
+      #habilidades .max-w-xl {
+        text-align: center;
+        margin: 0 auto 2rem auto;
+      }
+
+      #habilidades .text-3xl {
+        display: none;
+      }
+
+      #habilidades p {
+        display: none;
+      }
+
+      /* Combinar regras de transição */
+      .feature-card,
+      .educacao-card,
+      .projeto-card,
+      .skill-tags span {
+        transition: all 0.3s ease;
+      }
+
+      .lang-toggle {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-right: 1rem;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .lang-toggle:hover {
+        background-color: #45a049;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      }
+
+      .lang-text {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .nav-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        height: 70px;
+        width: 100%;
+        position: relative;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #4caf50;
+      }
+
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="sidebar-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <i class="fas fa-code"></i>
+        <span data-i18n="sidebar.logo">Matheus Luiz</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title" data-i18n="sidebar.menu">Menu</div>
+          <a href="#home" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <span class="nav-link-text" data-i18n="nav.home">Home</span>
+          </a>
+          <a href="#sobre" class="nav-link">
+            <i class="fas fa-user"></i>
+            <span class="nav-link-text" data-i18n="nav.about">Sobre</span>
+          </a>
+          <a href="#experiencia" class="nav-link">
+            <i class="fas fa-briefcase"></i>
+            <span class="nav-link-text" data-i18n="nav.experience"
+              >Experiência</span
+            >
+          </a>
+          <a href="#educacao" class="nav-link">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="nav-link-text" data-i18n="nav.education"
+              >Educação</span
+            >
+          </a>
+          <a href="#projetos" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+            <span class="nav-link-text" data-i18n="nav.projects">Projetos</span>
+          </a>
+          <a href="#habilidades" class="nav-link">
+            <i class="fas fa-tools"></i>
+            <span class="nav-link-text" data-i18n="nav.skills"
+              >Habilidades</span
+            >
+          </a>
+          <a href="#contato" class="nav-link">
+            <i class="fas fa-envelope"></i>
+            <span class="nav-link-text" data-i18n="nav.contact">Contato</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title" data-i18n="sidebar.social">Social</div>
+          <a
+            href="https://github.com/devMatheusOliv"
+            target="_blank"
+            class="nav-link"
+          >
+            <i class="fab fa-github"></i>
+            <span class="nav-link-text">GitHub</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/matheus-olive"
+            target="_blank"
+            class="nav-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span class="nav-link-text">LinkedIn</span>
+          </a>
+          <a href="mailto:Matheus.luiz0524@gmail.com" class="nav-link">
+            <i class="fas fa-envelope"></i>
+            <span class="nav-link-text" data-i18n="sidebar.email">Email</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <img
+            src="assets/images/avatar.png"
+            alt="Matheus Oliveira"
+            class="user-avatar"
+          />
+          <div class="user-info">
+            <div class="user-name">Matheus</div>
+            <div class="user-role" data-i18n="sidebar.role">
+              Front-end Developer
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div
+        style="position: fixed; top: 20px; right: 20px; z-index: 9999"
+        class="fixed-language-button"
+      >
+        <button
+          id="language-button"
+          style="
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+          "
+          onclick="toggleLanguage()"
+          onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.25)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)';"
+        >
+          <i class="fas fa-globe" style="margin-right: 8px"></i>
+          <span id="language-text" style="font-size: 1rem">PT</span>
+        </button>
+      </div>
+
+      <header class="header">
+        <nav class="nav-bar">
+          <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav.home">Início</a></li>
+            <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+            <li>
+              <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+            </li>
+            <li><a href="#educacao" data-i18n="nav.education">Educação</a></li>
+            <li>
+              <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+            </li>
+            <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+
+          <div class="nav-right">
+            <button
+              class="lang-toggle"
+              aria-label="Toggle Language"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                cursor: pointer;
+                font-weight: 600;
+                margin-right: 1rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+              "
+              onclick="toggleLanguage()"
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.25)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)';"
+            >
+              <i class="fas fa-globe" style="margin-right: 8px"></i>
+              <span class="lang-text" style="font-size: 1rem">PT</span>
+            </button>
+
+            <button
+              class="menu-btn"
+              aria-label="Toggle Menu"
+              data-i18n="nav.menu"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>
+            <span class="highlight" data-i18n="hero.title"
+              >Olá, eu sou Matheus</span
+            >
+            <span class="gradient-text" data-i18n="hero.subtitle"
+              >Desenvolvendo o Futuro Digital</span
+            >
+          </h1>
+          <p data-i18n="hero.description">
+            Transformando ideias em experiências digitais extraordinárias
+            através de código limpo e design inovador. Especializado em criar
+            interfaces modernas e intuitivas que encantam usuários e impulsionam
+            negócios.
+          </p>
+          <div class="hero-btns">
+            <a href="#projetos" class="hero-btn primary">
+              <i class="fas fa-laptop-code"></i>
+              <span data-i18n="hero.buttons.projects">Explorar Projetos</span>
+            </a>
+            <a href="#contato" class="hero-btn secondary">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="hero.buttons.contact">Iniciar Conversa</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="sobre section-animate">
+        <h2 data-i18n="about.title">Sobre</h2>
+        <div class="sobre-content">
+          <div class="sobre-grid">
+            <div class="sobre-text">
+              <p class="sobre-intro" data-i18n="about.introduction">
+                👋 Olá! Sou um Desenvolvedor Front-end Junior apaixonado por
+                criar experiências web incríveis.
+              </p>
+              <p class="sobre-description" data-i18n="about.description">
+                Estudante de Engenharia de Software e Desenvolvedor Front-end
+                Júnior com experiência em desenvolvimento web. Possuo
+                habilidades sólidas em HTML, CSS, JavaScript e React, além de
+                conhecimentos em MySQL. Busco constantemente aprender novas
+                tecnologias e aprimorar minhas habilidades para criar interfaces
+                modernas e responsivas.
+              </p>
+              <p class="sobre-goals" data-i18n="about.goals">
+                Atualmente, estou aprimorando minhas habilidades em
+                desenvolvimento full-stack e sempre buscando aprender novas
+                tecnologias. Acredito que a combinação de código limpo e design
+                intuitivo é a chave para criar experiências digitais memoráveis.
+              </p>
+            </div>
+            <div class="sobre-info">
+              <div class="info-card">
+                <i class="fas fa-code"></i>
+                <h3 data-i18n="about.card1.title">Desenvolvimento Web</h3>
+                <p data-i18n="about.card1.description">
+                  Criação de sites e aplicações web responsivas e modernas
+                </p>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3 data-i18n="about.card2.title">Front-end</h3>
+                <p data-i18n="about.card2.description">
+                  Interfaces intuitivas com foco em experiência do usuário
+                </p>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-server"></i>
+                <h3 data-i18n="about.card3.title">Back-end</h3>
+                <p data-i18n="about.card3.description">
+                  Desenvolvimento de APIs e integração com banco de dados
+                </p>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3 data-i18n="about.card4.title">Responsivo</h3>
+                <p data-i18n="about.card4.description">
+                  Sites adaptáveis para todos os dispositivos
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia" class="experiencia section-animate">
+        <h2 data-i18n="experience.title">Experiência</h2>
+        <div class="experiencia-grid">
+          <div class="experiencia-card">
+            <div class="card-header">
+              <i class="fas fa-headset"></i>
+              <h3 data-i18n="experience.job1.title">
+                Agente de Backoffice - NEOBPO
+              </h3>
+              <div class="periodo">
+                <i class="far fa-calendar-alt"></i>
+                <span data-i18n="experience.job1.period"
+                  >Janeiro 2023 - Presente</span
+                >
+              </div>
+            </div>
+            <div class="tecnologias-exp">
+              <span data-i18n="experience.tech.sap">SAP</span>
+              <span data-i18n="experience.tech.excel">Excel</span>
+              <span data-i18n="experience.tech.zendesk">Zendesk</span>
+              <span data-i18n="experience.tech.servicenow">ServiceNow</span>
+            </div>
+            <div class="card-content">
+              <h4 data-i18n="experience.responsibilities">
+                Principais Responsabilidades:
+              </h4>
+              <ul>
+                <li data-i18n="experience.job1.task1">
+                  <i class="fas fa-check-circle"></i>
+                  Análise e processamento de solicitações de clientes através de
+                  múltiplos canais
+                </li>
+                <li data-i18n="experience.job1.task2">
+                  <i class="fas fa-check-circle"></i>
+                  Gerenciamento de documentação e registros em sistemas CRM
+                </li>
+                <li data-i18n="experience.job1.task3">
+                  <i class="fas fa-check-circle"></i>
+                  Resolução de problemas complexos e escalonamento quando
+                  necessário
+                </li>
+                <li data-i18n="experience.job1.task4">
+                  <i class="fas fa-check-circle"></i>
+                  Elaboração de relatórios e acompanhamento de indicadores de
+                  performance
+                </li>
+              </ul>
+            </div>
+            <div class="conquistas">
+              <h4 data-i18n="experience.achievements">Conquistas:</h4>
+              <ul>
+                <li>
+                  <i class="fas fa-trophy"></i>
+                  <span data-i18n="experience.job1.achievement1"
+                    >Reconhecimento por excelência no atendimento com 98% de
+                    satisfação dos clientes</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-trophy"></i>
+                  <span data-i18n="experience.job1.achievement2"
+                    >Redução do tempo médio de resolução de casos em 30%</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experiencia-card">
+            <div class="card-header">
+              <i class="fas fa-phone-alt"></i>
+              <h3 data-i18n="experience.job2.title">
+                Agente de Telemarketing - NEOBPO
+              </h3>
+              <div class="periodo">
+                <i class="far fa-calendar-alt"></i>
+                <span data-i18n="experience.job2.period"
+                  >Junho 2022 - Dezembro 2022</span
+                >
+              </div>
+            </div>
+            <div class="tecnologias-exp">
+              <span data-i18n="experience.tech.avaya">Avaya</span>
+              <span data-i18n="experience.tech.crm">CRM</span>
+              <span data-i18n="experience.tech.office">Office</span>
+              <span data-i18n="experience.tech.teams">Teams</span>
+            </div>
+            <div class="card-content">
+              <h4 data-i18n="experience.responsibilities">
+                Principais Responsabilidades:
+              </h4>
+              <ul>
+                <li data-i18n="experience.job2.task1">
+                  <i class="fas fa-check-circle"></i>
+                  Atendimento ao cliente via telefone com foco em resolução no
+                  primeiro contato
+                </li>
+                <li data-i18n="experience.job2.task2">
+                  <i class="fas fa-check-circle"></i>
+                  Registro detalhado de interações e encaminhamento de
+                  solicitações
+                </li>
+                <li data-i18n="experience.job2.task3">
+                  <i class="fas fa-check-circle"></i>
+                  Identificação de oportunidades de venda e cross-selling
+                  durante atendimentos
+                </li>
+                <li data-i18n="experience.job2.task4">
+                  <i class="fas fa-check-circle"></i>
+                  Suporte na resolução de problemas e dúvidas dos clientes
+                </li>
+              </ul>
+            </div>
+            <div class="conquistas">
+              <h4 data-i18n="experience.achievements">Conquistas:</h4>
+              <ul>
+                <li>
+                  <i class="fas fa-trophy"></i>
+                  <span data-i18n="experience.job2.achievement1"
+                    >Destaque em vendas adicionais, superando meta em 25%</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-trophy"></i>
+                  <span data-i18n="experience.job2.achievement2"
+                    >Premiação por melhor qualidade no atendimento do
+                    trimestre</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="educacao" class="educacao section-animate">
+        <h2 data-i18n="education.title">Educação</h2>
+        <div class="educacao-grid">
+          <div class="educacao-card">
+            <div class="card-header">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <h3 data-i18n="education.degree1.title">
+                  Engenharia de Software
+                </h3>
+                <p
+                  class="instituicao"
+                  data-i18n="education.degree1.institution"
+                >
+                  Universidade de Mogi das Cruzes
+                </p>
+                <div class="periodo">
+                  <i class="far fa-calendar-alt"></i>
+                  <span data-i18n="education.degree1.period"
+                    >2023 - Presente</span
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="descricao" data-i18n="education.degree1.description">
+              Cursando Engenharia de Software com foco em desenvolvimento web e
+              mobile. Estudando conceitos avançados de programação, arquitetura
+              de software e metodologias ágeis.
+            </p>
+          </div>
+
+          <div class="educacao-card">
+            <div class="card-header">
+              <i class="fas fa-laptop-code"></i>
+              <div>
+                <h3 data-i18n="education.degree2.title">
+                  The Complete 2023 Web Development Bootcamp
+                </h3>
+                <p
+                  class="instituicao"
+                  data-i18n="education.degree2.institution"
+                >
+                  Udemy
+                </p>
+                <div class="periodo">
+                  <i class="far fa-calendar-alt"></i>
+                  <span data-i18n="education.degree2.period">2023</span>
+                </div>
+              </div>
+            </div>
+            <p class="descricao" data-i18n="education.degree2.description">
+              Bootcamp completo de desenvolvimento web, abrangendo HTML5, CSS3,
+              JavaScript, React, Node.js e MongoDB. Desenvolvimento de projetos
+              práticos e aplicações full-stack.
+            </p>
+          </div>
+
+          <div class="educacao-card">
+            <div class="card-header">
+              <i class="fas fa-code"></i>
+              <div>
+                <h3 data-i18n="education.degree3.title">Python Professional</h3>
+                <p
+                  class="instituicao"
+                  data-i18n="education.degree3.institution"
+                >
+                  Digital Innovation One
+                </p>
+                <div class="periodo">
+                  <i class="far fa-calendar-alt"></i>
+                  <span data-i18n="education.degree3.period">2023</span>
+                </div>
+              </div>
+            </div>
+            <p class="descricao" data-i18n="education.degree3.description">
+              Formação completa em Python, incluindo programação orientada a
+              objetos, análise de dados, automação e desenvolvimento web com
+              Django e Flask.
+            </p>
+          </div>
+
+          <div class="educacao-card">
+            <div class="card-header">
+              <i class="fas fa-terminal"></i>
+              <div>
+                <h3 data-i18n="education.degree4.title">Bootcamp Full Stack</h3>
+                <p
+                  class="instituicao"
+                  data-i18n="education.degree4.institution"
+                >
+                  Digital Innovation One
+                </p>
+                <div class="periodo">
+                  <i class="far fa-calendar-alt"></i>
+                  <span data-i18n="education.degree4.period">2022</span>
+                </div>
+              </div>
+            </div>
+            <p class="descricao" data-i18n="education.degree4.description">
+              Formação intensiva em desenvolvimento web full stack, com foco em
+              HTML, CSS, JavaScript, React, Node.js e banco de dados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos" class="projetos section-animate">
+        <h2 data-i18n="projects.title">Projetos 🚀</h2>
+        <div class="projetos-grid">
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/to-do-list-app.png"
+                alt="To-Do App"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.card1.title">To-Do List App</h3>
+              <p data-i18n="projects.card1.description">
+                Aplicativo de lista de tarefas com interface moderna e
+                responsiva. Inclui adição, edição, exclusão, filtros e modo
+                escuro/claro.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.html">HTML5 📝</span>
+                <span data-i18n="projects.tech.css">CSS3 🎨</span>
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/to-do-list-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.card1.github">GitHub</span>
+                </a>
+                <a
+                  href="Projetos/todo-app/index.html"
+                  target="_blank"
+                  class="bounce-effect"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.card1.demo">Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/weather-dashboard.png"
+                alt="Weather Dashboard"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.card2.title">
+                Weather Dashboard
+                <img
+                  src="assets/images/weather-dashboard.png"
+                  alt="Weather Icon"
+                  class="project-icon"
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                  "
+                />
+              </h3>
+              <p data-i18n="projects.card2.description">
+                Dashboard de previsão do tempo que consome API externa. Exibe
+                informações detalhadas sobre clima e previsão para 5 dias.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+                <span data-i18n="projects.tech.api">API REST 🔌</span>
+                <span data-i18n="projects.tech.grid">CSS Grid 📱</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/weather-dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.card2.github">GitHub</span>
+                </a>
+                <a
+                  href="Projetos/weather-dashboard/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.card2.demo">Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/livraria.png"
+                alt="LiteraTour - Livraria Online"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.literatour.title">
+                LiteraTour - Livraria Online 📚
+              </h3>
+              <p data-i18n="projects.literatour.description">
+                Landing page moderna para uma livraria online com modo
+                escuro/claro, design responsivo, seções para categorias de
+                livros e destaques da semana. Interface elegante com animações
+                suaves.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.html">HTML5 📝</span>
+                <span data-i18n="projects.tech.css">CSS3 🎨</span>
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/landing-page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.literatour.github">GitHub</span>
+                </a>
+                <a
+                  href="Projetos/landing-page/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.literatour.demo">Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculadora JavaScript -->
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/calculadora-cientifica.png"
+                alt="Calculadora JavaScript"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.calculator.title">
+                Calculadora JavaScript 🔢
+              </h3>
+              <p data-i18n="projects.calculator.description">
+                Calculadora científica moderna com interface elegante e efeito
+                glassmorphism. Inclui operações básicas e funções científicas
+                como sin, cos, tan, log, e muito mais.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.html">HTML5 📝</span>
+                <span data-i18n="projects.tech.css">CSS3 🎨</span>
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/CalculadoraJS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.calculator.github">GitHub</span>
+                </a>
+                <a
+                  href="Projetos/calculadora/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.calculator.demo">Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/quiz-app.png"
+                alt="Quiz Brasil & Programação"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.quiz.title">
+                Quiz Brasil & Programação 🎯
+              </h3>
+              <p data-i18n="projects.quiz.description">
+                Quiz interativo desenvolvido com React que testa conhecimentos
+                sobre o Brasil e programação. Inclui timer, sistema de pontuação
+                e design moderno.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.react">React ⚛️</span>
+                <span data-i18n="projects.tech.styled"
+                  >Styled Components 💅</span
+                >
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/quiz-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.quiz.github">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mac-card projeto-card">
+            <div class="mac-tools">
+              <div class="mac-circle">
+                <span class="mac-box mac-red"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-yellow"></span>
+              </div>
+              <div class="mac-circle">
+                <span class="mac-box mac-green"></span>
+              </div>
+            </div>
+            <div class="mac-card__content">
+              <img
+                src="assets/images/movie-catalog.png"
+                alt="Catálogo de Filmes"
+                loading="lazy"
+              />
+              <h3 data-i18n="projects.card6.title">Catálogo de Filmes 🎬</h3>
+              <p data-i18n="projects.card6.description">
+                Aplicação para busca e visualização de informações sobre filmes,
+                utilizando a API do TMDB. Inclui modo escuro/claro, detalhes dos
+                filmes e trailers.
+              </p>
+              <div class="tecnologias">
+                <span data-i18n="projects.tech.html">HTML5 📝</span>
+                <span data-i18n="projects.tech.css">CSS3 🎨</span>
+                <span data-i18n="projects.tech.js">JavaScript 💻</span>
+              </div>
+              <div class="projeto-links">
+                <a
+                  href="https://github.com/devMatheusOliv/movie-catalog"
+                  target="_blank"
+                  class="bounce-effect"
+                >
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.card6.github">GitHub</span>
+                </a>
+                <a
+                  href="Projetos/movie-catalog/index.html"
+                  target="_blank"
+                  class="bounce-effect"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.card6.demo">Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="habilidades" class="habilidades section-animate">
+        <h2 data-i18n="skills.title">Habilidades 🎯</h2>
+        <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+          <div class="max-w-xl space-y-3">
+            <p
+              class="text-gray-800 text-3xl font-semibold sm:text-4xl"
+              data-i18n="skills.subtitle"
+            >
+              Minhas Especialidades
+            </p>
+            <p data-i18n="skills.description">
+              Conjunto de habilidades técnicas e interpessoais desenvolvidas ao
+              longo da minha jornada profissional
+            </p>
+          </div>
+          <div class="mt-12">
+            <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <!-- Front-end -->
+              <li class="feature-card">
+                <div class="skill-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="skill-title" data-i18n="skills.frontend.title">
+                  Front-end
+                </h3>
+                <div class="skill-tags">
+                  <span data-i18n="skills.frontend.html"
+                    ><i class="fab fa-html5"></i> HTML</span
+                  >
+                  <span data-i18n="skills.frontend.css"
+                    ><i class="fab fa-css3-alt"></i> CSS</span
+                  >
+                  <span data-i18n="skills.frontend.js"
+                    ><i class="fab fa-js"></i> JavaScript</span
+                  >
+                  <span data-i18n="skills.frontend.react"
+                    ><i class="fab fa-react"></i> React</span
+                  >
+                  <span data-i18n="skills.frontend.nodejs"
+                    ><i class="fab fa-node-js"></i> Node.js</span
+                  >
+                </div>
+              </li>
+
+              <!-- Ferramentas -->
+              <li class="feature-card">
+                <div class="skill-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="skill-title" data-i18n="skills.tools.title">
+                  Ferramentas & Outros
+                </h3>
+                <div class="skill-tags">
+                  <span data-i18n="skills.tools.git"
+                    ><i class="fab fa-git-alt"></i> Git</span
+                  >
+                  <span data-i18n="skills.tools.vscode"
+                    ><i class="fas fa-code"></i> VS Code</span
+                  >
+                  <span data-i18n="skills.tools.mysql"
+                    ><i class="fas fa-database"></i> MySQL</span
+                  >
+                  <span data-i18n="skills.tools.responsive"
+                    ><i class="fas fa-mobile-alt"></i> Responsive</span
+                  >
+                  <span data-i18n="skills.tools.github"
+                    ><i class="fab fa-github"></i> GitHub</span
+                  >
+                </div>
+              </li>
+
+              <!-- Soft Skills -->
+              <li class="feature-card">
+                <div class="skill-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="skill-title" data-i18n="skills.soft.title">
+                  Soft Skills & Idiomas
+                </h3>
+                <div class="skill-tags">
+                  <span data-i18n="skills.soft.portuguese"
+                    ><i class="fas fa-language"></i> Português</span
+                  >
+                  <span data-i18n="skills.soft.english"
+                    ><i class="fas fa-globe"></i> English</span
+                  >
+                  <span data-i18n="skills.soft.teamwork"
+                    ><i class="fas fa-users"></i> Trabalho em Equipe</span
+                  >
+                  <span data-i18n="skills.soft.problemsolving"
+                    ><i class="fas fa-lightbulb"></i> Solução de Problemas</span
+                  >
+                  <span data-i18n="skills.soft.communication"
+                    ><i class="fas fa-comments"></i> Comunicação</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="contato section-animate">
+        <h2 data-i18n="contact.title">Contato</h2>
+        <div class="contato-content">
+          <div class="contato-info">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=Matheus.luiz0524@gmail.com&su=Contato via Portfolio&body=Olá Matheus,"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📧 Matheus.luiz0524@gmail.com</a
+              >
+            </div>
+            <div class="info-item">
+              <i class="fab fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/matheus-olive"
+                target="_blank"
+                rel="noopener noreferrer"
+                >👥 LinkedIn</a
+              >
+            </div>
+            <div class="info-item">
+              <i class="fab fa-github"></i>
+              <a
+                href="https://github.com/devMatheusOliv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📦 GitHub</a
+              >
+            </div>
+          </div>
+
+          <form
+            id="contato-form"
+            action="https://formspree.io/f/xdkaqder"
+            method="POST"
+            class="formspree-form"
+          >
+            <input
+              type="text"
+              name="name"
+              data-i18n="contact.name"
+              placeholder="Nome"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              data-i18n="contact.email"
+              placeholder="E-mail"
+              required
+            />
+            <textarea
+              name="message"
+              data-i18n="contact.message"
+              placeholder="Mensagem"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="button-neomorphic-theme"
+              data-i18n="contact.send"
+            >
+              Enviar Mensagem
+            </button>
+            <div id="form-status"></div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="stacked-footer">
+        <img
+          src="assets/images/footer-wave.svg"
+          alt="Footer Wave"
+          class="footer-wave"
+        />
+        <div class="footer-content">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 data-i18n="footer.navigation">Navegação</h4>
+              <ul>
+                <li><a href="#home" data-i18n="nav.home">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+                <li>
+                  <a href="#experiencia" data-i18n="nav.experience"
+                    >Experiência</a
+                  >
+                </li>
+                <li>
+                  <a href="#educacao" data-i18n="nav.education">Educação</a>
+                </li>
+                <li>
+                  <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4 data-i18n="footer.projects">Projetos</h4>
+              <ul>
+                <li>
+                  <a href="Projetos/todo-app/index.html">To-Do List App</a>
+                </li>
+                <li>
+                  <a href="Projetos/weather-dashboard/index.html"
+                    >Weather Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a href="Projetos/landing-page/index.html">LiteraTour</a>
+                </li>
+                <li>
+                  <a href="Projetos/movie-catalog/index.html"
+                    >Catálogo de Filmes 🎬</a
+                  >
+                </li>
+                <li>
+                  <a href="Projetos/calculadora/index.html"
+                    >Calculadora JS 🔢</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4 data-i18n="footer.contact">Contato</h4>
+              <ul>
+                <li>
+                  <a href="mailto:Matheus.luiz0524@gmail.com">Email 📧</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/matheus-olive"
+                    target="_blank"
+                    >LinkedIn 👥</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/devMatheusOliv" target="_blank"
+                    >GitHub 📦</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-social">
+            <a href="https://github.com/devMatheusOliv" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/matheus-olive" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="mailto:Matheus.luiz0524@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+          <div class="footer-bottom">
+            <p data-i18n="footer.copyright">
+              &copy; 2024 Matheus Oliveira. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/github-integration.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.translations) {
+          if (window.translations.pt && window.translations.pt.about) {
+            window.translations.pt.about.description =
+              "Estudante de Engenharia de Software e Desenvolvedor Front-end Júnior com experiência em desenvolvimento web. Possuo habilidades sólidas em HTML, CSS, JavaScript e React, além de conhecimentos em MySQL. Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para criar interfaces modernas e responsivas.";
+          }
+          if (window.translations.en && window.translations.en.about) {
+            window.translations.en.about.description =
+              "Software Engineering student and Junior Front-end Developer with experience in web development. I have solid skills in HTML, CSS, JavaScript, and React, as well as knowledge in MySQL. I constantly seek to learn new technologies and improve my skills to create modern and responsive interfaces.";
+          }
+        }
+
+        function initializeProgressBars() {
+          document.querySelectorAll(".skill-progress").forEach((progress) => {
+            const width = progress.dataset.width;
+            progress.style.setProperty("--progress-width", width);
+            progress.style.width = width;
+          });
+        }
+
+        function animateProgressBars() {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const progressBars =
+                    entry.target.querySelectorAll(".skill-progress");
+                  progressBars.forEach((bar) => {
+                    const width = bar.dataset.width;
+                    bar.style.width = "0";
+                    setTimeout(() => {
+                      bar.style.width = width;
+                    }, 100);
+                  });
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          document.querySelectorAll(".habilidade-card").forEach((card) => {
+            observer.observe(card);
+          });
+        }
+
+        initializeProgressBars();
+        animateProgressBars();
+
+        const animateSections = () => {
+          const sections = document.querySelectorAll(".section-animate");
+
+          document.querySelectorAll(".sobre-text p").forEach((p, index) => {
+            p.style.setProperty("--p-index", index);
+          });
+
+          document
+            .querySelectorAll(
+              ".experiencia-card, .educacao-card, .projeto-card, .habilidade-card, .info-card"
+            )
+            .forEach((card, index) => {
+              card.style.setProperty("--card-index", index % 4);
+            });
+
+          document.querySelectorAll(".skill-item").forEach((item, index) => {
+            item.style.setProperty("--skill-index", index);
+          });
+
+          document
+            .querySelectorAll(
+              ".info-item, .contato-form input, .contato-form textarea, .contato-form button"
+            )
+            .forEach((item, index) => {
+              item.style.setProperty("--contact-index", index);
+            });
+
+          const heroSection = document.querySelector(".hero");
+          if (heroSection) {
+            setTimeout(() => {
+              heroSection.classList.add("animate");
+            }, 100);
+          }
+
+          const sectionObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setTimeout(() => {
+                    entry.target.classList.add("animate");
+
+                    if (entry.target.classList.contains("habilidades")) {
+                      setTimeout(() => {
+                        entry.target
+                          .querySelectorAll(".skill-progress")
+                          .forEach((progress) => {
+                            const targetWidth = progress.style.width;
+                            progress.style.width = "0%";
+                            setTimeout(() => {
+                              progress.style.width = targetWidth;
+                            }, 200);
+                          });
+                      }, 500);
+                    }
+                  }, 100);
+
+                  sectionObserver.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.15,
+              rootMargin: "-10px",
+            }
+          );
+
+          sections.forEach((section) => {
+            if (!section.classList.contains("hero")) {
+              sectionObserver.observe(section);
+            }
+          });
+        };
+
+        setTimeout(animateSections, 200);
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px",
+          }
+        );
+
+        document
+          .querySelectorAll(
+            ".experiencia-card, .educacao-card, .habilidade-card, .projeto-card"
+          )
+          .forEach((el) => observer.observe(el));
+
+        document
+          .querySelectorAll(
+            ".button-neomorphic-theme, .projeto-links a, .info-item, .nav-links a"
+          )
+          .forEach((element) => {
+            element.classList.add("bounce-effect");
+          });
+
+        document.querySelectorAll(".bounce-effect").forEach((element) => {
+          element.addEventListener("animationend", function () {
+            this.style.animation = "";
+          });
+
+          element.addEventListener("mouseenter", function () {
+            this.style.animation = "bounce-top-light 0.9s both";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

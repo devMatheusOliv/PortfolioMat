@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>To-Do List</h1>
+        <div class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+      </header>
+
+      <div class="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Adicionar uma nova tarefa..."
+        />
+        <button id="add-button">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <div class="filter-container">
+        <div class="filters">
+          <span class="filter active" data-filter="all">Todas</span>
+          <span class="filter" data-filter="pending">Pendentes</span>
+          <span class="filter" data-filter="completed">Concluídas</span>
+        </div>
+        <button class="clear-btn">Limpar Tudo</button>
+      </div>
+
+      <ul class="todo-list"></ul>
+
+      <div class="todo-stats">
+        <span class="pending-tasks"
+          >Você tem <span class="pending-count">0</span> tarefas pendentes</span
+        >
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
