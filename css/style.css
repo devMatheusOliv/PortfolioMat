@@ -2076,9 +2076,11 @@ input:checked + .slider:before {
   margin-bottom: 8px;
   color: var(--text-color);
   position: relative;
-  display: inline-block;
+  display: block; /* Alterado de inline-block para block */
   margin-left: auto;
   margin-right: auto; /* Centralizar o título */
+  text-align: center; /* Garantir que o texto do título esteja centralizado */
+  width: 100%; /* Ocupar toda a largura disponível */
 }
 
 .experience-card-content h3::after {
@@ -2102,6 +2104,7 @@ input:checked + .slider:before {
   margin-bottom: 15px;
   color: var(--primary-color);
   text-align: center; /* Garantir que o subtítulo esteja centralizado */
+  width: 100%; /* Ocupar toda a largura disponível */
 }
 
 .experience-card-content p {
@@ -2110,6 +2113,16 @@ input:checked + .slider:before {
   font-size: 15px;
   line-height: 1.6;
   text-align: center; /* Centralizar o parágrafo */
+  width: 100%; /* Ocupar toda a largura disponível */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px; /* Adicionar um pouco de padding para evitar que o texto fique muito próximo das bordas */
+}
+
+/* Estilo específico para o texto da empresa e localização */
+.experience-card-content p:first-of-type {
+  font-weight: 500; /* Deixar um pouco mais destacado */
+  margin-bottom: 5px; /* Reduzir o espaço após este parágrafo */
 }
 
 .experience-card-content ul {
@@ -2118,8 +2131,9 @@ input:checked + .slider:before {
   list-style: none;
   position: relative;
   padding-left: 0; /* Remover o padding padrão da lista */
-  display: inline-block; /* Permitir que a lista seja centralizada */
+  display: block; /* Alterado de inline-block para block para ocupar toda a largura */
   text-align: left; /* Manter o texto da lista alinhado à esquerda */
+  width: 80%; /* Definir uma largura para a lista */
   margin: 0 auto; /* Centralizar a lista */
 }
 
@@ -2131,6 +2145,7 @@ input:checked + .slider:before {
   font-size: 15px;
   line-height: 1.5;
   transition: transform 0.2s ease, color 0.2s ease;
+  text-align: left; /* Garantir que o texto do item da lista esteja alinhado à esquerda */
 }
 
 .experience-card-content ul li:hover {
