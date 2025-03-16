@@ -2053,6 +2053,7 @@ input:checked + .slider:before {
   position: relative;
   z-index: 1;
   background-color: var(--card-bg);
+  text-align: center; /* Centralizar todo o texto */
 }
 
 .experience-card-content::before {
@@ -2076,13 +2077,16 @@ input:checked + .slider:before {
   color: var(--text-color);
   position: relative;
   display: inline-block;
+  margin-left: auto;
+  margin-right: auto; /* Centralizar o título */
 }
 
 .experience-card-content h3::after {
   content: "";
   position: absolute;
   bottom: -5px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centralizar a linha abaixo do título */
   width: 40px;
   height: 2px;
   background-color: var(--primary-color);
@@ -2097,6 +2101,7 @@ input:checked + .slider:before {
   font-size: 16px;
   margin-bottom: 15px;
   color: var(--primary-color);
+  text-align: center; /* Garantir que o subtítulo esteja centralizado */
 }
 
 .experience-card-content p {
@@ -2104,6 +2109,7 @@ input:checked + .slider:before {
   color: var(--text-light);
   font-size: 15px;
   line-height: 1.6;
+  text-align: center; /* Centralizar o parágrafo */
 }
 
 .experience-card-content ul {
@@ -2111,6 +2117,10 @@ input:checked + .slider:before {
   margin-bottom: 0;
   list-style: none;
   position: relative;
+  padding-left: 0; /* Remover o padding padrão da lista */
+  display: inline-block; /* Permitir que a lista seja centralizada */
+  text-align: left; /* Manter o texto da lista alinhado à esquerda */
+  margin: 0 auto; /* Centralizar a lista */
 }
 
 .experience-card-content ul li {
@@ -2140,18 +2150,20 @@ input:checked + .slider:before {
   transition: all 0.3s ease;
 }
 
-.experience-card-content ul li:hover::before {
-  transform: scale(1.3);
-}
-
 .experience-card-date {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 8px 18px;
   border-radius: 30px;
+  display: inline-block; /* Permitir que a data seja centralizada */
+  margin: 0 auto 15px auto; /* Centralizar a data e adicionar margem inferior */
   font-size: 15px;
   font-weight: 600;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
+}
+
+.experience-card-content ul li:hover::before {
+  transform: scale(1.3);
 }
 
 /* ===== BLOG SLIDER ===== */
