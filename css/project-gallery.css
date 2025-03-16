@@ -135,19 +135,19 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(79, 70, 229, 0),
-    rgba(79, 70, 229, 0.4),
-    rgba(79, 70, 229, 0.8) 100%
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6) 100%
   );
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 
 .dark-mode .project-card-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(99, 102, 241, 0),
-    rgba(99, 102, 241, 0.4),
-    rgba(99, 102, 241, 0.8) 100%
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7) 100%
   );
 }
 
@@ -227,5 +227,106 @@
 @media (max-width: 768px) {
   .project-gallery-controls {
     display: none;
+  }
+
+  .project-gallery-description {
+    margin-left: 20px;
+    max-width: 90%;
+  }
+
+  .project-carousel {
+    padding-left: 20px;
+  }
+
+  .carousel-indicators {
+    margin-left: 20px;
+    justify-content: center;
+  }
+
+  .project-carousel-item {
+    flex: 0 0 280px;
+  }
+
+  .project-card {
+    height: 24rem;
+  }
+
+  .project-card-content {
+    padding: 1.2rem;
+  }
+
+  .project-card-title {
+    font-size: 1.1rem;
+  }
+
+  .project-card-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-gallery-section {
+    padding: 60px 0;
+  }
+
+  .project-gallery-title {
+    font-size: 1.8rem;
+  }
+
+  .project-gallery-description {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+
+  .project-carousel {
+    padding-left: 15px;
+  }
+
+  .carousel-indicators {
+    margin-left: 15px;
+  }
+
+  .project-carousel-item {
+    flex: 0 0 260px;
+    padding-right: 10px;
+  }
+
+  .project-card {
+    height: 22rem;
+  }
+
+  .project-card-content {
+    padding: 1rem;
+  }
+
+  .project-card-title {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .project-card-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .project-card-link {
+    font-size: 0.8rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .project-card:active .project-card-image {
+    transform: scale(1.05);
+  }
+
+  .project-card:active .project-card-link i {
+    transform: translateX(4px);
+  }
+
+  .gallery-control-button:active {
+    background-color: var(--accent-color);
   }
 }

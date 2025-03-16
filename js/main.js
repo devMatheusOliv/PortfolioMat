@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicializa a animação das aceternity feature boxes na seção de experiência
   initExperienceAceternityFeatures();
 
+  // Inicializa as animações de scroll
+  initScrollAnimations();
+
   // Scroll to top button
   const scrollToTopBtn = document.querySelector(".scroll-to-top");
 
@@ -46,12 +49,41 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu toggle
   const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
   const navbar = document.querySelector(".navbar");
+  const sidebarContainer = document.querySelector(".sidebar-container");
+  const sidebarOverlay = document.querySelector(".sidebar-overlay");
 
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", function () {
       this.classList.toggle("active");
-      navbar.classList.toggle("active");
+
+      // Toggle sidebar
+      if (sidebarContainer) {
+        sidebarContainer.classList.toggle("active");
+
+        // Toggle overlay
+        if (sidebarOverlay) {
+          sidebarOverlay.classList.toggle("active");
+        }
+      }
+
+      // Toggle navbar if it exists
+      if (navbar) {
+        navbar.classList.toggle("active");
+      }
     });
+
+    // Close sidebar when clicking on overlay
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener("click", function () {
+        mobileMenuToggle.classList.remove("active");
+        sidebarContainer.classList.remove("active");
+        this.classList.remove("active");
+
+        if (navbar) {
+          navbar.classList.remove("active");
+        }
+      });
+    }
   }
 
   // Project filtering
@@ -146,6 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Close mobile menu if open
+        if (sidebarContainer && sidebarContainer.classList.contains("active")) {
+          sidebarContainer.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+          sidebarOverlay.classList.remove("active");
+        }
+
         if (navbar && navbar.classList.contains("active")) {
           navbar.classList.remove("active");
           mobileMenuToggle.classList.remove("active");
@@ -153,6 +191,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Detectar dispositivos touch e adicionar classe ao body
+  if ("ontouchstart" in window || navigator.maxTouchPoints) {
+    document.body.classList.add("touch-device");
+  }
 });
 
 // Função para animar as feature boxes quando o usuário rolar até a seção
@@ -369,5 +412,65 @@ function initExperienceAceternityFeatures() {
         icon.style.animation = "";
       }
     });
+  });
+}
+
+// Função para inicializar animações de scroll
+function initScrollAnimations() {
+  // Seleciona todas as seções que devem ser animadas
+  const sections = document.querySelectorAll("section");
+  const cards = document.querySelectorAll(
+    ".project-carousel-item, .experience-card, .skill-card"
+  );
+
+  // Configuração do Intersection Observer
+  const options = {
+    root: null, // viewport
+    rootMargin: "0px",
+    threshold: 0.1, // 10% do elemento visível
+  };
+
+  // Função de callback para o observer
+  const sectionObserverCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("section-visible");
+        // Desativa o observer após a animação
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Função de callback para os cards
+  const cardObserverCallback = (entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Adiciona um atraso baseado no índice para criar um efeito cascata
+        setTimeout(() => {
+          entry.target.classList.add("card-visible");
+        }, index * 100);
+        // Desativa o observer após a animação
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Cria os observers
+  const sectionObserver = new IntersectionObserver(
+    sectionObserverCallback,
+    options
+  );
+  const cardObserver = new IntersectionObserver(cardObserverCallback, options);
+
+  // Observa cada seção
+  sections.forEach((section) => {
+    section.classList.add("section-hidden");
+    sectionObserver.observe(section);
+  });
+
+  // Observa cada card
+  cards.forEach((card) => {
+    card.classList.add("card-hidden");
+    cardObserver.observe(card);
   });
 }

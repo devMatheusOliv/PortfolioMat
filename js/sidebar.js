@@ -31,6 +31,17 @@ const Sidebar = () => {
     };
   }, [activeSection]);
 
+  // Função para fechar a sidebar em dispositivos móveis
+  const closeSidebarOnMobile = () => {
+    const sidebarContainer = document.querySelector(".sidebar-container");
+    const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+    if (window.innerWidth <= 992) {
+      if (sidebarContainer) sidebarContainer.classList.remove("active");
+      if (sidebarOverlay) sidebarOverlay.classList.remove("active");
+    }
+  };
+
   return (
     <div className="sidebar-container">
       <div className="sidebar-wrapper">
@@ -42,7 +53,7 @@ const Sidebar = () => {
                 activeSection === "home" ? "active" : ""
               }`}
             >
-              <a href="#home">
+              <a href="#home" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -64,7 +75,7 @@ const Sidebar = () => {
                 activeSection === "about" ? "active" : ""
               }`}
             >
-              <a href="#about">
+              <a href="#about" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -84,10 +95,10 @@ const Sidebar = () => {
             </li>
             <li
               className={`sidebar-listItem ${
-                activeSection === "experience" ? "active" : ""
+                activeSection === "skills" ? "active" : ""
               }`}
             >
-              <a href="#experience">
+              <a href="#skills" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -98,10 +109,9 @@ const Sidebar = () => {
                   strokeLinejoin="round"
                   className="sidebar-listIcon"
                 >
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                 </svg>
-                <span className="sidebar-listItemText">Experiência</span>
+                <span className="sidebar-listItemText">Habilidades</span>
               </a>
             </li>
             <li
@@ -109,7 +119,7 @@ const Sidebar = () => {
                 activeSection === "education" ? "active" : ""
               }`}
             >
-              <a href="#education">
+              <a href="#education" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -128,10 +138,10 @@ const Sidebar = () => {
             </li>
             <li
               className={`sidebar-listItem ${
-                activeSection === "skills" ? "active" : ""
+                activeSection === "experience" ? "active" : ""
               }`}
             >
-              <a href="#skills">
+              <a href="#experience" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -142,11 +152,10 @@ const Sidebar = () => {
                   strokeLinejoin="round"
                   className="sidebar-listIcon"
                 >
-                  <line x1="12" y1="20" x2="12" y2="10"></line>
-                  <line x1="18" y1="20" x2="18" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="16"></line>
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
-                <span className="sidebar-listItemText">Habilidades</span>
+                <span className="sidebar-listItemText">Experiência</span>
               </a>
             </li>
             <li
@@ -154,7 +163,7 @@ const Sidebar = () => {
                 activeSection === "projects" ? "active" : ""
               }`}
             >
-              <a href="#projects">
+              <a href="#projects" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -177,7 +186,7 @@ const Sidebar = () => {
                 activeSection === "contact" ? "active" : ""
               }`}
             >
-              <a href="#contact">
+              <a href="#contact" onClick={closeSidebarOnMobile}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -272,32 +281,145 @@ const Sidebar = () => {
         {/* Espaçador flexível para empurrar o botão CV para o final */}
         <div className="sidebar-spacer"></div>
 
-        <div className="sidebar-cv-section">
-          <a
-            href="images/CV-english.pdf"
-            download
-            className="sidebar-cv-button"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="sidebar-listIcon"
+        <div className="sidebar-section">
+          <h3 className="sidebar-section-title">DOWNLOAD</h3>
+          <div className="sidebar-cv-button">
+            <a
+              href="images/CV-english.pdf"
+              download
+              className="sidebar-cv-link"
+              onClick={closeSidebarOnMobile}
             >
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="12" y1="18" x2="12" y2="12"></line>
-              <line x1="9" y1="15" x2="15" y2="15"></line>
-            </svg>
-            <span>Download CV</span>
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="sidebar-cv-icon"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+              <span className="sidebar-cv-text">Download CV</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+  );
+};
+
+// Mobile Navbar Component
+const MobileNavbar = () => {
+  // Estado para controlar qual item está ativo
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Função para atualizar o item ativo com base na rolagem
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      if (current && current !== activeSection) {
+        setActiveSection(current);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Verificar a seção ativa ao carregar
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
+
+  // Função para fechar a sidebar em dispositivos móveis
+  const handleNavClick = () => {
+    const sidebarContainer = document.querySelector(".sidebar-container");
+    const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+    if (sidebarContainer) sidebarContainer.classList.remove("active");
+    if (sidebarOverlay) sidebarOverlay.classList.remove("active");
+  };
+
+  return (
+    <nav className="mobile-navbar">
+      <ul className="mobile-navbar-list">
+        <li className="mobile-navbar-item">
+          <a
+            href="#home"
+            className={`mobile-navbar-link ${
+              activeSection === "home" ? "active" : ""
+            }`}
+            onClick={handleNavClick}
+          >
+            <i className="fa-solid fa-house mobile-navbar-icon"></i>
+            <span className="mobile-navbar-text">Início</span>
+          </a>
+        </li>
+        <li className="mobile-navbar-item">
+          <a
+            href="#about"
+            className={`mobile-navbar-link ${
+              activeSection === "about" ? "active" : ""
+            }`}
+            onClick={handleNavClick}
+          >
+            <i className="fa-solid fa-user mobile-navbar-icon"></i>
+            <span className="mobile-navbar-text">Sobre</span>
+          </a>
+        </li>
+        <li className="mobile-navbar-item">
+          <a
+            href="#skills"
+            className={`mobile-navbar-link ${
+              activeSection === "skills" ? "active" : ""
+            }`}
+            onClick={handleNavClick}
+          >
+            <i className="fa-solid fa-code mobile-navbar-icon"></i>
+            <span className="mobile-navbar-text">Skills</span>
+          </a>
+        </li>
+        <li className="mobile-navbar-item">
+          <a
+            href="#projects"
+            className={`mobile-navbar-link ${
+              activeSection === "projects" ? "active" : ""
+            }`}
+            onClick={handleNavClick}
+          >
+            <i className="fa-solid fa-briefcase mobile-navbar-icon"></i>
+            <span className="mobile-navbar-text">Projetos</span>
+          </a>
+        </li>
+        <li className="mobile-navbar-item">
+          <a
+            href="#contact"
+            className={`mobile-navbar-link ${
+              activeSection === "contact" ? "active" : ""
+            }`}
+            onClick={handleNavClick}
+          >
+            <i className="fa-solid fa-envelope mobile-navbar-icon"></i>
+            <span className="mobile-navbar-text">Contato</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
@@ -430,10 +552,30 @@ function Footer() {
   );
 }
 
+// Função para inicializar a interação entre a sidebar e a navbar móvel
+function initMobileNavbarInteraction() {
+  const sidebarContainer = document.querySelector(".sidebar-container");
+  const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+  if (sidebarContainer && sidebarOverlay) {
+    // Adicionar evento de clique ao overlay
+    sidebarOverlay.addEventListener("click", function () {
+      sidebarContainer.classList.remove("active");
+      sidebarOverlay.classList.remove("active");
+    });
+  }
+}
+
+// Inicializar a interação quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", function () {
+  initMobileNavbarInteraction();
+});
+
 // Renderização dos componentes
 ReactDOM.render(
   <React.StrictMode>
     <Sidebar />
+    <MobileNavbar />
     {/* Outros componentes podem ser adicionados aqui */}
   </React.StrictMode>,
   document.getElementById("root")
