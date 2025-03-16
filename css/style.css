@@ -2046,14 +2046,14 @@ input:checked + .slider:before {
 }
 
 .experience-card-content {
-  padding: 20px 25px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 25px;
   position: relative;
   z-index: 1;
-  background-color: var(--card-bg);
-  text-align: center; /* Centralizar todo o texto */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .experience-card-content::before {
@@ -2064,7 +2064,7 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
   background: radial-gradient(
-    circle at top right,
+    circle at center,
     rgba(79, 70, 229, 0.03),
     transparent 70%
   );
@@ -2076,11 +2076,48 @@ input:checked + .slider:before {
   margin-bottom: 8px;
   color: var(--text-color);
   position: relative;
-  display: block; /* Alterado de inline-block para block */
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.experience-card-content h3:first-child {
+  margin: 0 auto 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.experience-card-content p {
+  margin-bottom: 15px;
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  width: 90%;
   margin-left: auto;
-  margin-right: auto; /* Centralizar o título */
-  text-align: center; /* Garantir que o texto do título esteja centralizado */
-  width: 100%; /* Ocupar toda a largura disponível */
+  margin-right: auto;
+  display: block;
+}
+
+.experience-card-content p:first-of-type {
+  font-weight: 500;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.experience-card-content p:nth-of-type(2) {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.experience-card-content p:nth-of-type(3) {
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto 15px;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .experience-card-content h3::after {
@@ -2088,7 +2125,7 @@ input:checked + .slider:before {
   position: absolute;
   bottom: -5px;
   left: 50%;
-  transform: translateX(-50%); /* Centralizar a linha abaixo do título */
+  transform: translateX(-50%);
   width: 40px;
   height: 2px;
   background-color: var(--primary-color);
@@ -2103,66 +2140,78 @@ input:checked + .slider:before {
   font-size: 16px;
   margin-bottom: 15px;
   color: var(--primary-color);
-  text-align: center; /* Garantir que o subtítulo esteja centralizado */
-  width: 100%; /* Ocupar toda a largura disponível */
-}
-
-.experience-card-content p {
-  margin-bottom: 15px;
-  color: var(--text-light);
-  font-size: 15px;
-  line-height: 1.6;
-  text-align: center; /* Centralizar o parágrafo */
-  width: 100%; /* Ocupar toda a largura disponível */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px; /* Adicionar um pouco de padding para evitar que o texto fique muito próximo das bordas */
-}
-
-/* Estilo específico para o texto da empresa e localização */
-.experience-card-content p:first-of-type {
-  font-weight: 500; /* Deixar um pouco mais destacado */
-  margin-bottom: 5px; /* Reduzir o espaço após este parágrafo */
+  text-align: center;
+  width: 100%;
 }
 
 .experience-card-content ul {
-  margin-left: 0;
-  margin-bottom: 0;
   list-style: none;
   position: relative;
-  padding-left: 0; /* Remover o padding padrão da lista */
-  display: block; /* Alterado de inline-block para block para ocupar toda a largura */
-  text-align: left; /* Manter o texto da lista alinhado à esquerda */
-  width: 80%; /* Definir uma largura para a lista */
-  margin: 0 auto; /* Centralizar a lista */
+  padding: 0;
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
 }
 
 .experience-card-content ul li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: var(--text-light);
   position: relative;
   padding-left: 25px;
   font-size: 15px;
   line-height: 1.5;
   transition: transform 0.2s ease, color 0.2s ease;
-  text-align: left; /* Garantir que o texto do item da lista esteja alinhado à esquerda */
-}
-
-.experience-card-content ul li:hover {
-  transform: translateX(5px);
-  color: var(--text-color);
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
 }
 
 .experience-card-content ul li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 8px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.experience-card-content ul li:hover {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
+.experience-card-content ul li:hover::before {
+  transform: scale(1.3);
+  background-color: var(--primary-hover);
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 480px) {
+  .experience-card-content {
+    padding: 20px 15px;
+    grid-gap: 5px;
+  }
+
+  .experience-card-content ul {
+    width: 95%;
+  }
+
+  .experience-card-content p {
+    width: 95%;
+  }
+
+  .experience-card-content h3 {
+    font-size: 18px;
+  }
+
+  .experience-card-content h4 {
+    font-size: 15px;
+  }
 }
 
 .experience-card-date {
