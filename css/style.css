@@ -46,10 +46,10 @@
   --card-bg: #1f2937;
   --border-color: #374151;
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --primary-color: #6366f1; /* Cor primária mais clara para melhor contraste */
-  --primary-hover: #818cf8;
-  --secondary-color: #818cf8;
-  --accent-text: #818cf8; /* Cor de destaque para textos importantes */
+  --primary-color: #0ea5e9; /* Azul turquesa para substituir o roxo */
+  --primary-hover: #38bdf8;
+  --secondary-color: #0284c7;
+  --accent-text: #38bdf8; /* Cor de destaque para textos importantes */
   --success-color: #34d399; /* Verde mais claro para melhor visibilidade */
   --error-color: #f87171; /* Vermelho mais claro para melhor visibilidade */
 }
@@ -284,6 +284,7 @@ img {
   left: 0;
   width: 100%;
   z-index: 1000;
+  padding: 1.5rem 0;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
