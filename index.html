@@ -96,31 +96,13 @@
   </head>
   <body>
     <!-- Theme Toggle Button -->
-    <div
-      class="theme-toggle-container"
-      id="theme-toggle-container"
-      style="width: 64px; height: 32px; background-color: transparent"
-    >
-      <!-- O componente ThemeToggle será renderizado aqui via React -->
-      <!-- Botão alternativo caso o React não funcione -->
-      <button
-        id="fallback-theme-toggle"
-        style="
-          display: block;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background-color: #18181b;
-          color: white;
-          border: 1px solid #27272a;
-          cursor: pointer;
-          position: absolute;
-          top: 0;
-          right: 0;
-        "
-      >
-        <i class="fa-solid fa-moon"></i>
-      </button>
+    <div class="theme-toggle-container">
+      <input type="checkbox" class="checkbox" id="checkbox" />
+      <label for="checkbox" class="checkbox-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+      </label>
     </div>
 
     <div id="root"></div>
@@ -814,16 +796,11 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- React e ReactDOM -->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
     <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/sidebar.js" type="text/babel"></script>
-    <script src="js/footer.js" type="text/babel"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/footer.js"></script>
     <script src="js/project-gallery.js"></script>
-    <script src="js/theme-toggle.js" type="text/babel"></script>
+    <script src="js/theme-toggle.js"></script>
   </body>
 </html>
