@@ -2,19 +2,29 @@
 function toggleDarkMode(isDark) {
   if (isDark) {
     document.documentElement.classList.add("dark-mode");
-    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("theme", "dark");
   } else {
     document.documentElement.classList.remove("dark-mode");
-    localStorage.setItem("darkMode", "false");
+    localStorage.setItem("theme", "light");
   }
 }
 
 // Inicializa as animações quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", function () {
   // Verifica se há preferência de tema salva
-  const savedDarkMode = localStorage.getItem("darkMode");
-  if (savedDarkMode === "true") {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
     toggleDarkMode(true);
+  }
+
+  // Adiciona evento de clique ao botão de toggle do tema
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", function () {
+      const isDarkMode =
+        document.documentElement.classList.contains("dark-mode");
+      toggleDarkMode(!isDarkMode);
+    });
   }
 
   // Inicializa a animação das feature boxes
