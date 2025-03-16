@@ -42,7 +42,7 @@
   --bg-color: #111827;
   --bg-light: #1f2937;
   --text-color: #f3f4f6;
-  --text-light: #9ca3af;
+  --text-light: #d1d5db; /* Aumentado o contraste para melhor visibilidade */
   --card-bg: #1f2937;
   --border-color: #374151;
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -60,8 +60,9 @@
 .dark-mode h3,
 .dark-mode h4,
 .dark-mode h5,
-.dark-mode h6 {
-  color: var(--text-color);
+.dark-mode h6,
+.dark-mode .section-header h2 {
+  color: #ffffff; /* Branco puro para títulos principais */
 }
 
 .dark-mode p,
@@ -75,12 +76,14 @@
 }
 
 .dark-mode .hero-title,
-.dark-mode .section-header h2 {
-  color: var(--text-color);
+.dark-mode .hero-subtitle {
+  color: #ffffff;
 }
 
-.dark-mode .hero-subtitle,
 .dark-mode .hero-description {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
   color: var(--text-light);
 }
 
@@ -1480,10 +1483,16 @@ img {
   --bg-color: #111827;
   --bg-light: #1f2937;
   --text-color: #f3f4f6;
-  --text-light: #9ca3af;
+  --text-light: #d1d5db; /* Aumentado o contraste para melhor visibilidade */
   --card-bg: #1f2937;
   --border-color: #374151;
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --primary-color: #0ea5e9; /* Azul turquesa para substituir o roxo */
+  --primary-hover: #38bdf8;
+  --secondary-color: #0284c7;
+  --accent-text: #38bdf8; /* Cor de destaque para textos importantes */
+  --success-color: #34d399; /* Verde mais claro para melhor visibilidade */
+  --error-color: #f87171; /* Vermelho mais claro para melhor visibilidade */
 }
 
 .dark-mode .footer-input {
@@ -3810,8 +3819,9 @@ img {
 
 /* Estilos para as seções de experiência e educação no dark mode */
 .dark-mode .experience-card-content h3,
-.dark-mode .education-aceternity-feature .aceternity-feature-title span {
-  color: var(--text-color);
+.dark-mode .education-aceternity-feature .aceternity-feature-title span,
+.dark-mode .about-text h3 {
+  color: #ffffff;
 }
 
 .dark-mode .experience-card-content h4,
@@ -3822,7 +3832,8 @@ img {
 
 .dark-mode .experience-card-content p,
 .dark-mode .experience-description,
-.dark-mode .education-description {
+.dark-mode .education-description,
+.dark-mode .about-text p {
   color: var(--text-light);
 }
 
@@ -3837,7 +3848,7 @@ img {
 }
 
 .dark-mode .aceternity-feature-title span {
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .dark-mode .aceternity-feature-description {
@@ -3864,7 +3875,7 @@ img {
 
 .dark-mode .footer-logo a,
 .dark-mode .footer-nav-section h4 {
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .dark-mode .footer-nav-section ul li a,
@@ -3880,7 +3891,7 @@ img {
 
 .dark-mode .footer-social a {
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .dark-mode .footer-social a:hover {
@@ -3888,13 +3899,18 @@ img {
   color: white;
 }
 
+.dark-mode .footer-social a i {
+  color: #ffffff;
+}
+
 .dark-mode .footer-newsletter-text {
   color: var(--text-light);
 }
 
 /* Estilos para a seção de projetos no dark mode */
-.dark-mode .project-gallery-title {
-  color: var(--text-color);
+.dark-mode .project-gallery-title,
+.dark-mode .section-header h2 {
+  color: #ffffff;
 }
 
 .dark-mode .project-gallery-description {
@@ -3906,7 +3922,7 @@ img {
 }
 
 .dark-mode .project-card-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dark-mode .project-card-link {
@@ -3919,7 +3935,7 @@ img {
 }
 
 .dark-mode .carousel-indicator {
-  background-color: rgba(99, 102, 241, 0.2);
+  background-color: rgba(14, 165, 233, 0.2);
 }
 
 .dark-mode .carousel-indicator.active {
@@ -3927,7 +3943,7 @@ img {
 }
 
 .dark-mode .gallery-control-button {
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .dark-mode .gallery-control-button:hover {
@@ -4033,4 +4049,51 @@ img {
 .dark-mode .scroll-to-top:hover {
   background-color: var(--primary-color);
   color: white;
+}
+
+/* Ajustes para ícones no modo escuro */
+.dark-mode .fa-solid,
+.dark-mode .fa-brands,
+.dark-mode .fa-regular {
+  color: inherit;
+}
+
+.dark-mode .skill-icon i,
+.dark-mode .aceternity-feature-icon i {
+  color: var(--primary-color);
+}
+
+/* Ajustes para textos específicos mencionados */
+.dark-mode .hero-description,
+.dark-mode .about-info .info-item span,
+.dark-mode .about-info .info-item p {
+  color: var(--text-light);
+}
+
+.dark-mode .about-info .info-item p a {
+  color: var(--primary-color);
+}
+
+.dark-mode .about-info .info-item p a:hover {
+  color: var(--primary-hover);
+}
+
+/* Ajustes para os ícones do footer */
+.dark-mode .footer-social a i {
+  color: #ffffff;
+}
+
+/* Ajustes para os textos da seção de habilidades */
+.dark-mode .aceternity-feature-description {
+  color: var(--text-light);
+}
+
+/* Ajustes para os textos da seção de contato */
+.dark-mode .contact-info h3,
+.dark-mode .contact-form h3 {
+  color: #ffffff;
+}
+
+.dark-mode .contact-info p {
+  color: var(--text-light);
 }
