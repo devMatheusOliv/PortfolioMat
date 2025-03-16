@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matheus Oliveira | Desenvolvedor Front-End</title>
+    <meta
+      name="description"
+      content="Portfólio de Matheus Oliveira, Desenvolvedor Front-End Jr. baseado em Mogi das Cruzes, SP."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/mail-animation.css" />
+    <link rel="stylesheet" href="css/feature-boxes.css" />
+    <link rel="stylesheet" href="css/project-gallery.css" />
+    <link rel="stylesheet" href="css/hover-features.css" />
+    <link rel="stylesheet" href="css/aceternity-features.css" />
+
+    <style>
+      .skill-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-card:hover .skill-icon {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .skill-card:hover .skill-icon i {
+        animation: pulse 1.5s infinite;
+      }
+
+      .skill-card:hover .skill-icon .fa-react {
+        animation: spin 10s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="root"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container flex-container">
+        <div class="hero-text-container">
+          <h1 class="hero-title">
+            Olá, eu sou
+            <span class="accent-text">Matheus Oliveira</span>
+          </h1>
+          <h2 class="hero-subtitle">Desenvolvedor Front-End Jr.</h2>
+          <p class="hero-description">
+            Transformando ideias em experiências digitais incríveis com código
+            limpo e design responsivo.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+            <a href="#contact" class="btn btn-outline">Contato</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="images/hero-section.svg"
+            alt="Ilustração de Desenvolvimento"
+            class="hero-profile-image"
+          />
+        </div>
+      </div>
+      <div class="scroll-down">
+        <a href="#about"><i class="fa-solid fa-chevron-down"></i></a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre Mim</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/sobremim.jpg" alt="Matheus Oliveira" />
+          </div>
+          <div class="about-text">
+            <h3>Desenvolvedor Front-End Jr. de Mogi das Cruzes, SP</h3>
+            <p>
+              Olá! Sou Matheus Oliveira, um desenvolvedor Front-End Jr.
+              apaixonado por criar interfaces web interativas e responsivas.
+              Minha jornada na área de tecnologia começou durante minha
+              experiência profissional na NEOBPO, onde desenvolvi habilidades
+              valiosas em comunicação, resolução de problemas e trabalho em
+              equipe.
+            </p>
+            <p>
+              Atualmente, estou cursando Engenharia de Software na Universidade
+              de Mogi das Cruzes, onde estou no 4º semestre. Além disso, concluí
+              o bootcamp "The Complete 2023 Web Development Bootcamp", que me
+              proporcionou conhecimentos práticos em desenvolvimento web.
+            </p>
+            <div class="about-info">
+              <div class="info-item">
+                <span>Nome:</span>
+                <p>Matheus Oliveira</p>
+              </div>
+              <div class="info-item">
+                <span>Email:</span>
+                <p>
+                  <a
+                    href="mailto:matheus.luiz0524@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >matheus.luiz0524@gmail.com</a
+                  >
+                </p>
+              </div>
+              <div class="info-item">
+                <span>Localização:</span>
+                <p>Mogi das Cruzes, SP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experiência Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="aceternity-features-grid experience-aceternity-grid">
+          <!-- Experiência 1 -->
+          <div class="aceternity-feature experience-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-headset"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Backoffice</span>
+            </div>
+            <p class="aceternity-feature-description experience-description">
+              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
+              <span class="experience-period">2022 - 2023</span><br /><br />
+              Atuei no suporte administrativo para uma das maiores empresas de
+              telecomunicações do Brasil, desenvolvendo habilidades valiosas em
+              organização, comunicação e resolução de problemas.
+            </p>
+            <ul class="experience-list">
+              <li>
+                Apoio Administrativo: Gerenciamento de tarefas administrativas,
+                incluindo preparação de relatórios
+              </li>
+              <li>
+                Demonstração de fortes habilidades organizacionais e atenção aos
+                detalhes
+              </li>
+              <li>
+                Colaboração e Comunicação: Trabalho com os departamentos de TI e
+                atendimento ao cliente
+              </li>
+              <li>
+                Contribuição em reuniões de equipe e fornecimento de feedback
+                para aprimorar o desempenho
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experiência 2 -->
+          <div class="aceternity-feature experience-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-phone-alt"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Agente de Telemarketing</span>
+            </div>
+            <p class="aceternity-feature-description experience-description">
+              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
+              <span class="experience-period">2021 - 2022</span><br /><br />
+              Trabalhei no atendimento ao cliente para uma das maiores empresas
+              de telecomunicações do Brasil, desenvolvendo habilidades
+              essenciais em comunicação e análise de feedback.
+            </p>
+            <ul class="experience-list">
+              <li>
+                Utilização de Feedback: Análise de feedback de clientes para
+                identificar tendências
+              </li>
+              <li>
+                Recomendação de mudanças acionáveis à gestão, resultando em
+                maior retenção
+              </li>
+              <li>
+                Comunicação Eficaz: Utilização de fortes habilidades de
+                comunicação
+              </li>
+              <li>Atendimento ao cliente e resolução de problemas complexos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Educação</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="aceternity-features-grid education-aceternity-grid">
+          <!-- Educação 1 -->
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-graduation-cap"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Engenharia de Software</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Universidade de Mogi das Cruzes</strong><br />
+              <span class="education-period">2023 - Presente</span><br /><br />
+              Atualmente cursando o 4º semestre, com foco em desenvolvimento web
+              e engenharia de software. Principais áreas de estudo:
+            </p>
+            <ul class="education-list">
+              <li>Algoritmos e Estruturas de Dados</li>
+              <li>Desenvolvimento Web</li>
+              <li>Banco de Dados</li>
+              <li>Engenharia de Software</li>
+            </ul>
+          </div>
+
+          <!-- Educação 2 -->
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-laptop-code"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Web Development Bootcamp</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Udemy</strong><br />
+              <span class="education-period">2024</span><br /><br />
+              Bootcamp intensivo de desenvolvimento web, abrangendo tecnologias
+              front-end e back-end. Principais tecnologias estudadas:
+            </p>
+            <ul class="education-list">
+              <li>HTML5, CSS3, JavaScript</li>
+              <li>React.js</li>
+              <li>Node.js e Express</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+
+          <!-- Educação 3 -->
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-brands fa-js"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>JavaScript Avançado</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Alura</strong><br />
+              <span class="education-period">2022</span><br /><br />
+              Curso focado em JavaScript avançado, abordando tópicos como:
+            </p>
+            <ul class="education-list">
+              <li>ES6+</li>
+              <li>Programação Assíncrona</li>
+              <li>Manipulação do DOM</li>
+              <li>Padrões de Projeto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>Minhas Habilidades</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="container">
+          <p
+            class="text-center"
+            style="
+              max-width: 800px;
+              margin: 0 auto 40px;
+              color: var(--text-light);
+            "
+          >
+            Competências que desenvolvi ao longo da minha jornada como
+            desenvolvedor front-end, combinando habilidades técnicas e
+            interpessoais para entregar soluções completas e eficientes.
+          </p>
+          <div class="aceternity-features-grid">
+            <!-- Feature 1 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>HTML5 & CSS3</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de interfaces modernas com HTML semântico e CSS
+                avançado, incluindo Flexbox, Grid e animações.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>JavaScript</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Programação com JavaScript moderno (ES6+), manipulação do DOM,
+                Promises, Async/Await e consumo de APIs.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-brands fa-react"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>React</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de aplicações com React, utilizando Hooks,
+                Context API, componentes reutilizáveis e gerenciamento de
+                estado.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-universal-access"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Acessibilidade Web</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de sites acessíveis para todos os usuários,
+                seguindo as diretrizes WCAG e melhores práticas.
+              </p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>SEO Técnico</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Implementação de práticas de otimização para mecanismos de
+                busca, melhorando a visibilidade e o ranking dos sites.
+              </p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Trabalho em Equipe</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Habilidade de colaborar efetivamente em equipes
+                multidisciplinares, compartilhando conhecimentos e buscando
+                soluções conjuntas.
+              </p>
+            </div>
+
+            <!-- Feature 7 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Resolução de Problemas</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Capacidade analítica para identificar e resolver problemas
+                complexos de forma eficiente e criativa.
+              </p>
+            </div>
+
+            <!-- Feature 8 -->
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Aprendizado Contínuo</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Compromisso com o desenvolvimento profissional constante,
+                acompanhando as novas tecnologias e tendências do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects project-gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meus Projetos</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="project-gallery-header">
+          <p class="project-gallery-description text-center">
+            Descubra como utilizo tecnologias web modernas para criar
+            experiências digitais excepcionais. Estes projetos demonstram
+            aplicações reais e casos de sucesso.
+          </p>
+          <div class="project-gallery-controls">
+            <button class="gallery-control-button gallery-prev-button" disabled>
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="gallery-control-button gallery-next-button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="project-carousel">
+          <div class="project-carousel-content">
+            <!-- Project 1 -->
+            <div class="project-carousel-item">
+              <a
+                href="https://github.com/devMatheusOliv/portfolio"
+                class="project-card"
+              >
+                <img
+                  src="images/projects/portfolio.jpg"
+                  alt="Portfolio Pessoal"
+                  class="project-card-image"
+                />
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                  <div class="project-card-title">Portfolio Pessoal</div>
+                  <div class="project-card-description">
+                    Site de portfolio pessoal desenvolvido com React, TypeScript
+                    e CSS moderno para exibir projetos.
+                  </div>
+                  <div class="project-card-link">
+                    Ver mais <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-carousel-item">
+              <a
+                href="https://github.com/devMatheusOliv/todo-app"
+                class="project-card"
+              >
+                <img
+                  src="images/projects/to-do-list-app.png"
+                  alt="Lista de Tarefas"
+                  class="project-card-image"
+                />
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                  <div class="project-card-title">Lista de Tarefas</div>
+                  <div class="project-card-description">
+                    Aplicativo de lista de tarefas com funcionalidades de
+                    adicionar, editar e marcar como concluídas.
+                  </div>
+                  <div class="project-card-link">
+                    Ver mais <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-carousel-item">
+              <a
+                href="https://devmatheus-literatour.netlify.app"
+                class="project-card"
+              >
+                <img
+                  src="images/projects/livraria.png"
+                  alt="LiteraTour - Livraria Online"
+                  class="project-card-image"
+                />
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                  <div class="project-card-title">
+                    LiteraTour - Livraria Online
+                  </div>
+                  <div class="project-card-description">
+                    Landing page moderna e responsiva para uma livraria online,
+                    com design limpo, modo claro/escuro, menu mobile interativo.
+                  </div>
+                  <div class="project-card-link">
+                    Ver mais <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-carousel-item">
+              <a href="https://github.com/devMatheusOliv" class="project-card">
+                <img
+                  src="images/projects/weather-dashboard.png"
+                  alt="Weather Dashboard"
+                  class="project-card-image"
+                />
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                  <div class="project-card-title">Weather Dashboard</div>
+                  <div class="project-card-description">
+                    Aplicação web para consulta de previsão do tempo em
+                    diferentes cidades, utilizando APIs de clima.
+                  </div>
+                  <div class="project-card-link">
+                    Ver mais <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-carousel-item">
+              <a href="https://github.com/devMatheusOliv" class="project-card">
+                <img
+                  src="images/projects/quiz-app.png"
+                  alt="Quiz App"
+                  class="project-card-image"
+                />
+                <div class="project-card-overlay"></div>
+                <div class="project-card-content">
+                  <div class="project-card-title">Quiz App</div>
+                  <div class="project-card-description">
+                    Aplicação interativa de quiz com diferentes categorias e
+                    sistema de pontuação.
+                  </div>
+                  <div class="project-card-link">
+                    Ver mais <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <button
+            class="carousel-indicator active"
+            aria-label="Go to slide 1"
+          ></button>
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 2"
+          ></button>
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 3"
+          ></button>
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 4"
+          ></button>
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 5"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Entre em Contato</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Vamos conversar!</h3>
+            <p>
+              Estou sempre aberto a novas oportunidades, colaborações ou apenas
+              para trocar ideias sobre tecnologia e desenvolvimento. Entre em
+              contato através do formulário ao lado.
+            </p>
+
+            <!-- Animação da Carta -->
+            <div class="letter-image">
+              <div class="animated-mail">
+                <div class="back-fold"></div>
+                <div class="letter">
+                  <div class="letter-border"></div>
+                  <div class="letter-title"></div>
+                  <div class="letter-context"></div>
+                  <div class="letter-context"></div>
+                  <div class="letter-stamp">
+                    <div class="letter-stamp-inner"></div>
+                  </div>
+                </div>
+                <div class="top-fold"></div>
+                <div class="body"></div>
+                <div class="left-fold"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Seu Nome"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Seu Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Assunto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Sua Mensagem"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar Mensagem
+              </button>
+            </form>
+            <div id="formStatus" class="form-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-container"></footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#home" class="scroll-to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- React Scripts -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script type="text/babel" src="js/sidebar.js"></script>
+    <script type="text/babel" src="js/footer.js"></script>
+    <script src="js/project-gallery.js"></script>
+  </body>
+</html>

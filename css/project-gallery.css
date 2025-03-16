@@ -1,0 +1,231 @@
+/* Project Gallery Styles */
+:root {
+  --primary-color: #4f46e5;
+  --primary-foreground: #ffffff;
+  --muted-foreground: #6b7280;
+  --card-background: #ffffff;
+  --card-foreground: #1f2937;
+  --border-color: #e5e7eb;
+  --accent-color: #f3f4f6;
+}
+
+.dark-mode {
+  --primary-color: #6366f1;
+  --primary-foreground: #ffffff;
+  --muted-foreground: #9ca3af;
+  --card-background: #1f2937;
+  --card-foreground: #f9fafb;
+  --border-color: #374151;
+  --accent-color: #2d3748;
+}
+
+.project-gallery-section {
+  padding: 80px 0;
+}
+
+.project-gallery-header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-gallery-title {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.project-gallery-description {
+  max-width: 800px;
+  color: var(--muted-foreground);
+  margin: 0 0 1.5rem 80px;
+}
+
+.project-gallery-description.text-center {
+  text-align: left;
+}
+
+.project-gallery-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+  margin-left: 80px;
+}
+
+.gallery-control-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gallery-control-button:hover {
+  background-color: var(--accent-color);
+}
+
+.gallery-control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 80px;
+}
+
+.project-carousel-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.project-carousel-item {
+  flex: 0 0 320px;
+  padding-left: 5px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .project-carousel-item {
+    flex: 0 0 360px;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+
+  .project-gallery-title {
+    font-size: 2.5rem;
+  }
+}
+
+.project-card {
+  position: relative;
+  height: 27rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+
+.project-card-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(79, 70, 229, 0),
+    rgba(79, 70, 229, 0.4),
+    rgba(79, 70, 229, 0.8) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.dark-mode .project-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(99, 102, 241, 0),
+    rgba(99, 102, 241, 0.4),
+    rgba(99, 102, 241, 0.8) 100%
+  );
+}
+
+.project-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  color: var(--primary-foreground);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-card-title {
+  margin-bottom: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.project-card-description {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.project-card-link {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--primary-foreground);
+}
+
+.project-card-link i {
+  margin-left: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.project-card:hover .project-card-link i {
+  transform: translateX(4px);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-left: 100px;
+}
+
+.carousel-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(79, 70, 229, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-indicator.active {
+  background-color: var(--primary-color);
+}
+
+@media (min-width: 1536px) {
+  .project-carousel-content {
+    margin-left: -80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-gallery-controls {
+    display: none;
+  }
+}

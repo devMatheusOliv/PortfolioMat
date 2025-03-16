@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/* Sidebar Styles */
+body {
+  --main-bg: #f5f4fd;
+  --item-hover: #f9f8fb;
+  --secondary-bg: #251d33;
+  --main-container-bg: #fff;
+  --container-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --text-color: #00071d;
+  --tooltip-bg: #251d33;
+}
+
+body.dark {
+  --main-bg: #00071d;
+  --item-hover: #1c2339;
+  --secondary-bg: #36415e;
+  --main-container-bg: #131c31;
+  --text-color: #fff;
+  --tooltip-bg: #251d33;
+  --container-shadow: rgba(19, 28, 49, 0.2) 0px 7px 29px 0px;
+
+  /* Tema escuro para o site */
+  --primary-color: #6c63ff;
+  --secondary-color: #131c31;
+  --accent-color: #ff6584;
+  --bg-color: #00071d;
+  --bg-light: #1c2339;
+  --card-bg: #131c31;
+  --border-color: #36415e;
+}
+
+/* Ajuste do layout para acomodar a sidebar */
+@media screen and (min-width: 992px) {
+  body {
+    padding-left: 70px; /* Espaço para a sidebar recolhida */
+    transition: padding-left 0.3s ease-in-out;
+  }
+
+  body.sidebar-expanded {
+    padding-left: 240px; /* Espaço para a sidebar expandida */
+  }
+
+  .header {
+    display: none; /* Remove a barra de navegação superior */
+  }
+}
+
+/* Sidebar Container */
+.sidebar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 70px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+.sidebar-container:hover {
+  width: 240px;
+}
+
+.sidebar-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+/* Espaçador flexível para empurrar o botão CV para o final */
+.sidebar-spacer {
+  flex-grow: 1;
+}
+
+/* Seções da Sidebar */
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-container:hover .sidebar-section-title {
+  opacity: 1;
+}
+
+/* Lista de navegação */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-listItem {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.sidebar-listItem a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar-listItem a:hover,
+.sidebar-listItem.active a {
+  color: #4f46e5;
+  background-color: #f8f9fa;
+}
+
+.sidebar-listItem.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #4f46e5;
+}
+
+.sidebar-listIcon {
+  min-width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.sidebar-listItemText {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-container:hover .sidebar-listItemText {
+  opacity: 1;
+}
+
+/* Seção de perfil */
+.sidebar-profileSection {
+  display: none; /* Ocultar a seção de perfil */
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .sidebar-container {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-container.active {
+    transform: translateX(0);
+    width: 240px;
+  }
+
+  .sidebar-container.active .sidebar-listItemText,
+  .sidebar-container.active .sidebar-section-title,
+  .sidebar-container.active .sidebar-profileSection span {
+    opacity: 1;
+  }
+}
+
+/* Ajuste do conteúdo principal */
+main {
+  margin-left: 70px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-container:hover + main {
+  margin-left: 240px;
+}
+
+@media (max-width: 992px) {
+  main {
+    margin-left: 0;
+  }
+
+  .sidebar-container.active + main {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 3px auto;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}
+
+/* Ajuste do espaçamento na parte inferior */
+.sidebar-section:last-child {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+/* Estilos para o botão de download do CV */
+.sidebar-cv-section {
+  margin-bottom: 20px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-cv-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+  width: calc(100% - 10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-container:not(:hover) .sidebar-cv-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.sidebar-cv-button span {
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-container:not(:hover) .sidebar-cv-button span {
+  opacity: 0;
+  transform: translateX(10px);
+  position: absolute;
+}
+
+.sidebar-cv-button:hover {
+  background-color: #4338ca; /* Cor mais escura no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(79, 70, 229, 0.3);
+}
+
+.sidebar-cv-button svg {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container:not(:hover) .sidebar-cv-button svg {
+  margin-right: 0;
+}
