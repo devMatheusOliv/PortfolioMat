@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/project-gallery.css" />
     <link rel="stylesheet" href="css/hover-features.css" />
     <link rel="stylesheet" href="css/aceternity-features.css" />
+    <link rel="stylesheet" href="css/theme-toggle.css" />
 
     <style>
       .skill-icon {
@@ -95,10 +96,30 @@
   </head>
   <body>
     <!-- Theme Toggle Button -->
-    <div class="theme-toggle-container">
-      <button id="theme-toggle-btn" aria-label="Toggle dark mode">
-        <i class="fa-solid fa-sun light-icon"></i>
-        <i class="fa-solid fa-moon dark-icon"></i>
+    <div
+      class="theme-toggle-container"
+      id="theme-toggle-container"
+      style="width: 64px; height: 32px; background-color: transparent"
+    >
+      <!-- O componente ThemeToggle será renderizado aqui via React -->
+      <!-- Botão alternativo caso o React não funcione -->
+      <button
+        id="fallback-theme-toggle"
+        style="
+          display: block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #18181b;
+          color: white;
+          border: 1px solid #27272a;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+        "
+      >
+        <i class="fa-solid fa-moon"></i>
       </button>
     </div>
 
@@ -793,21 +814,16 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- React Scripts -->
-    <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React e ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script type="text/babel" src="js/sidebar.js"></script>
-    <script type="text/babel" src="js/footer.js"></script>
+    <script src="js/sidebar.js" type="text/babel"></script>
+    <script src="js/footer.js" type="text/babel"></script>
     <script src="js/project-gallery.js"></script>
+    <script src="js/theme-toggle.js" type="text/babel"></script>
   </body>
 </html>

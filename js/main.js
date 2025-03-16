@@ -17,14 +17,34 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleDarkMode(true);
   }
 
-  // Adiciona evento de clique ao botão de toggle do tema
-  const themeToggleBtn = document.getElementById("theme-toggle-btn");
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", function () {
+  // Configurar o botão alternativo de tema
+  const fallbackThemeToggle = document.getElementById("fallback-theme-toggle");
+  if (fallbackThemeToggle) {
+    // Atualizar o ícone baseado no tema atual
+    const isDarkMode = document.documentElement.classList.contains("dark-mode");
+    fallbackThemeToggle.innerHTML = isDarkMode
+      ? '<i class="fa-solid fa-sun"></i>'
+      : '<i class="fa-solid fa-moon"></i>';
+
+    // Adicionar evento de clique
+    fallbackThemeToggle.addEventListener("click", function () {
       const isDarkMode =
         document.documentElement.classList.contains("dark-mode");
       toggleDarkMode(!isDarkMode);
+
+      // Atualizar o ícone
+      this.innerHTML = !isDarkMode
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
     });
+
+    // Esconder o botão alternativo após 2 segundos se o React renderizar o componente
+    setTimeout(() => {
+      const reactComponent = document.querySelector(".theme-toggle-wrapper");
+      if (reactComponent) {
+        fallbackThemeToggle.style.display = "none";
+      }
+    }, 2000);
   }
 
   // Inicializa a animação das feature boxes
