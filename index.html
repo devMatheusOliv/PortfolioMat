@@ -762,25 +762,6 @@
       <i class="fa-solid fa-arrow-up"></i>
     </a>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script src="js/main.js"></script>
-    <script type="text/babel" src="js/sidebar.js"></script>
-    <script type="text/babel" src="js/footer.js"></script>
-    <script src="js/project-gallery.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script type="module" src="js/analytics.js"></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector(".contact-form form");
@@ -871,5 +852,35 @@
         }
       });
     </script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- React Scripts -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/sidebar.js" type="text/babel"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/project-gallery.js"></script>
+    <script
+      src="js/components/hooks/use-expandable.js"
+      type="text/babel"
+    ></script>
+    <script
+      src="js/components/ui/expandable-card.js"
+      type="text/babel"
+    ></script>
+    <script src="js/project-cards.js" type="text/babel"></script>
+
+    <!-- Vercel Analytics -->
+    <script src="js/analytics.js"></script>
+
+    <!-- Vercel Speed Insights -->
+    <script src="js/speed-insights.js"></script>
+    <script src="js/components/SpeedInsights.js" type="text/babel"></script>
   </body>
 </html>

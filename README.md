@@ -20,6 +20,7 @@ This portfolio website was designed to showcase my skills, projects, and profess
 - 📬 **Contact Form**: Functional form for easy communication
 - 🎯 **Smooth User Experience**: Intuitive navigation and user-friendly interface
 - 📈 **Analytics**: Website traffic analytics with Vercel Analytics
+- ⚡ **Performance Monitoring**: Real user metrics with Vercel Speed Insights
 
 ## 🛠️ Technologies Used
 
@@ -31,6 +32,7 @@ This portfolio website was designed to showcase my skills, projects, and profess
 - Swiper.js (for sliders)
 - Formspree (for contact form)
 - Vercel Analytics (for website traffic insights)
+- Vercel Speed Insights (for performance monitoring)
 
 ## 📋 Project Structure
 
@@ -101,6 +103,25 @@ To implement Vercel Analytics in your own project:
 3. Add the component to your main React component: `<Analytics />`
 
 For non-React projects, the script is added via `/_vercel/insights/script.js`.
+
+## ⚡ Performance Monitoring
+
+This portfolio uses Vercel Speed Insights to monitor the performance and user experience of the website in real-time:
+
+- Tracks Core Web Vitals metrics (LCP, FID, CLS, TTFB)
+- Identifies performance bottlenecks
+- Provides real user metrics (RUM) data
+- Helps optimize loading and interaction times
+- Visualizes performance trends over time
+
+To implement Vercel Speed Insights in your own project:
+
+1. Install the package: `npm install @vercel/speed-insights`
+2. For Next.js projects: `import { SpeedInsights } from '@vercel/speed-insights/next'`
+3. For React projects: `import { SpeedInsights } from '@vercel/speed-insights/react'`
+4. Add the component to your main component: `<SpeedInsights />`
+
+For non-React projects, the script is added via `/_vercel/speed-insights/script.js`.
 
 ## 📞 Contact
 
