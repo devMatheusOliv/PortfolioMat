@@ -4,7 +4,7 @@
 
 A responsive and interactive portfolio website showcasing my skills and projects as a Front-end Developer.
 
-[Live Demo](https://matheuslincon.github.io/newPortfolio/) | [GitHub Repository](https://github.com/devMatheusOliv/newPortfolio)
+[Live Demo](https://portfoliomat.site/) | [GitHub Repository](https://github.com/devMatheusOliv/PortfolioMat)
 
 ## 💫 About This Project
 
@@ -56,11 +56,11 @@ This portfolio website was designed to showcase my skills, projects, and profess
 
 1. Clone the repository
    ```
-   git clone https://github.com/devMatheusOliv/newPortfolio.git
+   git clone https://github.com/devMatheusOliv/PortfolioMat.git
    ```
 2. Navigate to the project directory
    ```
-   cd newPortfolio
+   cd PortfolioMat
    ```
 3. Open the `index.html` file in your browser or use a local development server
 
