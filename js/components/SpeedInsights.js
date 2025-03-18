@@ -22,19 +22,19 @@ window.SpeedInsightsComponent = ({ children }) => {
     try {
       // Verificar se o script já foi carregado
       if (
-        !document.querySelector(
-          'script[src="/_vercel/speed-insights/script.js"]'
-        )
+        !document.querySelector('script[src*="vitals.vercel-insights.com"]')
       ) {
         // Carregar o script do Vercel Speed Insights
         const script = document.createElement("script");
         script.defer = true;
-        script.src = "/_vercel/speed-insights/script.js";
+        script.src = "https://vitals.vercel-insights.com/v1/vitals.js";
+        // ID do website (opcional, substitua pelo seu ID se tiver um)
+        script.setAttribute("data-website-id", "portfolio-matheusol");
 
         // Adicionar o script ao documento
         document.head.appendChild(script);
 
-        console.log("Vercel Speed Insights initialized");
+        console.log("Vercel Speed Insights initialized from React component");
       }
     } catch (error) {
       console.error("Failed to initialize Vercel Speed Insights:", error);
@@ -48,13 +48,13 @@ window.SpeedInsightsComponent = ({ children }) => {
 window.initSpeedInsights = function () {
   try {
     // Verificar se o script já foi carregado
-    if (
-      !document.querySelector('script[src="/_vercel/speed-insights/script.js"]')
-    ) {
+    if (!document.querySelector('script[src*="vitals.vercel-insights.com"]')) {
       // Carregar o script do Vercel Speed Insights
       const script = document.createElement("script");
       script.defer = true;
-      script.src = "/_vercel/speed-insights/script.js";
+      script.src = "https://vitals.vercel-insights.com/v1/vitals.js";
+      // ID do website (opcional, substitua pelo seu ID se tiver um)
+      script.setAttribute("data-website-id", "portfolio-matheusol");
 
       // Adicionar o script ao documento
       document.head.appendChild(script);

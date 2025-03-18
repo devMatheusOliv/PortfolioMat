@@ -14,9 +14,11 @@
 (function () {
   try {
     // Inicializar o Vercel Speed Insights
+    // Para sites não hospedados na Vercel, usamos o CDN direto
     const script = document.createElement("script");
-    script.src = "/_vercel/speed-insights/script.js";
+    script.src = "https://vitals.vercel-insights.com/v1/vitals.js";
     script.defer = true;
+    script.setAttribute("data-website-id", "portfolio-matheusol"); // Substitua pelo seu ID se tiver um
     document.head.appendChild(script);
 
     console.log("Vercel Speed Insights initialized");
@@ -28,12 +30,11 @@
 // Exportar uma função para inicializar manualmente, se necessário
 window.initSpeedInsights = function () {
   try {
-    if (
-      !document.querySelector('script[src="/_vercel/speed-insights/script.js"]')
-    ) {
+    if (!document.querySelector('script[src*="vitals.vercel-insights.com"]')) {
       const script = document.createElement("script");
-      script.src = "/_vercel/speed-insights/script.js";
+      script.src = "https://vitals.vercel-insights.com/v1/vitals.js";
       script.defer = true;
+      script.setAttribute("data-website-id", "portfolio-matheusol"); // Substitua pelo seu ID se tiver um
       document.head.appendChild(script);
 
       console.log("Vercel Speed Insights manually initialized");
