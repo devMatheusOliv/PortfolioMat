@@ -887,7 +887,28 @@
     <script src="js/analytics.js"></script>
 
     <!-- Vercel Speed Insights -->
-    <script src="js/speed-insights.js"></script>
-    <script src="js/components/SpeedInsights.js" type="text/babel"></script>
+    <!-- Em um projeto Next.js real:
+         import { SpeedInsights } from "@vercel/speed-insights/next";
+         function MyApp() {
+           return (
+             <>
+               <Component {...pageProps} />
+               <SpeedInsights />
+             </>
+           );
+         }
+    -->
+    <script src="js/vercel-speed-insights.js"></script>
+    <script>
+      // Simulando o uso do componente SpeedInsights importado
+      document.addEventListener("DOMContentLoaded", function () {
+        if (
+          window.vercelSpeedInsights &&
+          window.vercelSpeedInsights.SpeedInsights
+        ) {
+          window.vercelSpeedInsights.SpeedInsights();
+        }
+      });
+    </script>
   </body>
 </html>
