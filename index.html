@@ -887,28 +887,22 @@
     <script src="js/analytics.js"></script>
 
     <!-- Vercel Speed Insights -->
-    <!-- Em um projeto Next.js real:
-         import { SpeedInsights } from "@vercel/speed-insights/next";
-         function MyApp() {
-           return (
-             <>
-               <Component {...pageProps} />
-               <SpeedInsights />
-             </>
-           );
-         }
+    <!-- 
+      Implementação seguindo a documentação oficial:
+      https://vercel.com/docs/speed-insights/quick-start
+      
+      Em um projeto Next.js:
+      import { SpeedInsights } from "@vercel/speed-insights/next";
+      
+      function App() {
+        return (
+          <>
+            {/* Seu conteúdo */}
+            <SpeedInsights />
+          </>
+        );
+      }
     -->
-    <script src="js/vercel-speed-insights.js"></script>
-    <script>
-      // Simulando o uso do componente SpeedInsights importado
-      document.addEventListener("DOMContentLoaded", function () {
-        if (
-          window.vercelSpeedInsights &&
-          window.vercelSpeedInsights.SpeedInsights
-        ) {
-          window.vercelSpeedInsights.SpeedInsights();
-        }
-      });
-    </script>
+    <script src="js/speed-insights-component.jsx" type="text/babel"></script>
   </body>
 </html>
