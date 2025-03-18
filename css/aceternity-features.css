@@ -397,10 +397,10 @@
 .education-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0 1rem;
   position: relative;
   z-index: 10;
-  max-width: 80%;
+  max-width: 100%;
   text-align: left;
 }
 
@@ -512,6 +512,8 @@
   font-size: 0.95rem;
   line-height: 1.6;
   text-align: center;
+  padding: 0 2.5rem;
+  display: block;
 }
 
 .experience-period {
@@ -531,10 +533,10 @@
 .experience-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0 2.5rem;
   position: relative;
   z-index: 10;
-  max-width: 80%;
+  max-width: 100%;
   text-align: left;
 }
 
@@ -597,11 +599,14 @@
   .experience-description {
     font-size: 0.9rem;
     margin-bottom: 1.2rem;
+    padding: 0 1.2rem;
+    text-align: center;
   }
 
   .education-list,
   .experience-list {
-    max-width: 90%;
+    max-width: 100%;
+    margin: 0 1.2rem;
   }
 
   .education-list li,
@@ -650,6 +655,7 @@
   .education-list,
   .experience-list {
     max-width: 100%;
+    margin: 0 1rem;
   }
 
   .education-list li,
@@ -663,6 +669,14 @@
     width: 6px;
     height: 6px;
     top: 8px;
+  }
+
+  .education-description,
+  .experience-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    text-align: center;
   }
 }
 

@@ -1,88 +1,116 @@
-# Matheus Oliveira | Desenvolvedor Front-End
+# 👋 Portfolio Website | Matheus Oliveira
 
-![Prévia do Portfólio](images/portfolio-preview.png)
+![Prévia do Portfólio](images/previa.png)
 
-## 📋 Visão Geral
+A responsive and interactive portfolio website showcasing my skills and projects as a Front-end Developer.
 
-Este é meu site de portfólio pessoal que apresenta minhas habilidades, projetos e experiência profissional como Desenvolvedor Front-End. O site foi projetado para ser responsivo, interativo e visualmente atraente para apresentar efetivamente meu trabalho a potenciais empregadores e colaboradores.
+[Live Demo](https://matheuslincon.github.io/newPortfolio/) | [GitHub Repository](https://github.com/devMatheusOliv/newPortfolio)
 
-## ✨ Funcionalidades
+## 💫 About This Project
 
-- **Design Responsivo**: Layout totalmente responsivo que funciona em todos os dispositivos
-- **Interface Interativa**: Rolagem suave, animações e elementos interativos
-- **Galeria de Projetos**: Projetos filtráveis com informações detalhadas
-- **Visualização de Habilidades**: Representação visual das habilidades técnicas com indicadores de progresso
-- **Formulário de Contato**: Formulário funcional para comunicação fácil
-- **Modo Claro/Escuro**: Alternância entre temas claro e escuro (em desenvolvimento)
+This portfolio website was designed to showcase my skills, projects, and professional experience as a Front-end Developer. It features a responsive design, interactive elements, and a clean, modern aesthetic that effectively presents my work to potential employers and collaborators.
 
-## 🛠️ Tecnologias Utilizadas
+## ✨ Features
+
+- 🎨 **Responsive Design**: Fully responsive layout that works on all devices
+- 🌓 **Dark/Light Mode**: Toggle between dark and light themes
+- 🎬 **Interactive Elements**: Smooth scrolling, animations, and interactive components
+- 📱 **Project Gallery**: Showcase of projects with detailed information
+- 📊 **Skills Visualization**: Visual representation of technical skills
+- 📬 **Contact Form**: Functional form for easy communication
+- 🎯 **Smooth User Experience**: Intuitive navigation and user-friendly interface
+- 📈 **Analytics**: Website traffic analytics with Vercel Analytics
+
+## 🛠️ Technologies Used
 
 - HTML5
-- CSS3 (com animações personalizadas)
+- CSS3 (with custom animations)
 - JavaScript (ES6+)
-- React.js (para componentes específicos)
-- Font Awesome (para ícones)
-- Swiper.js (para sliders)
+- React.js (for specific components)
+- Font Awesome (for icons)
+- Swiper.js (for sliders)
+- Formspree (for contact form)
+- Vercel Analytics (for website traffic insights)
 
-## 🚀 Como Começar
+## 📋 Project Structure
 
-### Pré-requisitos
+- **Home Section**: Introduction and hero image
+- **About Section**: Personal information and background
+- **Experience Section**: Professional experience with detailed descriptions
+- **Education Section**: Academic background and certifications
+- **Skills Section**: Technical and soft skills with visual indicators
+- **Projects Section**: Gallery of featured projects with descriptions and links
+- **Contact Section**: Contact form with animated elements
+- **Footer**: Social media links and additional information
 
-- Um navegador web moderno
-- Conhecimento básico de HTML, CSS e JavaScript (se quiser modificar o código)
+## 🚀 Getting Started
 
-### Instalação
+### Prerequisites
 
-1. Clone o repositório:
+- A modern web browser
+- Basic knowledge of HTML, CSS, and JavaScript (if you want to modify the code)
 
-2. Navegue até o diretório do projeto:
+### Installation
 
-3. Abra o arquivo `index.html` no seu navegador ou use um servidor de desenvolvimento local.
+1. Clone the repository
+   ```
+   git clone https://github.com/devMatheusOliv/newPortfolio.git
+   ```
+2. Navigate to the project directory
+   ```
+   cd newPortfolio
+   ```
+3. Open the `index.html` file in your browser or use a local development server
 
-## 📂 Estrutura do Projeto
+## 🎨 Customization
 
-## 🔧 Personalização
+### Modifying Content
 
-### Modificando o Conteúdo
+1. Open `index.html` to edit the main content of the site
+2. Update personal information, projects, skills, and experience
+3. Replace images in the `images` directory with your own
 
-1. Abra `index.html` para editar o conteúdo principal do site.
-2. Atualize suas informações pessoais, projetos, habilidades e experiência.
-3. Substitua as imagens no diretório `images` pelas suas próprias.
+### Style Changes
 
-### Alterações de Estilo
+1. Modify `css/style.css` to change the general appearance
+2. Adjust colors, fonts, and layout as needed
+3. The site uses CSS variables for consistent theming
 
-1. Modifique `css/style.css` para alterar a aparência geral.
-2. Ajuste cores, fontes e layout conforme necessário.
-3. O site usa variáveis CSS para temas consistentes.
+## 🌐 Deployment
 
-## 🌐 Implantação
-
-O site pode ser implantado usando vários serviços de hospedagem:
+The site can be deployed using various hosting services:
 
 - GitHub Pages
 - Netlify
 - Vercel
-- Qualquer serviço padrão de hospedagem web
+- Any standard web hosting service
 
-## 📝 Lista de Tarefas
+## 📊 Analytics
 
-- [ ] Completar todas as descrições de projetos e adicionar capturas de tela reais
-- [ ] Implementar alternância de modo claro/escuro
-- [ ] Adicionar seção de blog
-- [ ] Conectar formulário de contato a um serviço de backend
-- [ ] Adicionar mais elementos interativos
-- [ ] Otimizar imagens e desempenho
+This website implements Vercel Analytics to gather insights about visitor traffic and website usage. The analytics implementation:
 
-## 📄 Licença
+- Respects user privacy
+- Tracks page views and basic user interactions
+- Provides insights into visitor demographics
+- Helps improve the user experience based on real usage data
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para obter detalhes.
+To implement Vercel Analytics in your own project:
 
-## 📞 Contato
+1. Install the package: `npm install @vercel/analytics`
+2. Import the Analytics component: `import { Analytics } from '@vercel/analytics/react'`
+3. Add the component to your main React component: `<Analytics />`
 
-- Email: [matheus.luiz0524@gmail.com](mailto:matheus.luiz0524@gmail.com)
-- LinkedIn: [linkedin.com/in/matheus-olive](https://www.linkedin.com/in/matheus-olive)
-- GitHub: [github.com/devMatheusOliv](https://github.com/devMatheusOliv)
+For non-React projects, the script is added via `/_vercel/insights/script.js`.
+
+## 📞 Contact
+
+If you have any questions about this project or would like to connect:
+
+- 📧 Email: [matheus.luiz0524@gmail.com](mailto:matheus.luiz0524@gmail.com)
+- 💼 LinkedIn: [Matheus Oliveira](https://www.linkedin.com/in/matheus-olive)
+- 🐱 GitHub: [devMatheusOliv](https://github.com/devMatheusOliv)
+- 📸 Instagram: [m4theus.oliv](https://www.instagram.com/m4theus.oliv/)
 
 ---
 
-⭐️ Criado por [Matheus Oliveira](https://github.com/devMatheusOliv)
+Made with 💜 by [Matheus Oliveira](https://github.com/devMatheusOliv)

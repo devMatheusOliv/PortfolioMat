@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-/* Estilos para o novo botão de alternância de tema */
 .theme-toggle-container {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 9999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 .checkbox {
@@ -49,17 +50,15 @@
   transform: translateX(24px);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .theme-toggle-container {
-    top: 15px;
-    right: 15px;
-  }
+/* Ajustes para integração com o tema existente */
+.dark-mode .checkbox-label {
+  background-color: #1f2937;
 }
 
-@media (max-width: 480px) {
-  .theme-toggle-container {
-    top: 10px;
-    right: 10px;
-  }
+.dark-mode .fa-moon {
+  color: #f1c40f;
+}
+
+.dark-mode .fa-sun {
+  color: #f39c12;
 }

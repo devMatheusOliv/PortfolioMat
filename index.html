@@ -9,10 +9,8 @@
       content="Portfólio de Matheus Oliveira, Desenvolvedor Front-End Jr. baseado em Mogi das Cruzes, SP."
     />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
 
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -21,7 +19,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,13 +26,11 @@
       rel="stylesheet"
     />
 
-    <!-- Swiper JS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
     <link rel="stylesheet" href="css/mail-animation.css" />
@@ -44,6 +39,8 @@
     <link rel="stylesheet" href="css/hover-features.css" />
     <link rel="stylesheet" href="css/aceternity-features.css" />
     <link rel="stylesheet" href="css/theme-toggle.css" />
+    <link rel="stylesheet" href="css/typography.css" />
+    <link rel="stylesheet" href="css/expandable-card.css" />
 
     <style>
       .skill-icon {
@@ -95,10 +92,9 @@
     </style>
   </head>
   <body>
-    <!-- Theme Toggle Button -->
     <div class="theme-toggle-container">
-      <input type="checkbox" class="checkbox" id="checkbox" />
-      <label for="checkbox" class="checkbox-label">
+      <input type="checkbox" class="checkbox" id="theme-checkbox" />
+      <label for="theme-checkbox" class="checkbox-label">
         <i class="fas fa-moon"></i>
         <i class="fas fa-sun"></i>
         <span class="ball"></span>
@@ -107,10 +103,8 @@
 
     <div id="root"></div>
 
-    <!-- Sidebar Overlay -->
     <div class="sidebar-overlay"></div>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="container flex-container">
         <div class="hero-text-container">
@@ -141,7 +135,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-section">
       <div class="container">
         <div class="section-header">
@@ -149,7 +142,7 @@
         </div>
         <div class="about-content">
           <div class="about-image">
-            <img src="images/sobremim.jpg" alt="Matheus Oliveira" />
+            <img src="images/SobreMim.png" alt="Matheus Oliveira" />
           </div>
           <div class="about-text">
             <h3>Desenvolvedor Front-End Jr. de Mogi das Cruzes, SP</h3>
@@ -193,7 +186,6 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="experience-section">
       <div class="container">
         <div class="section-header">
@@ -201,7 +193,42 @@
           <div class="section-line"></div>
         </div>
         <div class="aceternity-features-grid experience-aceternity-grid">
-          <!-- Experiência 1 -->
+          <div class="aceternity-feature experience-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-phone-alt"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Agente de Telemarketing</span>
+            </div>
+            <div class="experience-description">
+              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
+              <span class="experience-period">2021 - 2022</span><br /><br />
+              Trabalhei no atendimento ao cliente para uma das maiores empresas
+              de telecomunicações do Brasil, desenvolvendo habilidades
+              essenciais em comunicação e análise de feedback.
+            </div>
+            <ul class="experience-list">
+              <li>
+                Utilização de Feedback: Análise de feedback de clientes para
+                identificar tendências
+              </li>
+              <li>
+                Recomendação de mudanças acionáveis à gestão, resultando em
+                maior retenção
+              </li>
+              <li>
+                Comunicação Eficaz: Utilização de fortes habilidades de
+                comunicação
+              </li>
+              <li>Atendimento ao cliente e resolução de problemas complexos</li>
+            </ul>
+          </div>
+
           <div class="aceternity-feature experience-aceternity-feature">
             <div class="aceternity-feature-gradient-top"></div>
             <div class="aceternity-feature-icon">
@@ -214,13 +241,13 @@
               <div class="aceternity-feature-indicator"></div>
               <span>Backoffice</span>
             </div>
-            <p class="aceternity-feature-description experience-description">
+            <div class="experience-description">
               <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
               <span class="experience-period">2022 - 2023</span><br /><br />
               Atuei no suporte administrativo para uma das maiores empresas de
               telecomunicações do Brasil, desenvolvendo habilidades valiosas em
               organização, comunicação e resolução de problemas.
-            </p>
+            </div>
             <ul class="experience-list">
               <li>
                 Apoio Administrativo: Gerenciamento de tarefas administrativas,
@@ -240,48 +267,10 @@
               </li>
             </ul>
           </div>
-
-          <!-- Experiência 2 -->
-          <div class="aceternity-feature experience-aceternity-feature">
-            <div class="aceternity-feature-gradient-top"></div>
-            <div class="aceternity-feature-icon">
-              <i
-                class="fa-solid fa-phone-alt"
-                style="font-size: 28px; color: #4f46e5"
-              ></i>
-            </div>
-            <div class="aceternity-feature-title">
-              <div class="aceternity-feature-indicator"></div>
-              <span>Agente de Telemarketing</span>
-            </div>
-            <p class="aceternity-feature-description experience-description">
-              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
-              <span class="experience-period">2021 - 2022</span><br /><br />
-              Trabalhei no atendimento ao cliente para uma das maiores empresas
-              de telecomunicações do Brasil, desenvolvendo habilidades
-              essenciais em comunicação e análise de feedback.
-            </p>
-            <ul class="experience-list">
-              <li>
-                Utilização de Feedback: Análise de feedback de clientes para
-                identificar tendências
-              </li>
-              <li>
-                Recomendação de mudanças acionáveis à gestão, resultando em
-                maior retenção
-              </li>
-              <li>
-                Comunicação Eficaz: Utilização de fortes habilidades de
-                comunicação
-              </li>
-              <li>Atendimento ao cliente e resolução de problemas complexos</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="education-section">
       <div class="container">
         <div class="section-header">
@@ -289,7 +278,6 @@
           <div class="section-line"></div>
         </div>
         <div class="aceternity-features-grid education-aceternity-grid">
-          <!-- Educação 1 -->
           <div class="aceternity-feature education-aceternity-feature">
             <div class="aceternity-feature-gradient-top"></div>
             <div class="aceternity-feature-icon">
@@ -316,7 +304,6 @@
             </ul>
           </div>
 
-          <!-- Educação 2 -->
           <div class="aceternity-feature education-aceternity-feature">
             <div class="aceternity-feature-gradient-top"></div>
             <div class="aceternity-feature-icon">
@@ -343,7 +330,6 @@
             </ul>
           </div>
 
-          <!-- Educação 3 -->
           <div class="aceternity-feature education-aceternity-feature">
             <div class="aceternity-feature-gradient-top"></div>
             <div class="aceternity-feature-icon">
@@ -372,7 +358,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
       <div class="container">
         <div class="section-header">
@@ -394,7 +379,6 @@
             interpessoais para entregar soluções completas e eficientes.
           </p>
           <div class="aceternity-features-grid">
-            <!-- Feature 1 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-top"></div>
               <div class="aceternity-feature-icon">
@@ -410,7 +394,6 @@
               </p>
             </div>
 
-            <!-- Feature 2 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-top"></div>
               <div class="aceternity-feature-icon">
@@ -426,7 +409,6 @@
               </p>
             </div>
 
-            <!-- Feature 3 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-top"></div>
               <div class="aceternity-feature-icon">
@@ -443,7 +425,6 @@
               </p>
             </div>
 
-            <!-- Feature 4 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-top"></div>
               <div class="aceternity-feature-icon">
@@ -459,7 +440,6 @@
               </p>
             </div>
 
-            <!-- Feature 5 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-bottom"></div>
               <div class="aceternity-feature-icon">
@@ -475,7 +455,6 @@
               </p>
             </div>
 
-            <!-- Feature 6 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-bottom"></div>
               <div class="aceternity-feature-icon">
@@ -492,7 +471,6 @@
               </p>
             </div>
 
-            <!-- Feature 7 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-bottom"></div>
               <div class="aceternity-feature-icon">
@@ -508,7 +486,6 @@
               </p>
             </div>
 
-            <!-- Feature 8 -->
             <div class="aceternity-feature">
               <div class="aceternity-feature-gradient-bottom"></div>
               <div class="aceternity-feature-icon">
@@ -528,7 +505,6 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects project-gallery-section">
       <div class="container">
         <div class="section-header">
@@ -542,167 +518,160 @@
             experiências digitais excepcionais. Estes projetos demonstram
             aplicações reais e casos de sucesso.
           </p>
-          <div class="project-gallery-controls">
-            <button class="gallery-control-button gallery-prev-button" disabled>
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button class="gallery-control-button gallery-next-button">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
         </div>
 
-        <div class="project-carousel">
-          <div class="project-carousel-content">
-            <!-- Project 1 -->
-            <div class="project-carousel-item">
-              <a
-                href="https://github.com/devMatheusOliv/portfolio"
-                class="project-card"
-              >
-                <img
-                  src="images/projects/portfolio.jpg"
-                  alt="Portfolio Pessoal"
-                  class="project-card-image"
-                />
-                <div class="project-card-overlay"></div>
-                <div class="project-card-content">
-                  <div class="project-card-title">Portfolio Pessoal</div>
-                  <div class="project-card-description">
-                    Site de portfolio pessoal desenvolvido com React, TypeScript
-                    e CSS moderno para exibir projetos.
-                  </div>
-                  <div class="project-card-link">
-                    Ver mais <i class="fa-solid fa-arrow-right"></i>
-                  </div>
+        <div class="projects-grid">
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/social-media-app"
+              class="project-card"
+            >
+              <img
+                src="images/projects/social-app.png"
+                alt="Social Media App"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Social Media App</div>
+                <div class="project-card-description">
+                  Aplicação moderna de mídia social com Next.js, React e
+                  Tailwind CSS, permitindo conexões, compartilhamento de
+                  conteúdo e interações entre usuários.
                 </div>
-              </a>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-carousel-item">
-              <a
-                href="https://github.com/devMatheusOliv/todo-app"
-                class="project-card"
-              >
-                <img
-                  src="images/projects/to-do-list-app.png"
-                  alt="Lista de Tarefas"
-                  class="project-card-image"
-                />
-                <div class="project-card-overlay"></div>
-                <div class="project-card-content">
-                  <div class="project-card-title">Lista de Tarefas</div>
-                  <div class="project-card-description">
-                    Aplicativo de lista de tarefas com funcionalidades de
-                    adicionar, editar e marcar como concluídas.
-                  </div>
-                  <div class="project-card-link">
-                    Ver mais <i class="fa-solid fa-arrow-right"></i>
-                  </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
                 </div>
-              </a>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-carousel-item">
-              <a
-                href="https://devmatheus-literatour.netlify.app"
-                class="project-card"
-              >
-                <img
-                  src="images/projects/livraria.png"
-                  alt="LiteraTour - Livraria Online"
-                  class="project-card-image"
-                />
-                <div class="project-card-overlay"></div>
-                <div class="project-card-content">
-                  <div class="project-card-title">
-                    LiteraTour - Livraria Online
-                  </div>
-                  <div class="project-card-description">
-                    Landing page moderna e responsiva para uma livraria online,
-                    com design limpo, modo claro/escuro, menu mobile interativo.
-                  </div>
-                  <div class="project-card-link">
-                    Ver mais <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-carousel-item">
-              <a href="https://github.com/devMatheusOliv" class="project-card">
-                <img
-                  src="images/projects/weather-dashboard.png"
-                  alt="Weather Dashboard"
-                  class="project-card-image"
-                />
-                <div class="project-card-overlay"></div>
-                <div class="project-card-content">
-                  <div class="project-card-title">Weather Dashboard</div>
-                  <div class="project-card-description">
-                    Aplicação web para consulta de previsão do tempo em
-                    diferentes cidades, utilizando APIs de clima.
-                  </div>
-                  <div class="project-card-link">
-                    Ver mais <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-carousel-item">
-              <a href="https://github.com/devMatheusOliv" class="project-card">
-                <img
-                  src="images/projects/quiz-app.png"
-                  alt="Quiz App"
-                  class="project-card-image"
-                />
-                <div class="project-card-overlay"></div>
-                <div class="project-card-content">
-                  <div class="project-card-title">Quiz App</div>
-                  <div class="project-card-description">
-                    Aplicação interativa de quiz com diferentes categorias e
-                    sistema de pontuação.
-                  </div>
-                  <div class="project-card-link">
-                    Ver mais <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
-        </div>
 
-        <div class="carousel-indicators">
-          <button
-            class="carousel-indicator active"
-            aria-label="Go to slide 1"
-          ></button>
-          <button
-            class="carousel-indicator"
-            aria-label="Go to slide 2"
-          ></button>
-          <button
-            class="carousel-indicator"
-            aria-label="Go to slide 3"
-          ></button>
-          <button
-            class="carousel-indicator"
-            aria-label="Go to slide 4"
-          ></button>
-          <button
-            class="carousel-indicator"
-            aria-label="Go to slide 5"
-          ></button>
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/landing-page"
+              class="project-card"
+            >
+              <img
+                src="images/projects/livraria.png"
+                alt="LiteraTour - Livraria Online"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">
+                  LiteraTour - Livraria Online
+                </div>
+                <div class="project-card-description">
+                  Landing page moderna e responsiva para uma livraria online,
+                  com design limpo, modo claro/escuro, menu mobile interativo.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/weather-dashboard"
+              class="project-card"
+            >
+              <img
+                src="images/projects/weather-dashboard.png"
+                alt="Weather Dashboard"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Weather Dashboard</div>
+                <div class="project-card-description">
+                  Aplicação web para consulta de previsão do tempo em diferentes
+                  cidades, utilizando APIs de clima.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/journal-web"
+              class="project-card"
+            >
+              <img
+                src="images/projects/journal-web.png"
+                alt="Journal Web"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Journal Web</div>
+                <div class="project-card-description">
+                  Aplicativo de diário digital com interface elegante,
+                  permitindo registrar pensamentos, adicionar tags e visualizar
+                  estatísticas de uso.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/Calculator"
+              class="project-card"
+            >
+              <img
+                src="images/projects/calculadora-cientifica.png"
+                alt="Calculadora Científica"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Calculadora Científica</div>
+                <div class="project-card-description">
+                  Calculadora científica com funções avançadas, histórico de
+                  cálculos e interface intuitiva.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/movie-catalog"
+              class="project-card"
+            >
+              <img
+                src="images/projects/movie-catalog.png"
+                alt="Catálogo de Filmes"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Catálogo de Filmes</div>
+                <div class="project-card-description">
+                  Aplicação web para explorar filmes e séries, com informações
+                  detalhadas, avaliações e recomendações personalizadas.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-header">
@@ -718,7 +687,6 @@
               contato através do formulário ao lado.
             </p>
 
-            <!-- Animação da Carta -->
             <div class="letter-image">
               <div class="animated-mail">
                 <div class="back-fold"></div>
@@ -739,11 +707,10 @@
             </div>
           </div>
           <div class="contact-form">
-            <form id="contactForm">
+            <form action="https://formspree.io/f/xdkaqder" method="POST">
               <div class="form-group">
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   placeholder="Seu Nome"
                   required
@@ -752,7 +719,6 @@
               <div class="form-group">
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   placeholder="Seu Email"
                   required
@@ -761,7 +727,6 @@
               <div class="form-group">
                 <input
                   type="text"
-                  id="subject"
                   name="subject"
                   placeholder="Assunto"
                   required
@@ -769,12 +734,18 @@
               </div>
               <div class="form-group">
                 <textarea
-                  id="message"
                   name="message"
                   placeholder="Sua Mensagem"
                   required
                 ></textarea>
               </div>
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nova mensagem do portfólio"
+              />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_format" value="json" />
               <button type="submit" class="btn btn-primary">
                 Enviar Mensagem
               </button>
@@ -785,22 +756,120 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer id="footer-container"></footer>
 
-    <!-- Scroll to Top Button -->
     <a href="#home" class="scroll-to-top">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
 
-    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- JavaScript -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script src="js/main.js"></script>
-    <script src="js/sidebar.js"></script>
-    <script src="js/footer.js"></script>
+    <script type="text/babel" src="js/sidebar.js"></script>
+    <script type="text/babel" src="js/footer.js"></script>
     <script src="js/project-gallery.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form form");
+        const formStatus = document.getElementById("formStatus");
+        const letterImage = document.querySelector(".letter-image");
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("submitted")) {
+          formStatus.innerHTML =
+            '<p class="success">Mensagem enviada com sucesso! Entrarei em contato em breve.</p>';
+          formStatus.className = "form-status success";
+          formStatus.style.display = "block";
+
+          if (form) {
+            form.reset();
+          }
+
+          if (letterImage) {
+            letterImage.classList.add("active");
+          }
+
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+
+          if (history.pushState) {
+            const newurl =
+              window.location.protocol +
+              "//" +
+              window.location.host +
+              window.location.pathname;
+            window.history.pushState({ path: newurl }, "", newurl);
+          }
+        }
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (letterImage) {
+              letterImage.classList.add("sending");
+            }
+
+            formStatus.innerHTML =
+              '<p class="sending">Enviando mensagem...</p>';
+            formStatus.className = "form-status sending";
+            formStatus.style.display = "block";
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: form.method,
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                }
+                throw new Error("Erro no envio do formulário");
+              })
+              .then((data) => {
+                formStatus.innerHTML =
+                  '<p class="success">Mensagem enviada com sucesso! Entrarei em contato em breve.</p>';
+                formStatus.className = "form-status success";
+
+                form.reset();
+
+                if (letterImage) {
+                  letterImage.classList.remove("sending");
+                  letterImage.classList.add("active");
+                }
+              })
+              .catch((error) => {
+                formStatus.innerHTML =
+                  '<p class="error">Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.</p>';
+                formStatus.className = "form-status error";
+
+                if (letterImage) {
+                  letterImage.classList.remove("sending");
+                }
+
+                console.error("Erro:", error);
+              });
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1225,23 +1225,54 @@ img {
   transition: all 0.3s ease;
 }
 
+/* Estilos para as mensagens de status do formulário */
 .form-status {
-  padding: 10px 15px;
-  margin-top: 15px;
-  border-radius: 10px; /* Mensagens com cantos mais arredondados */
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
   display: none;
 }
 
+.form-status.sending {
+  display: block;
+  background-color: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
 .form-status.success {
-  background-color: rgba(46, 213, 115, 0.15);
-  color: #2ed573;
-  border: 1px solid rgba(46, 213, 115, 0.3);
+  display: block;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .form-status.error {
-  background-color: rgba(255, 71, 87, 0.15);
-  color: #ff4757;
-  border: 1px solid rgba(255, 71, 87, 0.3);
+  display: block;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.dark-mode .form-status.sending {
+  background-color: rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.dark-mode .form-status.success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dark-mode .form-status.error {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 /* ===== FOOTER ===== */
@@ -4172,4 +4203,16 @@ img {
 
 .dark-mode .contact-info p {
   color: var(--text-light);
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.dark-mode .form-note {
+  color: #9ca3af;
 }

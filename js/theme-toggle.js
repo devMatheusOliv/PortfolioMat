@@ -1,29 +1,24 @@
-// Função para alternar entre modo claro e escuro
-function toggleDarkMode(isDark) {
-  if (isDark) {
-    document.documentElement.classList.add("dark-mode");
-    document.body.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark-mode");
-    document.body.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }
-}
-
-// Inicializa o tema quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", function () {
-  const checkbox = document.getElementById("checkbox");
+  const checkbox = document.getElementById("theme-checkbox");
+  const html = document.documentElement;
 
-  // Verifica se há preferência de tema salva
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  // Verificar se há uma preferência salva no localStorage
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+  // Aplicar o modo escuro se estiver salvo como preferência
+  if (isDarkMode) {
+    html.classList.add("dark-mode");
     checkbox.checked = true;
-    toggleDarkMode(true);
   }
 
-  // Adiciona o evento de mudança ao checkbox
+  // Alternar entre os modos quando o checkbox for alterado
   checkbox.addEventListener("change", () => {
-    toggleDarkMode(checkbox.checked);
+    if (checkbox.checked) {
+      html.classList.add("dark-mode");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      html.classList.remove("dark-mode");
+      localStorage.setItem("darkMode", "false");
+    }
   });
 });

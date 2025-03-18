@@ -1,51 +1,8 @@
-// Função para alternar entre modo claro e escuro
-function toggleDarkMode(isDark) {
-  if (isDark) {
-    document.documentElement.classList.add("dark-mode");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark-mode");
-    localStorage.setItem("theme", "light");
-  }
-}
+// Função para alternar entre modo claro e escuro - agora gerenciado por theme-toggle.js
 
 // Inicializa as animações quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", function () {
-  // Verifica se há preferência de tema salva
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    toggleDarkMode(true);
-  }
-
-  // Configurar o botão alternativo de tema
-  const fallbackThemeToggle = document.getElementById("fallback-theme-toggle");
-  if (fallbackThemeToggle) {
-    // Atualizar o ícone baseado no tema atual
-    const isDarkMode = document.documentElement.classList.contains("dark-mode");
-    fallbackThemeToggle.innerHTML = isDarkMode
-      ? '<i class="fa-solid fa-sun"></i>'
-      : '<i class="fa-solid fa-moon"></i>';
-
-    // Adicionar evento de clique
-    fallbackThemeToggle.addEventListener("click", function () {
-      const isDarkMode =
-        document.documentElement.classList.contains("dark-mode");
-      toggleDarkMode(!isDarkMode);
-
-      // Atualizar o ícone
-      this.innerHTML = !isDarkMode
-        ? '<i class="fa-solid fa-sun"></i>'
-        : '<i class="fa-solid fa-moon"></i>';
-    });
-
-    // Esconder o botão alternativo após 2 segundos se o React renderizar o componente
-    setTimeout(() => {
-      const reactComponent = document.querySelector(".theme-toggle-wrapper");
-      if (reactComponent) {
-        fallbackThemeToggle.style.display = "none";
-      }
-    }, 2000);
-  }
+  // Verifica se há preferência de tema salva - agora gerenciado por theme-toggle.js
 
   // Inicializa a animação das feature boxes
   initFeatureBoxes();

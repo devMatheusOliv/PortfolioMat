@@ -285,8 +285,8 @@ const Sidebar = () => {
           <h3 className="sidebar-section-title">DOWNLOAD</h3>
           <div className="sidebar-cv-button">
             <a
-              href="images/CV-english.pdf"
-              download
+              href="images/Matheus_Oliveira_CV.pdf"
+              download="Matheus_Oliveira_CV.pdf"
               className="sidebar-cv-link"
               onClick={closeSidebarOnMobile}
             >
@@ -425,16 +425,7 @@ const MobileNavbar = () => {
 
 // Footer Component
 function Footer() {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
   const currentYear = new Date().getFullYear();
-
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark-mode");
-    } else {
-      document.documentElement.classList.remove("dark-mode");
-    }
-  }, [isDarkMode]);
 
   return (
     <footer className="footer">
@@ -522,7 +513,7 @@ function Footer() {
               <i className="fa-solid fa-envelope"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/m4theus.oliv/"
               target="_blank"
               rel="noopener noreferrer"
               title="Instagram"

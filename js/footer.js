@@ -60,7 +60,10 @@ function Footer() {
                   <a href="mailto:matheus.luiz0524@gmail.com">Email</a>
                 </li>
                 <li>
-                  <a href="images/CV-english.pdf" download>
+                  <a
+                    href="images/Matheus_Oliveira_CV.pdf"
+                    download="Matheus_Oliveira_CV.pdf"
+                  >
                     Download CV
                   </a>
                 </li>
@@ -123,7 +126,7 @@ function Footer() {
               <i className="fa-solid fa-envelope"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/m4theus.oliv/"
               target="_blank"
               rel="noopener noreferrer"
               title="Instagram"
@@ -153,5 +156,26 @@ function Footer() {
   );
 }
 
-// Renderizar o componente Footer
-ReactDOM.render(<Footer />, document.getElementById("footer-container"));
+// Renderizar o componente Footer com AnalyticsProvider
+// Carregar o componente AnalyticsProvider
+const analyticScript = document.createElement("script");
+analyticScript.src = "js/components/AnalyticsProvider.js";
+analyticScript.type = "text/babel";
+document.head.appendChild(analyticScript);
+
+// Aguardar o carregamento do script AnalyticsProvider
+analyticScript.onload = () => {
+  ReactDOM.render(
+    <AnalyticsProvider>
+      <Footer />
+    </AnalyticsProvider>,
+    document.getElementById("footer-container")
+  );
+};
+
+// Fallback caso o script não carregue a tempo
+setTimeout(() => {
+  if (!window.AnalyticsProvider) {
+    ReactDOM.render(<Footer />, document.getElementById("footer-container"));
+  }
+}, 1000);
