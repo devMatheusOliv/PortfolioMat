@@ -886,23 +886,19 @@
     <!-- Vercel Analytics -->
     <script src="js/analytics.js"></script>
 
-    <!-- Vercel Speed Insights -->
+    <!-- Vercel Speed Insights - implementação oficial -->
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- Comentado: implementação antiga do Speed Insights -->
     <!-- 
-      Implementação seguindo a documentação oficial:
-      https://vercel.com/docs/speed-insights/quick-start
-      
-      Em um projeto Next.js:
-      import { SpeedInsights } from "@vercel/speed-insights/next";
-      
-      function App() {
-        return (
-          <>
-            {/* Seu conteúdo */}
-            <SpeedInsights />
-          </>
-        );
-      }
-    -->
     <script src="js/speed-insights-component.jsx" type="text/babel"></script>
+    -->
   </body>
 </html>
