@@ -9,6 +9,8 @@ body {
   --container-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --text-color: #00071d;
   --tooltip-bg: #251d33;
+  --transition-speed: 0.4s;
+  --transition-easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.dark {
@@ -34,7 +36,7 @@ body.dark {
 @media screen and (min-width: 992px) {
   body {
     padding-left: 90px; /* Espaço para a sidebar recolhida (aumentado) */
-    transition: padding-left 0.3s ease-in-out;
+    transition: padding-left var(--transition-speed) var(--transition-easing);
   }
 
   body.sidebar-expanded {
@@ -60,7 +62,11 @@ body.dark {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05),
     0 20px 40px rgba(79, 70, 229, 0.08);
   z-index: 1000;
-  transition: width 0.3s ease, left 0.3s ease, box-shadow 0.3s ease;
+  transition: width var(--transition-speed) var(--transition-easing),
+    left var(--transition-speed) var(--transition-easing),
+    box-shadow var(--transition-speed) var(--transition-easing),
+    transform 0.2s ease;
+  will-change: width, transform;
 }
 
 .dark-mode .sidebar-container {
@@ -74,6 +80,7 @@ body.dark {
   left: 10px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.06),
     0 25px 50px rgba(79, 70, 229, 0.1);
+  transform: translateZ(0);
 }
 
 .dark-mode .sidebar-container:hover {
@@ -97,6 +104,7 @@ body.dark {
 /* Seções da Sidebar */
 .sidebar-section {
   margin-bottom: 20px;
+  transition: opacity 0.2s var(--transition-easing);
 }
 
 .sidebar-section-title {
@@ -109,11 +117,14 @@ body.dark {
   margin-bottom: 10px;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-speed) var(--transition-easing),
+    transform 0.3s var(--transition-easing);
+  transform: translateX(-10px);
 }
 
 .sidebar-container:hover .sidebar-section-title {
   opacity: 1;
+  transform: translateX(0);
 }
 
 /* Lista de navegação */
@@ -134,10 +145,12 @@ body.dark {
   padding: 12px 16px;
   color: #333333;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s var(--transition-easing);
   white-space: nowrap;
   border-radius: 10px;
   margin: 0 8px;
+  position: relative;
+  overflow: hidden;
 }
 
 .dark-mode .sidebar-listItem a {
@@ -147,6 +160,7 @@ body.dark {
 .sidebar-listItem a:hover {
   color: #4f46e5;
   background-color: rgba(79, 70, 229, 0.05);
+  transform: translateX(2px);
 }
 
 .dark-mode .sidebar-listItem a:hover {
@@ -163,6 +177,8 @@ body.dark {
   width: 4px;
   background-color: #4f46e5;
   border-radius: 0 4px 4px 0;
+  transition: transform 0.3s var(--transition-easing);
+  transform-origin: left;
 }
 
 .dark-mode .sidebar-listItem.active::before {
@@ -173,15 +189,23 @@ body.dark {
   min-width: 24px;
   height: 24px;
   margin-right: 14px;
+  transition: transform 0.3s var(--transition-easing);
+}
+
+.sidebar-listItem a:hover .sidebar-listIcon {
+  transform: scale(1.1);
 }
 
 .sidebar-listItemText {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-speed) var(--transition-easing),
+    transform 0.3s var(--transition-easing);
+  transform: translateX(-10px);
 }
 
 .sidebar-container:hover .sidebar-listItemText {
   opacity: 1;
+  transform: translateX(0);
 }
 
 /* Seção de perfil */
@@ -199,7 +223,8 @@ body.dark {
     border-radius: 0;
     border-right: 1px solid #e0e0e0;
     z-index: 1002;
-    transition: left 0.3s ease;
+    transition: left var(--transition-speed) var(--transition-easing),
+      width var(--transition-speed) var(--transition-easing);
   }
 
   .sidebar-container.active {
@@ -213,6 +238,7 @@ body.dark {
   .sidebar-container.active .sidebar-section-title,
   .sidebar-container.active .sidebar-profileSection span {
     opacity: 1;
+    transform: translateX(0);
   }
 
   .sidebar-container.active .sidebar-cv-link {
@@ -229,6 +255,7 @@ body.dark {
   .sidebar-container.active .sidebar-cv-text {
     display: block;
     opacity: 1;
+    transform: translateX(0);
   }
 
   .dark-mode .sidebar-container {
@@ -243,7 +270,8 @@ body.dark {
 /* Ajuste do conteúdo principal */
 main {
   margin-left: 90px; /* Aumentado para acomodar a sidebar maior */
-  transition: margin-left 0.3s ease;
+  transition: margin-left var(--transition-speed) var(--transition-easing);
+  will-change: margin-left;
 }
 
 .sidebar-container:hover + main {
@@ -281,7 +309,8 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1001;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-speed) var(--transition-easing);
+  backdrop-filter: blur(3px);
 }
 
 .sidebar-overlay.active {
@@ -300,6 +329,7 @@ main {
   .sidebar-listItem a:active {
     color: #4f46e5;
     background-color: rgba(79, 70, 229, 0.05);
+    transform: translateX(3px);
   }
 
   .dark-mode .sidebar-listItem a:active {
@@ -311,7 +341,7 @@ main {
 .sidebar-cv-section {
   margin-bottom: 15px;
   padding: 0 14px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) var(--transition-easing);
 }
 
 .sidebar-cv-button {
@@ -331,42 +361,72 @@ main {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.3s var(--transition-easing);
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .sidebar-cv-link:hover {
   background-color: #4338ca;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.sidebar-cv-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.sidebar-cv-link:hover:after {
+  transform: translateX(100%);
 }
 
 .dark-mode .sidebar-cv-link {
   background-color: #0ea5e9;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.2);
 }
 
 .dark-mode .sidebar-cv-link:hover {
   background-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
 .sidebar-cv-icon {
   min-width: 24px;
   height: 24px;
   margin-right: 0;
-  transition: margin-right 0.3s ease;
+  transition: margin-right var(--transition-speed) var(--transition-easing),
+    transform 0.3s var(--transition-easing);
 }
 
 .sidebar-container:hover .sidebar-cv-icon {
   margin-right: 14px;
 }
 
+.sidebar-cv-link:hover .sidebar-cv-icon {
+  transform: translateY(-1px);
+}
+
 .sidebar-cv-text {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-speed) var(--transition-easing),
+    transform 0.3s var(--transition-easing);
+  transform: translateX(-10px);
 }
 
 .sidebar-container:hover .sidebar-cv-text {
   display: block;
   opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 576px) {
@@ -418,7 +478,7 @@ main {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s var(--transition-easing);
 }
 
 .dark-mode .mobile-navbar {
@@ -456,7 +516,7 @@ main {
   color: #333333;
   text-decoration: none;
   font-size: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s var(--transition-easing);
   padding: 8px 0;
   background: none;
   border: none;
@@ -479,11 +539,18 @@ main {
 .mobile-navbar-icon {
   font-size: 20px;
   margin-bottom: 4px;
+  transition: transform 0.2s var(--transition-easing);
+}
+
+.mobile-navbar-link:hover .mobile-navbar-icon,
+.mobile-navbar-link.active .mobile-navbar-icon {
+  transform: translateY(-2px);
 }
 
 .mobile-navbar-text {
   font-size: 10px;
   font-weight: 500;
+  transition: transform 0.2s var(--transition-easing);
 }
 
 /* Mostrar a navbar móvel apenas em dispositivos móveis */
@@ -546,4 +613,21 @@ main {
 .dark-mode .sidebar-listItem.active a {
   color: #0ea5e9;
   font-weight: 500;
+}
+
+/* Adiciona um efeito sutil de pulsação à marca ativa na sidebar */
+@keyframes pulseBorder {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.sidebar-listItem.active::before {
+  animation: pulseBorder 2s infinite ease-in-out;
 }
