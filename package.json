@@ -8,6 +8,10 @@
     "type": "git",
     "url": "https://github.com/devMatheusOliv/PortfolioMat"
   },
+  "scripts": {
+    "dev": "npx serve",
+    "build": "echo 'No build step required for static HTML'"
+  },
   "author": "Matheus Oliveira <matheus.luiz0524@gmail.com>",
   "license": "MIT",
   "dependencies": {
