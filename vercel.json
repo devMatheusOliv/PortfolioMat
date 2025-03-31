@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "npm run vercel-build",
-  "devCommand": "next dev",
-  "outputDirectory": ".vercel/output/static",
-  "framework": "nextjs"
-}
