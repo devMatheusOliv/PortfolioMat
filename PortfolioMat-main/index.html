@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matheus Oliveira | Desenvolvedor Front-End</title>
+    <meta
+      name="description"
+      content="Portfólio de Matheus Oliveira, Desenvolvedor Front-End Jr. baseado em Mogi das Cruzes, SP."
+    />
+
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/mail-animation.css" />
+    <link rel="stylesheet" href="assets/css/feature-boxes.css" />
+    <link rel="stylesheet" href="assets/css/project-gallery.css" />
+    <link rel="stylesheet" href="assets/css/hover-features.css" />
+    <link rel="stylesheet" href="assets/css/aceternity-features.css" />
+    <link rel="stylesheet" href="assets/css/theme-toggle.css" />
+    <link rel="stylesheet" href="assets/css/typography.css" />
+    <link rel="stylesheet" href="assets/css/expandable-card.css" />
+
+    <style>
+      .skill-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-card:hover .skill-icon {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .skill-card:hover .skill-icon i {
+        animation: pulse 1.5s infinite;
+      }
+
+      .skill-card:hover .skill-icon .fa-react {
+        animation: spin 10s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="theme-toggle-container">
+      <label class="theme-switch">
+        <input
+          type="checkbox"
+          class="theme-switch__checkbox"
+          id="theme-checkbox"
+        />
+        <div class="theme-switch__container">
+          <div class="theme-switch__clouds"></div>
+          <div class="theme-switch__stars-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 144 55"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688ZM31 23.3545C32.1114 23.2995 33.0551 22.8503 33.8313 22.0069C34.6075 21.1635 34.9956 20.1642 34.9956 19C34.9956 20.1642 35.3837 21.1635 36.1599 22.0069C36.9361 22.8503 37.8798 23.2903 39 23.3545C38.2679 23.3911 37.5976 23.602 36.9802 24.0053C36.3716 24.3995 35.8864 24.9312 35.5248 25.5913C35.172 26.2513 34.9956 26.9572 34.9956 27.7273C34.9956 26.563 34.6075 25.5546 33.8313 24.7112C33.0551 23.8587 32.1114 23.4095 31 23.3545ZM0 36.3545C1.11136 36.2995 2.05513 35.8503 2.83131 35.0069C3.6075 34.1635 3.99559 33.1642 3.99559 32C3.99559 33.1642 4.38368 34.1635 5.15987 35.0069C5.93605 35.8503 6.87982 36.2903 8 36.3545C7.26792 36.3911 6.59757 36.602 5.98015 37.0053C5.37155 37.3995 4.88644 37.9312 4.52481 38.5913C4.172 39.2513 3.99559 39.9572 3.99559 40.7273C3.99559 39.563 3.6075 38.5546 2.83131 37.7112C2.05513 36.8587 1.11136 36.4095 0 36.3545ZM56.8313 24.0069C56.0551 24.8503 55.1114 25.2995 54 25.3545C55.1114 25.4095 56.0551 25.8587 56.8313 26.7112C57.6075 27.5546 57.9956 28.563 57.9956 29.7273C57.9956 28.9572 58.172 28.2513 58.5248 27.5913C58.8864 26.9312 59.3716 26.3995 59.9802 26.0053C60.5976 25.602 61.2679 25.3911 62 25.3545C60.8798 25.2903 59.9361 24.8503 59.1599 24.0069C58.3837 23.1635 57.9956 22.1642 57.9956 21C57.9956 22.1642 57.6075 23.1635 56.8313 24.0069ZM81 25.3545C82.1114 25.2995 83.0551 24.8503 83.8313 24.0069C84.6075 23.1635 84.9956 22.1642 84.9956 21C84.9956 22.1642 85.3837 23.1635 86.1599 24.0069C86.9361 24.8503 87.8798 25.2903 89 25.3545C88.2679 25.3911 87.5976 25.602 86.9802 26.0053C86.3716 26.3995 85.8864 26.9312 85.5248 27.5913C85.172 28.2513 84.9956 28.9572 84.9956 29.7273C84.9956 28.563 84.6075 27.5546 83.8313 26.7112C83.0551 25.8587 82.1114 25.4095 81 25.3545ZM136 36.3545C137.111 36.2995 138.055 35.8503 138.831 35.0069C139.607 34.1635 139.996 33.1642 139.996 32C139.996 33.1642 140.384 34.1635 141.16 35.0069C141.936 35.8503 142.88 36.2903 144 36.3545C143.268 36.3911 142.598 36.602 141.98 37.0053C141.372 37.3995 140.886 37.9312 140.525 38.5913C140.172 39.2513 139.996 39.9572 139.996 40.7273C139.996 39.563 139.607 38.5546 138.831 37.7112C138.055 36.8587 137.111 36.4095 136 36.3545ZM101.831 49.0069C101.055 49.8503 100.111 50.2995 99 50.3545C100.111 50.4095 101.055 50.8587 101.831 51.7112C102.607 52.5546 102.996 53.563 102.996 54.7273C102.996 53.9572 103.172 53.2513 103.525 52.5913C103.886 51.9312 104.372 51.3995 104.98 51.0053C105.598 50.602 106.268 50.3911 107 50.3545C105.88 50.2903 104.936 49.8503 104.16 49.0069C103.384 48.1635 102.996 47.1642 102.996 46C102.996 47.1642 102.607 48.1635 101.831 49.0069Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <div class="theme-switch__circle-container">
+            <div class="theme-switch__sun-moon-container">
+              <div class="theme-switch__moon">
+                <div class="theme-switch__spot"></div>
+                <div class="theme-switch__spot"></div>
+                <div class="theme-switch__spot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div id="root"></div>
+
+    <div class="sidebar-overlay"></div>
+
+    <section id="home" class="hero">
+      <div class="container flex-container">
+        <div class="hero-text-container">
+          <h1 class="hero-title">
+            Olá, eu sou
+            <span class="accent-text">Matheus Oliveira</span>
+          </h1>
+          <h2 class="hero-subtitle">Desenvolvedor Front-End Jr.</h2>
+          <p class="hero-description">
+            Transformando ideias em experiências digitais incríveis com código
+            limpo e design responsivo.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+            <a href="#contact" class="btn btn-outline">Contato</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="assets/images/hero-section.svg"
+            alt="Ilustração de Desenvolvimento"
+            class="hero-profile-image"
+          />
+        </div>
+      </div>
+      <div class="scroll-down">
+        <a href="#about"><i class="fa-solid fa-chevron-down"></i></a>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre Mim</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="assets/images/SobreMim.png" alt="Matheus Oliveira" />
+          </div>
+          <div class="about-text">
+            <h3>Desenvolvedor Front-End Jr. de Mogi das Cruzes, SP</h3>
+            <p>
+              Olá! Sou Matheus Oliveira, um desenvolvedor Front-End Jr.
+              apaixonado por criar interfaces web interativas e responsivas.
+              Minha jornada na área de tecnologia começou durante minha
+              experiência profissional na NEOBPO, onde desenvolvi habilidades
+              valiosas em comunicação, resolução de problemas e trabalho em
+              equipe.
+            </p>
+            <p>
+              Atualmente, estou cursando Engenharia de Software na Universidade
+              de Mogi das Cruzes, onde estou no 4º semestre. Além disso, concluí
+              o bootcamp "The Complete 2023 Web Development Bootcamp", que me
+              proporcionou conhecimentos práticos em desenvolvimento web.
+            </p>
+            <div class="about-info">
+              <div class="info-item">
+                <span>Nome:</span>
+                <p>Matheus Oliveira</p>
+              </div>
+              <div class="info-item">
+                <span>Email:</span>
+                <p>
+                  <a
+                    href="mailto:matheus.luiz0524@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >matheus.luiz0524@gmail.com</a
+                  >
+                </p>
+              </div>
+              <div class="info-item">
+                <span>Localização:</span>
+                <p>Mogi das Cruzes, SP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experiência Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="aceternity-features-grid experience-aceternity-grid">
+          <div class="aceternity-feature experience-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-phone-alt"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Agente de Telemarketing</span>
+            </div>
+            <div class="experience-description">
+              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
+              <span class="experience-period">2021 - 2022</span><br /><br />
+              Trabalhei no atendimento ao cliente para uma das maiores empresas
+              de telecomunicações do Brasil, desenvolvendo habilidades
+              essenciais em comunicação e análise de feedback.
+            </div>
+            <ul class="experience-list">
+              <li>
+                Utilização de Feedback: Análise de feedback de clientes para
+                identificar tendências
+              </li>
+              <li>
+                Recomendação de mudanças acionáveis à gestão, resultando em
+                maior retenção
+              </li>
+              <li>
+                Comunicação Eficaz: Utilização de fortes habilidades de
+                comunicação
+              </li>
+              <li>Atendimento ao cliente e resolução de problemas complexos</li>
+            </ul>
+          </div>
+
+          <div class="aceternity-feature experience-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-headset"
+                style="font-size: 28px; color: #0ea5e9"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Backoffice</span>
+            </div>
+            <div class="experience-description">
+              <strong>NEOBPO - Mogi das Cruzes, SP</strong><br />
+              <span class="experience-period">2022 - 2023</span><br /><br />
+              Atuei no suporte administrativo para uma das maiores empresas de
+              telecomunicações do Brasil, desenvolvendo habilidades valiosas em
+              organização, comunicação e resolução de problemas.
+            </div>
+            <ul class="experience-list">
+              <li>
+                Apoio Administrativo: Gerenciamento de tarefas administrativas,
+                incluindo preparação de relatórios
+              </li>
+              <li>
+                Demonstração de fortes habilidades organizacionais e atenção aos
+                detalhes
+              </li>
+              <li>
+                Colaboração e Comunicação: Trabalho com os departamentos de TI e
+                atendimento ao cliente
+              </li>
+              <li>
+                Contribuição em reuniões de equipe e fornecimento de feedback
+                para aprimorar o desempenho
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Educação</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="aceternity-features-grid education-aceternity-grid">
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-graduation-cap"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Engenharia de Software</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Universidade de Mogi das Cruzes</strong><br />
+              <span class="education-period">2023 - Presente</span><br /><br />
+              Atualmente cursando o 4º semestre, com foco em desenvolvimento web
+              e engenharia de software. Principais áreas de estudo:
+            </p>
+            <ul class="education-list">
+              <li>Algoritmos e Estruturas de Dados</li>
+              <li>Desenvolvimento Web</li>
+              <li>Banco de Dados</li>
+              <li>Engenharia de Software</li>
+            </ul>
+          </div>
+
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-solid fa-laptop-code"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>Web Development Bootcamp</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Udemy</strong><br />
+              <span class="education-period">2024</span><br /><br />
+              Bootcamp intensivo de desenvolvimento web, abrangendo tecnologias
+              front-end e back-end. Principais tecnologias estudadas:
+            </p>
+            <ul class="education-list">
+              <li>HTML5, CSS3, JavaScript</li>
+              <li>React.js</li>
+              <li>Node.js e Express</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+
+          <div class="aceternity-feature education-aceternity-feature">
+            <div class="aceternity-feature-gradient-top"></div>
+            <div class="aceternity-feature-icon">
+              <i
+                class="fa-brands fa-js"
+                style="font-size: 28px; color: #4f46e5"
+              ></i>
+            </div>
+            <div class="aceternity-feature-title">
+              <div class="aceternity-feature-indicator"></div>
+              <span>JavaScript Avançado</span>
+            </div>
+            <p class="aceternity-feature-description education-description">
+              <strong>Alura</strong><br />
+              <span class="education-period">2022</span><br /><br />
+              Curso focado em JavaScript avançado, abordando tópicos como:
+            </p>
+            <ul class="education-list">
+              <li>ES6+</li>
+              <li>Programação Assíncrona</li>
+              <li>Manipulação do DOM</li>
+              <li>Padrões de Projeto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>Minhas Habilidades</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="container">
+          <p
+            class="text-center"
+            style="
+              max-width: 800px;
+              margin: 0 auto 40px;
+              color: var(--text-light);
+            "
+          >
+            Competências que desenvolvi ao longo da minha jornada como
+            desenvolvedor front-end, combinando habilidades técnicas e
+            interpessoais para entregar soluções completas e eficientes.
+          </p>
+          <div class="aceternity-features-grid">
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>HTML5 & CSS3</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de interfaces modernas com HTML semântico e CSS
+                avançado, incluindo Flexbox, Grid e animações.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>JavaScript</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Programação com JavaScript moderno (ES6+), manipulação do DOM,
+                Promises, Async/Await e consumo de APIs.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-brands fa-react"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>React</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de aplicações com React, utilizando Hooks,
+                Context API, componentes reutilizáveis e gerenciamento de
+                estado.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-top"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-universal-access"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Acessibilidade Web</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Desenvolvimento de sites acessíveis para todos os usuários,
+                seguindo as diretrizes WCAG e melhores práticas.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>SEO Técnico</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Implementação de práticas de otimização para mecanismos de
+                busca, melhorando a visibilidade e o ranking dos sites.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Trabalho em Equipe</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Habilidade de colaborar efetivamente em equipes
+                multidisciplinares, compartilhando conhecimentos e buscando
+                soluções conjuntas.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Resolução de Problemas</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Capacidade analítica para identificar e resolver problemas
+                complexos de forma eficiente e criativa.
+              </p>
+            </div>
+
+            <div class="aceternity-feature">
+              <div class="aceternity-feature-gradient-bottom"></div>
+              <div class="aceternity-feature-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="aceternity-feature-title">
+                <div class="aceternity-feature-indicator"></div>
+                <span>Aprendizado Contínuo</span>
+              </div>
+              <p class="aceternity-feature-description">
+                Compromisso com o desenvolvimento profissional constante,
+                acompanhando as novas tecnologias e tendências do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects project-gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meus Projetos</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="project-gallery-header">
+          <p class="project-gallery-description text-center">
+            Descubra como utilizo tecnologias web modernas para criar
+            experiências digitais excepcionais. Estes projetos demonstram
+            aplicações reais e casos de sucesso.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/social-media-app"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/social-app.png"
+                alt="Social Media App"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Social Media App</div>
+                <div class="project-card-description">
+                  Aplicação moderna de mídia social com Next.js, React e
+                  Tailwind CSS, permitindo conexões, compartilhamento de
+                  conteúdo e interações entre usuários.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/landing-page"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/livraria.png"
+                alt="LiteraTour - Livraria Online"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">
+                  LiteraTour - Livraria Online
+                </div>
+                <div class="project-card-description">
+                  Landing page moderna e responsiva para uma livraria online,
+                  com design limpo, modo claro/escuro, menu mobile interativo.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/weather-dashboard"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/weather-dashboard.png"
+                alt="Weather Dashboard"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Weather Dashboard</div>
+                <div class="project-card-description">
+                  Aplicação web para consulta de previsão do tempo em diferentes
+                  cidades, utilizando APIs de clima.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/journal-web"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/journal-web.png"
+                alt="Journal Web"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Journal Web</div>
+                <div class="project-card-description">
+                  Aplicativo de diário digital com interface elegante,
+                  permitindo registrar pensamentos, adicionar tags e visualizar
+                  estatísticas de uso.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/Calculator"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/calculadora-cientifica.png"
+                alt="Calculadora Científica"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Calculadora Científica</div>
+                <div class="project-card-description">
+                  Calculadora científica com funções avançadas, histórico de
+                  cálculos e interface intuitiva.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-grid-item">
+            <a
+              href="https://github.com/devMatheusOliv/movie-catalog"
+              class="project-card"
+            >
+              <img
+                src="assets/images/projects/movie-catalog.png"
+                alt="Catálogo de Filmes"
+                class="project-card-image"
+              />
+              <div class="project-card-overlay"></div>
+              <div class="project-card-content">
+                <div class="project-card-title">Catálogo de Filmes</div>
+                <div class="project-card-description">
+                  Aplicação web para explorar filmes e séries, com informações
+                  detalhadas, avaliações e recomendações personalizadas.
+                </div>
+                <div class="project-card-link">
+                  Ver mais <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Entre em Contato</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Vamos conversar!</h3>
+            <p>
+              Estou sempre aberto a novas oportunidades, colaborações ou apenas
+              para trocar ideias sobre tecnologia e desenvolvimento. Entre em
+              contato através do formulário ao lado.
+            </p>
+
+            <div class="letter-image">
+              <div class="animated-mail">
+                <div class="back-fold"></div>
+                <div class="letter">
+                  <div class="letter-border"></div>
+                  <div class="letter-title"></div>
+                  <div class="letter-context"></div>
+                  <div class="letter-context"></div>
+                  <div class="letter-stamp">
+                    <div class="letter-stamp-inner"></div>
+                  </div>
+                </div>
+                <div class="top-fold"></div>
+                <div class="body"></div>
+                <div class="left-fold"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form action="https://formspree.io/f/xdkaqder" method="POST">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Seu Nome"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Seu Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Assunto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Sua Mensagem"
+                  required
+                ></textarea>
+              </div>
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nova mensagem do portfólio"
+              />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_format" value="json" />
+              <button type="submit" class="btn btn-primary">
+                Enviar Mensagem
+              </button>
+            </form>
+            <div id="formStatus" class="form-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer-container"></footer>
+
+    <a href="#home" class="scroll-to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form form");
+        const formStatus = document.getElementById("formStatus");
+        const letterImage = document.querySelector(".letter-image");
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("submitted")) {
+          formStatus.innerHTML =
+            '<p class="success">Mensagem enviada com sucesso! Entrarei em contato em breve.</p>';
+          formStatus.className = "form-status success";
+          formStatus.style.display = "block";
+
+          if (form) {
+            form.reset();
+          }
+
+          if (letterImage) {
+            letterImage.classList.add("active");
+          }
+
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+
+          if (history.pushState) {
+            const newurl =
+              window.location.protocol +
+              "//" +
+              window.location.host +
+              window.location.pathname;
+            window.history.pushState({ path: newurl }, "", newurl);
+          }
+        }
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (letterImage) {
+              letterImage.classList.add("sending");
+            }
+
+            formStatus.innerHTML =
+              '<p class="sending">Enviando mensagem...</p>';
+            formStatus.className = "form-status sending";
+            formStatus.style.display = "block";
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: form.method,
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                }
+                throw new Error("Erro no envio do formulário");
+              })
+              .then((data) => {
+                formStatus.innerHTML =
+                  '<p class="success">Mensagem enviada com sucesso! Entrarei em contato em breve.</p>';
+                formStatus.className = "form-status success";
+
+                form.reset();
+
+                if (letterImage) {
+                  letterImage.classList.remove("sending");
+                  letterImage.classList.add("active");
+                }
+              })
+              .catch((error) => {
+                formStatus.innerHTML =
+                  '<p class="error">Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.</p>';
+                formStatus.className = "form-status error";
+
+                if (letterImage) {
+                  letterImage.classList.remove("sending");
+                }
+
+                console.error("Erro:", error);
+              });
+          });
+        }
+      });
+    </script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="assets/js/sidebar.js" type="text/babel"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/project-gallery.js"></script>
+    <script
+      src="assets/js/components/hooks/use-expandable.js"
+      type="text/babel"
+    ></script>
+    <script
+      src="assets/js/components/ui/expandable-card.js"
+      type="text/babel"
+    ></script>
+    <script src="assets/js/project-cards.js" type="text/babel"></script>
+
+    <script src="assets/js/analytics.js"></script>
+
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+  </body>
+</html>
