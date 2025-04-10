@@ -1,0 +1,21 @@
+{
+  "name": "portfoliomat",
+  "version": "1.0.0",
+  "description": "Portfolio website for Matheus Oliveira, Front-end Developer",
+  "main": "index.html",
+  "homepage": "https://portfoliomat.site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devMatheusOliv/PortfolioMat"
+  },
+  "scripts": {
+    "dev": "npx serve",
+    "build": "mkdir -p public && cp -r index.html css js images public/"
+  },
+  "author": "Matheus Oliveira <matheus.luiz0524@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0"
+  }
+}
