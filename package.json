@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "npx serve",
-    "build": "mkdir -p public && cp -r index.html css js images public/"
+    "build": "mkdir -p public && cp -r index.html assets public/"
   },
   "author": "Matheus Oliveira <matheus.luiz0524@gmail.com>",
   "license": "MIT",

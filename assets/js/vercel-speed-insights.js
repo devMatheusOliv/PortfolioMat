@@ -1,58 +1,43 @@
-/**
- * Vercel Speed Insights Integration
- *
- * Este arquivo simula o comportamento do módulo @vercel/speed-insights/next
- * seguindo a documentação oficial da Vercel.
- *
- * Em um projeto Next.js real, você importaria e usaria assim:
- *
- * import { SpeedInsights } from "@vercel/speed-insights/next";
- *
- * function MyApp({ Component, pageProps }) {
- *   return (
- *     <>
- *       <Component {...pageProps} />
- *       <SpeedInsights />
- *     </>
- *   );
- * }
- */
+// vercel-speed-insights.js
+// Script para integração com Vercel Speed Insights
 
-// Simulação do componente SpeedInsights da biblioteca @vercel/speed-insights/next
 (function () {
-  // Definir o objeto global para simular a importação
-  if (!window.vercelSpeedInsights) {
-    window.vercelSpeedInsights = {};
+  // Configura o objeto do Speed Insights
+  window.si =
+    window.si ||
+    function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
+
+  // Função para carregar o script do Speed Insights
+  function loadSpeedInsights() {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = "/_vercel/speed-insights/script.js";
+    document.head.appendChild(script);
   }
 
-  // Criar o componente SpeedInsights
-  window.vercelSpeedInsights.SpeedInsights = function () {
-    // Este seria o componente React real
-    // Como estamos simulando, inicializamos o script aqui
+  // Carrega o script quando o documento estiver pronto
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    loadSpeedInsights();
+  } else {
+    document.addEventListener("DOMContentLoaded", loadSpeedInsights);
+  }
+
+  // Configura o evento de rastreamento de navegação
+  window.addEventListener("load", function () {
     try {
-      if (
-        !document.querySelector('script[src*="vitals.vercel-insights.com"]')
-      ) {
-        const script = document.createElement("script");
-        script.src = "https://vitals.vercel-insights.com/v1/vitals.js";
-        script.defer = true;
-        script.setAttribute("data-website-id", "portfolio-matheusol");
-        document.head.appendChild(script);
-
-        console.log(
-          "SpeedInsights from @vercel/speed-insights/next initialized"
-        );
-      }
-    } catch (error) {
-      console.error("Failed to initialize Vercel SpeedInsights:", error);
+      window.si("trackPageView");
+    } catch (e) {
+      console.error("Erro ao rastrear visualização de página:", e);
     }
+  });
 
-    // Em um componente React real, retornaríamos JSX, mas aqui retornamos null
-    return null;
-  };
-
-  // Inicializar automaticamente se o script for carregado direto
-  document.addEventListener("DOMContentLoaded", function () {
-    window.vercelSpeedInsights.SpeedInsights();
+  // Inicializa automaticamente o Speed Insights
+  window.si("config", {
+    autoTrack: true,
   });
 })();

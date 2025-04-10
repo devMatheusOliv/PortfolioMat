@@ -11,15 +11,33 @@
  */
 
 (function () {
-  try {
-    // Inicializar o Vercel Analytics
+  // Função para carregar o script do Vercel Analytics
+  function loadVercelAnalytics() {
     const script = document.createElement("script");
-    script.src = "/_vercel/insights/script.js";
     script.defer = true;
+    script.src = "/_vercel/insights/script.js";
     document.head.appendChild(script);
-
-    console.log("Vercel Analytics initialized");
-  } catch (error) {
-    console.error("Failed to initialize Vercel Analytics:", error);
   }
+
+  // Função para configurar o Vercel Speed Insights
+  function setupSpeedInsights() {
+    window.si =
+      window.si ||
+      function () {
+        (window.siq = window.siq || []).push(arguments);
+      };
+  }
+
+  // Carrega os scripts quando o documento estiver pronto
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    loadVercelAnalytics();
+  } else {
+    document.addEventListener("DOMContentLoaded", loadVercelAnalytics);
+  }
+
+  // Configura o Speed Insights
+  setupSpeedInsights();
 })();
