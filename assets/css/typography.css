@@ -1,0 +1,94 @@
+/* Tipografia personalizada */
+
+/* Aplicação da fonte JetBrains Mono */
+.code-font,
+code,
+pre,
+.skill-card h4,
+.experience-aceternity-feature .aceternity-feature-title span,
+.education-aceternity-feature .aceternity-feature-title span,
+.project-card-title,
+.sidebar-listItemText,
+.footer-logo a,
+.btn,
+.section-header h2,
+.mobile-navbar-text,
+.hero-buttons .btn,
+.filter-btn,
+.experience-period,
+.education-period,
+.accent-text,
+.hero-subtitle,
+.about-text h3,
+.contact-info h3,
+.gallery-control-button,
+.project-card-link,
+.footer-nav-section h4 {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Ajuste de peso da fonte para títulos */
+.skill-card h4,
+.experience-aceternity-feature .aceternity-feature-title span,
+.education-aceternity-feature .aceternity-feature-title span,
+.project-card-title,
+.section-header h2,
+.accent-text,
+.hero-subtitle,
+.about-text h3,
+.contact-info h3,
+.footer-nav-section h4 {
+  font-weight: 600;
+}
+
+/* Ajuste de peso da fonte para elementos de navegação */
+.sidebar-listItemText,
+.footer-logo a,
+.btn,
+.mobile-navbar-text,
+.filter-btn,
+.gallery-control-button,
+.project-card-link {
+  font-weight: 500;
+}
+
+/* Ajuste para código */
+code,
+pre {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+/* Classe auxiliar para aplicar a fonte em qualquer elemento */
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Ajuste de espaçamento de letras para melhor legibilidade */
+.section-header h2,
+.btn,
+.filter-btn,
+.about-text h3,
+.contact-info h3,
+.gallery-control-button,
+.project-card-link,
+.footer-nav-section h4 {
+  letter-spacing: 0.5px;
+}
+
+/* Ajuste para períodos de experiência e educação */
+.experience-period,
+.education-period {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Ajuste para o nome na seção hero */
+.accent-text {
+  letter-spacing: 1px;
+}
+
+/* Ajuste para o subtítulo na seção hero */
+.hero-subtitle {
+  letter-spacing: 0.5px;
+}
